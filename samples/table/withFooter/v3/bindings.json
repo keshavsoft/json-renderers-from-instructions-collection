@@ -1,0 +1,17 @@
+[
+  {
+    "event": "input",
+    "selector": "#tableSearch",
+    "action": "onSearchInput"
+  },
+  {
+    "event": "click",
+    "selector": ".ks-btn-show",
+    "action": "onRowShow"
+  },
+  {
+    "event": "click",
+    "selector": ".ks-btn-save",
+    "action": "onFooterSave"
+  }
+]
