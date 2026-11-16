@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Documentation | json-renderers-from-instructions-collection</title>
+    <title>Documentation Hub | json-renderers-from-instructions-collection</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -28,31 +28,69 @@
             background-color: #ffffff;
             border-bottom: 1px solid var(--border-color);
         }
-        .doc-card {
-            background: #ffffff;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
         }
-        .doc-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            border-color: #cbd5e1;
+        .dropdown-menu {
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            padding: 8px;
+        }
+        .dropdown-item {
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .dropdown-item:hover {
+            background-color: var(--accent-soft);
+            color: var(--accent-primary);
         }
         .hero-section {
             background: #ffffff;
             border-bottom: 1px solid var(--border-color);
-            padding: 48px 0;
+            padding: 42px 0;
         }
         pre {
             background: #f8fafc;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 16px;
+            border-radius: 10px;
+            padding: 38px 18px 18px 18px;
             color: #0f172a;
             font-size: 0.9rem;
             overflow-x: auto;
+            position: relative;
+        }
+        .btn-copy-code {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: var(--text-secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            transition: all 0.15s ease;
+            z-index: 5;
+        }
+        .btn-copy-code:hover {
+            background-color: #f1f5f9;
+            color: var(--text-primary);
+            border-color: #94a3b8;
+        }
+        .btn-copy-code.copied {
+            background-color: #f0fdf4;
+            border-color: #86efac;
+            color: #16a34a;
         }
         code {
             color: #d97706;
@@ -67,48 +105,161 @@
             padding: 6px 12px;
             border-radius: 9999px;
         }
-        .table-custom th {
-            background-color: #f1f5f9;
-            color: #334155;
-            font-weight: 600;
+        .story-box {
+            background: #ffffff;
+            border-left: 4px solid var(--accent-primary);
+            border-radius: 0 8px 8px 0;
+            padding: 16px 20px;
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .doc-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        /* Horizontal Scrolling Carousel Styling */
+        .chapters-carousel-container {
+            position: relative;
+        }
+        .chapters-carousel {
+            display: flex;
+            gap: 18px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            scroll-snap-type: x mandatory;
+            padding: 8px 4px 16px 4px;
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
+        }
+        .chapters-carousel::-webkit-scrollbar {
+            display: none; /* Chrome/Safari */
+        }
+        .chapter-card-wrapper {
+            flex: 0 0 320px;
+            max-width: 320px;
+            scroll-snap-align: start;
+        }
+        @media (max-width: 576px) {
+            .chapter-card-wrapper {
+                flex: 0 0 280px;
+                max-width: 280px;
+            }
+        }
+        .chapter-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 24px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        .chapter-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(37,99,235,0.08);
+            border-color: #93c5fd;
+            color: inherit;
+        }
+        .chapter-icon-box {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: #eff6ff;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin-bottom: 14px;
+        }
+        .carousel-nav-btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+        .carousel-nav-btn:hover {
+            background: var(--accent-primary);
+            color: #ffffff;
+            border-color: var(--accent-primary);
+            box-shadow: 0 4px 10px rgba(37,99,235,0.25);
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <!-- Streamlined Header Navbar with Grouped Dropdowns -->
+    <nav class="navbar navbar-expand-lg sticky-top bg-white">
         <div class="container">
             <a class="navbar-brand fw-bold text-dark d-flex align-items-center gap-2" href="./index.html">
                 <i class="bi bi-collection-play-fill text-primary"></i>
-                <span>json-renderers-from-instructions-collection</span>
+                <span>json-renderers</span>
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navContent">
-                <ul class="navbar-nav ms-auto align-items-center gap-1">
-                    <li class="nav-item"><a class="nav-link active fw-semibold" href="./index.html">Overview</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./architecture.html">Architecture</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./api-reference.html">API Reference</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./components-and-options.html">Components</a></li>
-                    <li class="nav-item"><a class="nav-link" href="./examples.html">Examples</a></li>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3 gap-1">
                     <li class="nav-item">
-                        <a class="btn btn-primary btn-sm rounded-pill px-3 text-white" href="https://www.npmjs.com/package/json-renderers-from-instructions-collection" target="_blank">
-                            <i class="bi bi-box-seam me-1"></i> NPM
-                        </a>
+                        <a class="nav-link fw-semibold active text-primary" href="./index.html">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="btn btn-primary btn-sm rounded-pill px-3 text-white" href="https://github.com/keshavsoft/json-renderers-from-instructions-collection" target="_blank">
-                            <i class="bi bi-box-seam me-1"></i> Git
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-book me-1"></i> Documentation
                         </a>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li><a class="dropdown-item py-2" href="./pages/arch.html"><i class="bi bi-diagram-3 me-2 text-primary"></i>Architecture</a></li>
+                            <li><a class="dropdown-item py-2" href="./pages/api.html"><i class="bi bi-file-earmark-code me-2 text-primary"></i>API Reference</a></li>
+                            <li><a class="dropdown-item py-2" href="./pages/types.html"><i class="bi bi-grid-3x3-gap me-2 text-primary"></i>Component Types</a></li>
+                            <li><a class="dropdown-item py-2" href="./pages/demo.html"><i class="bi bi-code-square me-2 text-primary"></i>Build Recipes & Demos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-puzzle me-1"></i> Modules & Engines
+                        </a>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li><a class="dropdown-item py-2" href="./pages/deps.html"><i class="bi bi-boxes me-2 text-primary"></i>All Dependencies Overview</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item py-2" href="./pages/guard.html"><i class="bi bi-shield-check me-2 text-primary"></i>json-renderers-guard</a></li>
+                            <li><a class="dropdown-item py-2" href="./pages/dom.html"><i class="bi bi-file-code me-2 text-primary"></i>@keshavsoft/json-to-dom</a></li>
+                            <li><a class="dropdown-item py-2" href="./pages/run.html"><i class="bi bi-gear-wide-connected me-2 text-primary"></i>run-instructions & run-options</a></li>
+                            <li><a class="dropdown-item py-2" href="./pages/core.html"><i class="bi bi-diagram-2 me-2 text-primary"></i>buildSpec & buildSingleSpec</a></li>
+                            <li><a class="dropdown-item py-2" href="./pages/global.html"><i class="bi bi-globe me-2 text-primary"></i>registerGlobal (globalThis.ks)</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item py-2" href="./pages/spec.html"><i class="bi bi-journal-code me-2 text-primary"></i>spec-repo Story & Origin</a></li>
+                        </ul>
                     </li>
                 </ul>
+                <div class="d-flex align-items-center gap-2">
+                    <a class="btn btn-outline-dark btn-sm rounded-pill px-3" href="https://github.com/keshavsoft/json-renderers-from-instructions-collection" target="_blank">
+                        <i class="bi bi-github me-1"></i> GitHub
+                    </a>
+                    <a class="btn btn-primary btn-sm rounded-pill px-3 text-white" href="https://www.npmjs.com/package/json-renderers-from-instructions-collection" target="_blank">
+                        <i class="bi bi-box-seam me-1"></i> NPM
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Short Story -->
     <header class="hero-section">
         <div class="container">
             <div class="d-flex flex-wrap gap-2 mb-3">
@@ -116,16 +267,28 @@
                 <span class="badge bg-success-subtle text-success border border-success-subtle badge-pill">Zero Boilerplate</span>
                 <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle badge-pill">1-Statement Render</span>
             </div>
-            <h1 class="display-6 fw-bold mb-3 text-dark">Declarative Composite Multi-Renderer Orchestrator</h1>
-            <p class="lead text-secondary mb-4" style="max-width: 860px;">
-                Render coordinated UI combinations (<b>Form + Table</b>, <b>Select + Table</b>, or <b>Complete Dashboards</b>) in <b>1 single statement</b> from a shared Single-Source-of-Truth schema and dataset.
-            </p>
-            <div class="d-flex flex-wrap gap-3">
+            
+            <h1 class="display-6 fw-bold mb-3 text-dark">Declarative Composite Multi-Renderer</h1>
+
+            <!-- Short Story Box -->
+            <div class="story-box mb-4" style="max-width: 840px;">
+                <p class="text-secondary mb-1">
+                    <strong>Short Story:</strong> Traditional UI requires writing separate HTML boilerplate, form inputs, and table loops for every screen. This orchestrator unifies them: given <strong>1 shared schema</strong> (<code>columns</code>) and <strong>1 dataset</strong> (<code>data</code>), it mounts multiple coordinated components (Form on top + Table below, or Select + Table) in <strong>1 single statement</strong>.
+                </p>
+                <small class="text-muted">
+                    Component blueprints originate from <a href="./pages/spec.html" class="fw-semibold text-primary">spec-repo</a> and execute via KeshavSoft's <a href="./pages/deps.html" class="fw-semibold text-primary">modular micro-libraries</a>.
+                </small>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2">
                 <a href="#quick-start" class="btn btn-primary px-4 py-2 rounded-3 shadow-sm">
                     <i class="bi bi-lightning-charge me-1"></i> Quick Start
                 </a>
-                <a href="./examples.html" class="btn btn-outline-secondary px-4 py-2 rounded-3 bg-white">
-                    <i class="bi bi-code-slash me-1"></i> Browse Examples
+                <a href="./pages/deps.html" class="btn btn-outline-secondary px-4 py-2 rounded-3 bg-white">
+                    <i class="bi bi-puzzle me-1"></i> KeshavSoft Dependencies
+                </a>
+                <a href="./pages/demo.html" class="btn btn-outline-dark px-4 py-2 rounded-3 bg-white">
+                    <i class="bi bi-code-slash me-1"></i> View Examples
                 </a>
             </div>
         </div>
@@ -134,100 +297,202 @@
     <!-- Main Content -->
     <main class="container py-5">
         
-        <!-- Documentation Cards Grid -->
-        <section class="mb-5">
-            <h2 class="h4 fw-bold mb-4 text-dark"><i class="bi bi-book me-2 text-primary"></i>Documentation Chapters</h2>
-            <div class="row g-4">
-                
-                <div class="col-md-6 col-lg-3">
-                    <a href="./architecture.html" class="text-decoration-none">
-                        <div class="doc-card h-100 p-4">
-                            <div class="text-primary fs-3 mb-2"><i class="bi bi-diagram-3"></i></div>
-                            <h3 class="h6 fw-bold text-dark">Architecture</h3>
-                            <p class="text-muted small mb-0">Learn how the 5-stage synthesis and VDOM compiler translates schema into live UI elements.</p>
-                        </div>
-                    </a>
+        <!-- Documentation Chapters Horizontal Scroll Carousel -->
+        <section class="mb-5 chapters-carousel-container">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+                <div>
+                    <h2 class="h4 fw-bold text-dark mb-0"><i class="bi bi-book me-2 text-primary"></i>Documentation Chapters</h2>
+                    <p class="text-muted small mb-0">Scroll horizontally to explore architecture, specialized engines, and recipes</p>
                 </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <a href="./api-reference.html" class="text-decoration-none">
-                        <div class="doc-card h-100 p-4">
-                            <div class="text-primary fs-3 mb-2"><i class="bi bi-file-earmark-code"></i></div>
-                            <h3 class="h6 fw-bold text-dark">API Reference</h3>
-                            <p class="text-muted small mb-0">Complete method signatures for <code>render()</code>, <code>buildSpec()</code>, and <code>buildSingleSpec()</code>.</p>
-                        </div>
-                    </a>
+                <div class="d-flex align-items-center gap-2">
+                    <span class="text-muted small me-2 d-none d-sm-inline"><i class="bi bi-arrows-expand me-1"></i>Slide chapters</span>
+                    <button id="slidePrevBtn" class="carousel-nav-btn" title="Scroll Left" aria-label="Previous">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button id="slideNextBtn" class="carousel-nav-btn" title="Scroll Right" aria-label="Next">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
                 </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <a href="./components-and-options.html" class="text-decoration-none">
-                        <div class="doc-card h-100 p-4">
-                            <div class="text-primary fs-3 mb-2"><i class="bi bi-sliders"></i></div>
-                            <h3 class="h6 fw-bold text-dark">Components & Options</h3>
-                            <p class="text-muted small mb-0">Detailed catalog for <code>table.simple</code>, <code>form.simple</code>, <code>select.simple</code>, and options.</p>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <a href="./examples.html" class="text-decoration-none">
-                        <div class="doc-card h-100 p-4">
-                            <div class="text-primary fs-3 mb-2"><i class="bi bi-play-btn"></i></div>
-                            <h3 class="h6 fw-bold text-dark">Build & POC Examples</h3>
-                            <p class="text-muted small mb-0">Production walkthrough of Form + Table, Table + Form, 4-component dashboard, and interactive event loops.</p>
-                        </div>
-                    </a>
-                </div>
-
             </div>
-        </section>
 
-        <!-- Short Note & Core Working -->
-        <section class="doc-card p-4 p-md-5 mb-5 bg-white">
-            <h2 class="h4 fw-bold mb-3 text-dark"><i class="bi bi-info-circle me-2 text-primary"></i>Short Note: What is this & How does it work?</h2>
-            <p class="text-secondary">
-                In traditional web apps, rendering a form and a table requires writing independent HTML templates, managing synchronization loops, and duplicating field bindings.
-            </p>
-            <p class="text-secondary mb-4">
-                <strong>json-renderers-from-instructions-collection</strong> eliminates all of that by introducing a declarative multi-renderer pipeline:
-            </p>
+            <!-- Horizontal Scroll Track -->
+            <div id="chaptersCarousel" class="chapters-carousel">
+                
+                <!-- Card 1: KeshavSoft Dependencies -->
+                <div class="chapter-card-wrapper">
+                    <a href="./pages/deps.html" class="chapter-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="chapter-icon-box"><i class="bi bi-puzzle"></i></div>
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill">Ecosystem</span>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-2">KeshavSoft Dependencies</h3>
+                        <p class="text-muted small mb-4 flex-grow-1">
+                            The ecosystem story and roles of <code>spec-repo</code>, <code>run-instructions</code>, <code>run-options</code>, <code>guard</code>, and <code>json-to-dom</code>.
+                        </p>
+                        <span class="text-primary fw-semibold small">Explore Ecosystem &rarr;</span>
+                    </a>
+                </div>
 
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="p-3 bg-light rounded-3 h-100 border border-light-subtle">
-                        <span class="badge bg-primary mb-2">Step 1</span>
-                        <h4 class="h6 fw-bold text-dark">Input Guard Assertions</h4>
-                        <p class="text-muted small mb-0">Validates configuration using <code>json-renderers-guard</code> to ensure safe, type-checked execution.</p>
-                    </div>
+                <!-- Card 2: json-renderers-guard -->
+                <div class="chapter-card-wrapper">
+                    <a href="./pages/guard.html" class="chapter-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="chapter-icon-box"><i class="bi bi-shield-check"></i></div>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill">Safety</span>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-2">json-renderers-guard</h3>
+                        <p class="text-muted small mb-4 flex-grow-1">
+                            Input contract assertion story and how <code>guardFunc</code> protects against runtime errors and malformed datasets.
+                        </p>
+                        <span class="text-primary fw-semibold small">Read Guard Story &rarr;</span>
+                    </a>
                 </div>
-                <div class="col-md-4">
-                    <div class="p-3 bg-light rounded-3 h-100 border border-light-subtle">
-                        <span class="badge bg-primary mb-2">Step 2</span>
-                        <h4 class="h6 fw-bold text-dark">VDOM Instruction Engine</h4>
-                        <p class="text-muted small mb-0">Translates SSOT <code>columns</code> and <code>data</code> through <code>json-renderers-run-instructions</code> and applies feature flags via <code>run-options</code>.</p>
-                    </div>
+
+                <!-- Card 3: json-to-dom -->
+                <div class="chapter-card-wrapper">
+                    <a href="./pages/dom.html" class="chapter-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="chapter-icon-box"><i class="bi bi-file-code"></i></div>
+                            <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle rounded-pill">DOM Mounter</span>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-2">@keshavsoft/json-to-dom</h3>
+                        <p class="text-muted small mb-4 flex-grow-1">
+                            How the compiled Virtual JSON DOM converts to real browser elements in <code>replace</code>, <code>append</code>, or <code>prepend</code> mode.
+                        </p>
+                        <span class="text-primary fw-semibold small">Read DOM Story &rarr;</span>
+                    </a>
                 </div>
-                <div class="col-md-4">
-                    <div class="p-3 bg-light rounded-3 h-100 border border-light-subtle">
-                        <span class="badge bg-primary mb-2">Step 3</span>
-                        <h4 class="h6 fw-bold text-dark">Direct DOM Mount</h4>
-                        <p class="text-muted small mb-0">Mounts the compiled Virtual JSON DOM tree via <code>@keshavsoft/json-to-dom</code> and registers to <code>globalThis.ks</code>.</p>
-                    </div>
+
+                <!-- Card 4: run-instructions & run-options -->
+                <div class="chapter-card-wrapper">
+                    <a href="./pages/run.html" class="chapter-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="chapter-icon-box"><i class="bi bi-gear-wide-connected"></i></div>
+                            <span class="badge bg-warning-subtle text-dark border border-warning-subtle rounded-pill">Engines</span>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-2">run-instructions & run-options</h3>
+                        <p class="text-muted small mb-4 flex-grow-1">
+                            The twin engines transforming schema into VDOM and applying serial numbers, live search, and action buttons.
+                        </p>
+                        <span class="text-primary fw-semibold small">Read Engine Story &rarr;</span>
+                    </a>
                 </div>
+
+                <!-- Card 5: buildSpec & buildSingleSpec -->
+                <div class="chapter-card-wrapper">
+                    <a href="./pages/core.html" class="chapter-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="chapter-icon-box"><i class="bi bi-diagram-2"></i></div>
+                            <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle rounded-pill">Pipeline</span>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-2">buildSpec & buildSingleSpec</h3>
+                        <p class="text-muted small mb-4 flex-grow-1">
+                            How the orchestrator coordinates multi-component collections into responsive vertical or horizontal layouts.
+                        </p>
+                        <span class="text-primary fw-semibold small">Read Pipeline Story &rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Card 6: registerGlobal -->
+                <div class="chapter-card-wrapper">
+                    <a href="./pages/global.html" class="chapter-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="chapter-icon-box"><i class="bi bi-globe"></i></div>
+                            <span class="badge bg-light text-secondary border rounded-pill">Runtime</span>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-2">registerGlobal</h3>
+                        <p class="text-muted small mb-4 flex-grow-1">
+                            Zero-config browser runtime access under the standardized <code>globalThis.ks</code> namespace.
+                        </p>
+                        <span class="text-primary fw-semibold small">Read Global Story &rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Card 7: spec-repo Story -->
+                <div class="chapter-card-wrapper">
+                    <a href="./pages/spec.html" class="chapter-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="chapter-icon-box"><i class="bi bi-journal-code"></i></div>
+                            <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill">Blueprints</span>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-2">spec-repo Story</h3>
+                        <p class="text-muted small mb-4 flex-grow-1">
+                            Why UI blueprints live in JSON contracts and how <code>type: "table.simple"</code> is resolved from spec-repo.
+                        </p>
+                        <span class="text-primary fw-semibold small">Read Blueprint Story &rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Card 8: Component Types -->
+                <div class="chapter-card-wrapper">
+                    <a href="./pages/types.html" class="chapter-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="chapter-icon-box"><i class="bi bi-grid-3x3-gap"></i></div>
+                            <span class="badge bg-info-subtle text-info-emphasis border border-info-subtle rounded-pill">Catalog</span>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-2">Component Types Catalog</h3>
+                        <p class="text-muted small mb-4 flex-grow-1">
+                            Full options catalog: <code>table.simple</code>, <code>table.bodyOnly</code>, <code>form.simple</code>, and <code>select.simple</code>.
+                        </p>
+                        <span class="text-primary fw-semibold small">View Types Catalog &rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Card 9: Architecture -->
+                <div class="chapter-card-wrapper">
+                    <a href="./pages/arch.html" class="chapter-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="chapter-icon-box"><i class="bi bi-diagram-3"></i></div>
+                            <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle rounded-pill">Architecture</span>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-2">5-Stage Architecture</h3>
+                        <p class="text-muted small mb-4 flex-grow-1">
+                            System architecture flow from configuration guard to VDOM transformation and final DOM insertion.
+                        </p>
+                        <span class="text-primary fw-semibold small">Read Architecture &rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Card 10: API Reference -->
+                <div class="chapter-card-wrapper">
+                    <a href="./pages/api.html" class="chapter-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="chapter-icon-box"><i class="bi bi-file-earmark-code"></i></div>
+                            <span class="badge bg-light text-dark border rounded-pill">Reference</span>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-2">API Reference</h3>
+                        <p class="text-muted small mb-4 flex-grow-1">
+                            Signatures and parameter contracts for <code>render()</code>, <code>buildSpec()</code>, and <code>buildSingleSpec()</code>.
+                        </p>
+                        <span class="text-primary fw-semibold small">View API Reference &rarr;</span>
+                    </a>
+                </div>
+
+                <!-- Card 11: Recipes & Demos -->
+                <div class="chapter-card-wrapper">
+                    <a href="./pages/demo.html" class="chapter-card">
+                        <div class="d-flex justify-content-between align-items-start">
+                            <div class="chapter-icon-box"><i class="bi bi-code-square"></i></div>
+                            <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill">Recipes</span>
+                        </div>
+                        <h3 class="h6 fw-bold text-dark mb-2">Build Recipes & Demos</h3>
+                        <p class="text-muted small mb-4 flex-grow-1">
+                            Form + Table, 4-component dashboard combo, live real-time search loops, and partial body row updates.
+                        </p>
+                        <span class="text-primary fw-semibold small">View Recipes &rarr;</span>
+                    </a>
+                </div>
+
             </div>
         </section>
 
         <!-- Quick Start Section -->
         <section id="quick-start" class="doc-card p-4 p-md-5 mb-5 bg-white">
-            <h2 class="h4 fw-bold mb-3 text-dark"><i class="bi bi-lightning-charge me-2 text-primary"></i>Quick Start</h2>
+            <h2 class="h4 fw-bold mb-3 text-dark"><i class="bi bi-lightning-charge me-2 text-primary"></i>1-Statement Quick Start</h2>
             
-            <h5 class="fw-semibold text-secondary mt-3">1. Installation</h5>
-            <pre><code>npm install json-renderers-from-instructions-collection</code></pre>
-
-            <h5 class="fw-semibold text-secondary mt-4">2. Render in 1 Statement</h5>
             <pre><code>import render from "json-renderers-from-instructions-collection";
 
-// Single Source of Truth
+// Single Source of Truth: Columns & Data
 const columns = [
     { field: "itemName", displayName: "Item Name", type: "string" },
     { field: "category", displayName: "Category", type: "string" },
@@ -239,7 +504,7 @@ const data = [
     { itemName: "Cooking Oil Sunflower", category: "Oils", baseUnit: "Litres" }
 ];
 
-// Single Statement Execution
+// 1 Statement Composite UI Render
 render({
     data,
     columns,
@@ -255,6 +520,32 @@ render({
 });</code></pre>
         </section>
 
+        <!-- Ecosystem Links Bar -->
+        <section class="doc-card p-4 text-center bg-white">
+            <h3 class="h5 fw-bold mb-2">KeshavSoft Ecosystem Repositories</h3>
+            <p class="text-muted small mb-3">Explore the underlying repositories powering the declarative JSON rendering pipeline.</p>
+            <div class="d-flex justify-content-center flex-wrap gap-2">
+                <a href="https://github.com/keshavsoft/spec-repo" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+                    <i class="bi bi-github me-1"></i> spec-repo
+                </a>
+                <a href="https://github.com/keshavsoft/json-renderers-guard" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+                    <i class="bi bi-github me-1"></i> json-renderers-guard
+                </a>
+                <a href="https://github.com/keshavsoft/json-renderers-run-instructions" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+                    <i class="bi bi-github me-1"></i> run-instructions
+                </a>
+                <a href="https://github.com/keshavsoft/json-renderers-run-options" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+                    <i class="bi bi-github me-1"></i> run-options
+                </a>
+                <a href="https://github.com/keshavsoft/json-to-dom" target="_blank" class="btn btn-outline-dark btn-sm rounded-pill px-3">
+                    <i class="bi bi-github me-1"></i> json-to-dom
+                </a>
+                <a href="https://www.npmjs.com/package/json-renderers-from-instructions-collection" target="_blank" class="btn btn-primary btn-sm rounded-pill px-3 text-white">
+                    <i class="bi bi-box-seam me-1"></i> NPM Package
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -266,5 +557,70 @@ render({
 
     <!-- Bootstrap 5 JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Carousel Left / Right Scroll Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const carousel = document.getElementById("chaptersCarousel");
+            const prevBtn = document.getElementById("slidePrevBtn");
+            const nextBtn = document.getElementById("slideNextBtn");
+
+            if (carousel && prevBtn && nextBtn) {
+                const scrollAmount = 340;
+
+                prevBtn.addEventListener("click", () => {
+                    carousel.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+                });
+
+                nextBtn.addEventListener("click", () => {
+                    carousel.scrollBy({ left: scrollAmount, behavior: "smooth" });
+                });
+
+                const updateButtonStates = () => {
+                    const atStart = carousel.scrollLeft <= 5;
+                    const atEnd = carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth - 5;
+                    prevBtn.style.opacity = atStart ? "0.4" : "1";
+                    prevBtn.style.pointerEvents = atStart ? "none" : "auto";
+                    nextBtn.style.opacity = atEnd ? "0.4" : "1";
+                    nextBtn.style.pointerEvents = atEnd ? "none" : "auto";
+                };
+
+                carousel.addEventListener("scroll", updateButtonStates);
+                window.addEventListener("resize", updateButtonStates);
+                updateButtonStates();
+            }
+
+            // Universal Copy Code Button Injector
+            document.querySelectorAll("pre").forEach((preBlock) => {
+                if (preBlock.querySelector(".btn-copy-code")) return;
+
+                const copyBtn = document.createElement("button");
+                copyBtn.className = "btn-copy-code";
+                copyBtn.type = "button";
+                copyBtn.innerHTML = '<i class="bi bi-clipboard"></i> <span>Copy</span>';
+                copyBtn.setAttribute("aria-label", "Copy code");
+
+                copyBtn.addEventListener("click", async () => {
+                    const codeEl = preBlock.querySelector("code");
+                    const textToCopy = codeEl ? codeEl.innerText : preBlock.innerText;
+
+                    try {
+                        await navigator.clipboard.writeText(textToCopy.trim());
+                        copyBtn.innerHTML = '<i class="bi bi-check2"></i> <span>Copied!</span>';
+                        copyBtn.classList.add("copied");
+
+                        setTimeout(() => {
+                            copyBtn.innerHTML = '<i class="bi bi-clipboard"></i> <span>Copy</span>';
+                            copyBtn.classList.remove("copied");
+                        }, 2000);
+                    } catch (err) {
+                        console.error("Copy failed", err);
+                    }
+                });
+
+                preBlock.appendChild(copyBtn);
+            });
+        });
+    </script>
 </body>
 </html>

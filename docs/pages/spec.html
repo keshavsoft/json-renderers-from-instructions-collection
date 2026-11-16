@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The spec-repo Story & Type System | json-renderers-from-instructions-collection</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-canvas: #ffffff;
+            --bg-surface: #f8fafc;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --accent-primary: #2563eb;
+            --accent-soft: #eff6ff;
+        }
+        body {
+            background-color: var(--bg-surface);
+            color: var(--text-primary);
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+        }
+        .navbar {
+            background-color: #ffffff;
+            border-bottom: 1px solid var(--border-color);
+        }
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+            }
+        }
+        .dropdown-menu {
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+            padding: 8px;
+        }
+        .dropdown-item {
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        .dropdown-item:hover {
+            background-color: var(--accent-soft);
+            color: var(--accent-primary);
+        }
+        .doc-card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        pre {
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 38px 18px 18px 18px;
+            color: #0f172a;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            position: relative;
+        }
+        .btn-copy-code {
+            position: absolute;
+            top: 8px;
+            right: 10px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 3px 10px;
+            border-radius: 6px;
+            background-color: #ffffff;
+            border: 1px solid #cbd5e1;
+            color: var(--text-secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+            transition: all 0.15s ease;
+            z-index: 5;
+        }
+        .btn-copy-code:hover {
+            background-color: #f1f5f9;
+            color: var(--text-primary);
+            border-color: #94a3b8;
+        }
+        .btn-copy-code.copied {
+            background-color: #f0fdf4;
+            border-color: #86efac;
+            color: #16a34a;
+        }
+        code {
+            color: #d97706;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        }
+        .story-callout {
+            background: #ffffff;
+            border-left: 4px solid var(--accent-primary);
+            padding: 20px 24px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .table-custom th {
+            background-color: #f1f5f9;
+            color: #334155;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg sticky-top bg-white">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-dark d-flex align-items-center gap-2" href="../index.html">
+                <i class="bi bi-collection-play-fill text-primary"></i>
+                <span>json-renderers</span>
+            </a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3 gap-1">
+                    <li class="nav-item">
+                        <a class="nav-link fw-semibold text-secondary" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-secondary" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-book me-1"></i> Documentation
+                        </a>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li><a class="dropdown-item py-2" href="./arch.html"><i class="bi bi-diagram-3 me-2 text-primary"></i>Architecture</a></li>
+                            <li><a class="dropdown-item py-2" href="./api.html"><i class="bi bi-file-earmark-code me-2 text-primary"></i>API Reference</a></li>
+                            <li><a class="dropdown-item py-2" href="./types.html"><i class="bi bi-grid-3x3-gap me-2 text-primary"></i>Component Types</a></li>
+                            <li><a class="dropdown-item py-2" href="./demo.html"><i class="bi bi-code-square me-2 text-primary"></i>Build Recipes & Demos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active text-primary fw-semibold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-puzzle me-1"></i> Modules & Engines
+                        </a>
+                        <ul class="dropdown-menu shadow-sm">
+                            <li><a class="dropdown-item py-2" href="./deps.html"><i class="bi bi-boxes me-2 text-primary"></i>All Dependencies Overview</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item py-2" href="./guard.html"><i class="bi bi-shield-check me-2 text-primary"></i>json-renderers-guard</a></li>
+                            <li><a class="dropdown-item py-2" href="./dom.html"><i class="bi bi-file-code me-2 text-primary"></i>@keshavsoft/json-to-dom</a></li>
+                            <li><a class="dropdown-item py-2" href="./run.html"><i class="bi bi-gear-wide-connected me-2 text-primary"></i>run-instructions & run-options</a></li>
+                            <li><a class="dropdown-item py-2" href="./core.html"><i class="bi bi-diagram-2 me-2 text-primary"></i>buildSpec & buildSingleSpec</a></li>
+                            <li><a class="dropdown-item py-2" href="./global.html"><i class="bi bi-globe me-2 text-primary"></i>registerGlobal (globalThis.ks)</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item py-2 active" href="./spec.html"><i class="bi bi-journal-code me-2"></i>spec-repo Story & Origin</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-2">
+                    <a class="btn btn-outline-dark btn-sm rounded-pill px-3" href="https://github.com/keshavsoft/json-renderers-from-instructions-collection" target="_blank">
+                        <i class="bi bi-github me-1"></i> GitHub
+                    </a>
+                    <a class="btn btn-primary btn-sm rounded-pill px-3 text-white" href="https://www.npmjs.com/package/json-renderers-from-instructions-collection" target="_blank">
+                        <i class="bi bi-box-seam me-1"></i> NPM
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5" style="max-width: 960px;">
+        <!-- Header -->
+        <div class="mb-4">
+            <div class="d-flex align-items-center gap-2 mb-2">
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill">Core Origin</span>
+                <a href="https://github.com/keshavsoft/spec-repo" target="_blank" class="badge bg-dark text-white px-3 py-2 rounded-pill text-decoration-none">
+                    <i class="bi bi-github me-1"></i> github.com/keshavsoft/spec-repo
+                </a>
+            </div>
+            <h1 class="display-6 fw-bold text-dark">The spec-repo Story & Type Resolution</h1>
+            <p class="text-secondary lead">Where does <code>type: "table.simple"</code> come from? The story of separating UI blueprints from rendering engines.</p>
+        </div>
+
+        <!-- The Story -->
+        <div class="doc-card p-4 p-md-5 mb-5 bg-white">
+            <h2 class="h4 fw-bold text-dark mb-3"><i class="bi bi-journal-bookmark-fill text-primary me-2"></i>The Origin Story</h2>
+            
+            <div class="story-callout mb-4">
+                <h3 class="h6 fw-bold text-dark mb-2">The Problem with Traditional Component Libraries</h3>
+                <p class="text-secondary mb-0">
+                    In most frontend architectures, component logic and HTML structure are coupled together. If you want a table, you write or import a Table component with hardcoded JSX or HTML template strings. If you want a form, you write another component. If schema changes, you update multiple templates.
+                </p>
+            </div>
+
+            <p class="text-secondary">
+                To solve this, KeshavSoft created <strong><a href="https://github.com/keshavsoft/spec-repo" target="_blank" class="fw-semibold text-primary">spec-repo</a></strong> &mdash; a centralized, pure JSON specification repository.
+            </p>
+
+            <p class="text-secondary">
+                In <code>spec-repo</code>, components do not contain JavaScript render loops, React hooks, or string concatenations. Instead, they are defined purely as <strong>declarative blueprint definitions</strong>:
+            </p>
+
+            <div class="row g-3 mb-4">
+                <div class="col-md-4">
+                    <div class="p-3 bg-light rounded-3 h-100 border">
+                        <span class="fw-bold text-dark d-block mb-1">1. Base VDOM Skeleton</span>
+                        <small class="text-muted">The exact DOM tags, CSS classes (e.g. Bootstrap 5 table classes), and data-role attributes.</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 bg-light rounded-3 h-100 border">
+                        <span class="fw-bold text-dark d-block mb-1">2. Instruction Rules</span>
+                        <small class="text-muted">Single-pass instructions (<code>buildColGroup</code>, <code>buildHeader</code>) and two-dimensional matrix loops (<code>buildBodyTr</code>, <code>buildBodyCell</code>).</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-3 bg-light rounded-3 h-100 border">
+                        <span class="fw-bold text-dark d-block mb-1">3. Option Modifiers</span>
+                        <small class="text-muted">Pluggable transforms (e.g. <code>unshiftSerialToRows</code>, <code>pushToRows</code> for action buttons, <code>tableSearch</code>).</small>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="h5 fw-bold text-dark mt-4 mb-2">How <code>type: "table.simple"</code> is Resolved in Code</h3>
+            <p class="text-secondary">
+                When you pass <code>{ type: "table.simple" }</code> to the collection renderer, <code>buildSingleSpec.js</code> performs the dot-separated lookup against <code>spec-repo</code> definitions:
+            </p>
+
+            <pre><code>import { definitions as fallbackDefinitions, spec as fallbackSpec } from "spec-repo";
+
+// type = "table.simple"
+const localTypeSplit = type.split(".");
+const category = localTypeSplit[0];  // "table"
+const variant  = localTypeSplit[1];  // "simple"
+
+// Extracts blueprint from spec-repo definitions
+const categoryDef = definitions[category];
+const config = (variant && categoryDef?.[variant]) ? categoryDef[variant] : categoryDef;</code></pre>
+
+            <p class="text-secondary mt-3">
+                This blueprint is then handed to <code>json-renderers-run-instructions</code> and <code>json-renderers-run-options</code> to populate it with your <code>data</code> and <code>columns</code>!
+            </p>
+        </div>
+
+        <!-- Repository Links & Live Navigation -->
+        <div class="doc-card p-4 p-md-5 mb-5 bg-white">
+            <h2 class="h5 fw-bold text-dark mb-3"><i class="bi bi-link-45deg text-primary me-2"></i>Official Repositories & Live Links</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-custom align-middle">
+                    <thead>
+                        <tr>
+                            <th>Resource</th>
+                            <th>Direct Navigation</th>
+                            <th>Role in Ecosystem</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>spec-repo</strong></td>
+                            <td><a href="https://github.com/keshavsoft/spec-repo" target="_blank" class="fw-semibold">github.com/keshavsoft/spec-repo</a></td>
+                            <td>The canonical JSON blueprint contract for all component types and options.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Collection Orchestrator</strong></td>
+                            <td><a href="https://github.com/keshavsoft/json-renderers-from-instructions-collection" target="_blank" class="fw-semibold">github.com/keshavsoft/...-collection</a></td>
+                            <td>Orchestrates multiple <code>spec-repo</code> components in 1 single statement.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Live Samples Hub</strong></td>
+                            <td><a href="https://keshavsoft.github.io/json-renderers-from-instructions-collection/samples/v1/index.html" target="_blank" class="btn btn-outline-primary btn-sm rounded-pill">Open Live Hub →</a></td>
+                            <td>Interactive live page with Form+Table, Select+Table, and All Dashboards.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Live Interactive POC</strong></td>
+                            <td><a href="https://keshavsoft.github.io/json-renderers-from-instructions-collection/samples/interactive/v1/index.html" target="_blank" class="btn btn-success btn-sm rounded-pill text-white">Open POC →</a></td>
+                            <td>Real-time table filter, form add loops, and row selection action clicks.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Next Navigation -->
+        <div class="d-flex justify-content-between align-items-center">
+            <a href="../index.html" class="btn btn-outline-secondary"><i class="bi bi-arrow-left me-1"></i> Home</a>
+            <a href="./types.html" class="btn btn-primary">Component Types Catalog <i class="bi bi-arrow-right ms-1"></i></a>
+        </div>
+    </main>
+
+    <footer class="bg-white border-top py-4 text-center text-muted small mt-5">
+        <div class="container">MIT Licensed &bull; Developed by KeshavSoft</div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.querySelectorAll("pre").forEach((preBlock) => {
+                if (preBlock.querySelector(".btn-copy-code")) return;
+                const copyBtn = document.createElement("button");
+                copyBtn.className = "btn-copy-code";
+                copyBtn.type = "button";
+                copyBtn.innerHTML = '<i class="bi bi-clipboard"></i> <span>Copy</span>';
+                copyBtn.setAttribute("aria-label", "Copy code");
+                copyBtn.addEventListener("click", async () => {
+                    const codeEl = preBlock.querySelector("code");
+                    const textToCopy = codeEl ? codeEl.innerText : preBlock.innerText;
+                    try {
+                        await navigator.clipboard.writeText(textToCopy.trim());
+                        copyBtn.innerHTML = '<i class="bi bi-check2"></i> <span>Copied!</span>';
+                        copyBtn.classList.add("copied");
+                        setTimeout(() => {
+                            copyBtn.innerHTML = '<i class="bi bi-clipboard"></i> <span>Copy</span>';
+                            copyBtn.classList.remove("copied");
+                        }, 2000);
+                    } catch (err) {
+                        console.error("Copy failed", err);
+                    }
+                });
+                preBlock.appendChild(copyBtn);
+            });
+        });
+    </script>
+</body>
+</html>
