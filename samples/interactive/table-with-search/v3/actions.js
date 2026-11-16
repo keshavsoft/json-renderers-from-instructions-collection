@@ -16,10 +16,18 @@ const setFeedback = (message) => {
 };
 
 const renderTable = (filteredData) => {
+    const tableContainer = document.getElementById("table-content-container") ||
+        document.getElementById("table-simple-table-id")?.parentElement;
+
+    const targetId = tableContainer?.id || "table-content-container";
+    if (tableContainer) {
+        tableContainer.innerHTML = "";
+    }
+
     state.render({
         data: filteredData,
         columns: state.columns,
-        targetHtmlId: "table-content-container",
+        targetHtmlId: targetId,
         appendPosition: "replace",
         renderers: [
             {

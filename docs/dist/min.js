@@ -4400,14 +4400,19 @@ var hr = {
 		showLog: t
 	});
 	t && console.log("[from-instructions-collection] generated composite spec:", n);
-	let r = ir({
+	let r = e.appendPosition || "replace";
+	if (r === "replace" && typeof document < "u") {
+		let t = document.getElementById(e.targetHtmlId);
+		t && (t.innerHTML = "");
+	}
+	let i = ir({
 		jsonSpec: n,
 		targetHtmlId: e.targetHtmlId,
-		appendPosition: e.appendPosition || "replace",
+		appendPosition: r,
 		classToApply: e.classToApply || "",
 		showLog: t
 	});
-	return t && console.log("[from-instructions-collection] mounted DOM element:", r), r;
+	return t && console.log("[from-instructions-collection] mounted DOM element:", i), i;
 };
 gr(_r);
 export { On as buildSingleSpec, kn as buildSpec, _r as default, _r as render };

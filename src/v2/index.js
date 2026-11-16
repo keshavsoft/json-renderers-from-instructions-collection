@@ -33,11 +33,19 @@ const render = (config = {}) => {
 
     if (showLog) console.log("[from-instructions-collection] generated composite spec:", spec);
 
-    // 2. Mount to DOM via json-to-dom
+    // 2. Mount to DOM via json-to-dom (ensuring replace empties container for collections)
+    const appendPos = config.appendPosition || "replace";
+    if (appendPos === "replace" && typeof document !== "undefined") {
+        const targetElement = document.getElementById(config.targetHtmlId);
+        if (targetElement) {
+            targetElement.innerHTML = "";
+        }
+    }
+
     const dom = jsonToDom({
         jsonSpec: spec,
         targetHtmlId: config.targetHtmlId,
-        appendPosition: config.appendPosition || "replace",
+        appendPosition: appendPos,
         classToApply: config.classToApply || "",
         showLog
     });
