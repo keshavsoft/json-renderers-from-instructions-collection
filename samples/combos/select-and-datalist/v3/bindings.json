@@ -1,12 +1,12 @@
 [
   {
     "event": "change",
-    "selector": "select.form-select",
+    "selector": "#select-base-id select",
     "action": "onSelectChoose"
   },
   {
     "event": "input",
-    "selector": "input.form-control[list]",
+    "selector": "input[list]",
     "action": "onDataListInput"
   }
 ]

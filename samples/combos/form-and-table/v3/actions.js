@@ -28,7 +28,10 @@ const renderTable = (filteredData) => {
         renderers: [
             {
                 type: "table.simple",
-                options: { showSerial: false }
+                options: {
+                    showSerial: true,
+                    showOptions: true
+                }
             }
         ],
         classToApply: "",
@@ -36,38 +39,68 @@ const renderTable = (filteredData) => {
     });
 };
 
+const refreshDataLists = () => {
+    state.columns.forEach(col => {
+        const dl = document.querySelector(`datalist#${col.columnName}`) ||
+                   document.querySelector(`[data-role="datalist-container"] #${col.columnName}`);
+        if (dl) {
+            const uniqueVals = [...new Set(state.dataset.map(item => item[col.columnName]).filter(Boolean))];
+            dl.innerHTML = uniqueVals.map(val => `<option value="${val}"></option>`).join("");
+        }
+    });
+};
+
+const populateForm = (record, rowIndex) => {
+    state.selectedIndex = rowIndex;
+
+    state.columns.forEach(col => {
+        const input = document.querySelector(`#form-simple-form-id input[name="${col.columnName}"]`) ||
+                      document.querySelector(`#form-simple-form-id #${col.columnName}`);
+        if (input && record[col.columnName] !== undefined) {
+            input.value = record[col.columnName];
+        }
+    });
+
+    const rows = Array.from(document.querySelectorAll("#table-simple-body-id tr"));
+    rows.forEach(r => r.classList.remove("table-primary"));
+    if (rows[rowIndex]) {
+        rows[rowIndex].classList.add("table-primary");
+    }
+
+    setFeedback(`Loaded Row #${rowIndex + 1} ("${record.itemName || ""}") &rarr; Displayed in Form`);
+};
+
 export const actions = {
-    // 1. Click row -> Populate in Form
+    // 1. Click "show" button in table row
+    onRowShowClick: (event, matchElement) => {
+        event.stopPropagation();
+        const row = matchElement.closest("tr");
+        const rows = Array.from(document.querySelectorAll("#table-simple-body-id tr"));
+        const rowIndex = rows.indexOf(row);
+        if (rowIndex >= 0 && rowIndex < state.dataset.length) {
+            populateForm(state.dataset[rowIndex], rowIndex);
+        }
+    },
+
+    // 2. Click table row -> Populate in Form
     onRowClickSelect: (event, matchElement) => {
+        if (event.target.tagName === "BUTTON" || event.target.closest("button")) return;
         const row = matchElement;
         const rows = Array.from(document.querySelectorAll("#table-simple-body-id tr"));
         const rowIndex = rows.indexOf(row);
         if (rowIndex < 0 || rowIndex >= state.dataset.length) return;
 
-        state.selectedIndex = rowIndex;
-        const record = state.dataset[rowIndex];
-
-        state.columns.forEach(col => {
-            const input = document.getElementById(col.columnName);
-            if (input && record[col.columnName] !== undefined) {
-                input.value = record[col.columnName];
-            }
-        });
-
-        // Highlight selected row visually
-        rows.forEach(r => r.classList.remove("table-primary"));
-        row.classList.add("table-primary");
-
-        setFeedback(`Loaded row #${rowIndex + 1} ("${record.itemName || ""}") into Form`);
+        populateForm(state.dataset[rowIndex], rowIndex);
     },
 
-    // 2. Submit form -> Update selected or Add new
+    // 3. Submit form -> Update selected or Add new
     onFormSubmit: (event, matchElement) => {
         event.preventDefault();
 
         const record = {};
         state.columns.forEach(col => {
-            const input = document.getElementById(col.columnName);
+            const input = document.querySelector(`#form-simple-form-id input[name="${col.columnName}"]`) ||
+                          document.querySelector(`#form-simple-form-id #${col.columnName}`);
             if (input) {
                 record[col.columnName] = input.value.trim();
             }
@@ -79,26 +112,25 @@ export const actions = {
         }
 
         if (state.selectedIndex >= 0 && state.selectedIndex < state.dataset.length) {
-            // Update existing
             state.dataset[state.selectedIndex] = record;
-            setFeedback(`Updated row #${state.selectedIndex + 1} from Form!`);
+            setFeedback(`Updated Row #${state.selectedIndex + 1} from Form!`);
         } else {
-            // Add new
             state.dataset.push(record);
             setFeedback(`Added new record "${record.itemName}" to Table!`);
         }
 
         renderTable(state.dataset);
+        refreshDataLists();
     },
 
-    // 3. Reset form
+    // 4. Reset form
     onFormReset: (event, matchElement) => {
         state.selectedIndex = -1;
         document.querySelectorAll("#table-simple-body-id tr").forEach(r => r.classList.remove("table-primary"));
         setFeedback("Form reset. Select a row to edit or enter a new record.");
     },
 
-    // 4. Live search
+    // 5. Live search
     onTableSearch: (event, matchElement) => {
         const query = (matchElement?.value || "").trim().toLowerCase();
         const filtered = query

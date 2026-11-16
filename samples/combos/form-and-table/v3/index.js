@@ -8,7 +8,10 @@ import actions, { initState } from "./actions.js";
 const containerId = "dom-render-container";
 const dataset = [...initialData];
 
-// 1. Initial composite render: Form on top + Table below
+// 1. Initial composite render:
+// - dataList.simple (hidden background datastore providing autocomplete)
+// - form.simple (vertical form)
+// - table.withSearch (live table with search and row action button)
 render({
     data: dataset,
     columns,
@@ -16,13 +19,18 @@ render({
     appendPosition: "replace",
     renderers: [
         {
+            type: "dataList.simple",
+            options: {}
+        },
+        {
             type: "form.simple",
             options: {}
         },
         {
             type: "table.withSearch",
             options: {
-                showSerial: false
+                showSerial: true,
+                showOptions: true
             }
         }
     ],
@@ -30,8 +38,17 @@ render({
     showLog: false
 });
 
-// 2. Initialize interactive state
+// 2. Attach list="columnName" to form inputs for native autocomplete from the rendered <datalist>
+columns.forEach(col => {
+    const input = document.querySelector(`#form-simple-form-id input[name="${col.columnName}"]`) ||
+                  document.querySelector(`#form-simple-form-id #${col.columnName}`);
+    if (input) {
+        input.setAttribute("list", col.columnName);
+    }
+});
+
+// 3. Initialize interactive state
 initState({ dataset, columns, render });
 
-// 3. Bind declarative events to container
+// 4. Bind declarative events to container
 bindEvents(containerId, bindings, actions);

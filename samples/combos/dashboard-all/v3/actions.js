@@ -14,6 +14,7 @@ const setFeedback = (message) => {
     if (feedback) feedback.textContent = message;
 };
 
+// Refreshes the table component with current dataset
 const renderTable = (filteredData) => {
     const tableContainer = document.getElementById("table-content-container") ||
         document.getElementById("table-simple-table-id")?.parentElement;
@@ -27,8 +28,11 @@ const renderTable = (filteredData) => {
         appendPosition: "replace",
         renderers: [
             {
-                type: "table.simple",
-                options: { showSerial: true, showOptions: true }
+                type: "table.withFooter",
+                options: {
+                    showSerial: true,
+                    showOptions: true
+                }
             }
         ],
         classToApply: "",
@@ -36,72 +40,74 @@ const renderTable = (filteredData) => {
     });
 };
 
+// Populates a record into the vertical form
+const populateForm = (record, rowIndex) => {
+    state.selectedIndex = rowIndex;
+
+    state.columns.forEach(col => {
+        const input = document.querySelector(`#form-simple-form-id #${col.columnName}`);
+        if (input && record[col.columnName] !== undefined) {
+            input.value = record[col.columnName];
+        }
+    });
+
+    // Highlight row in table
+    const rows = Array.from(document.querySelectorAll("#table-simple-body-id tr"));
+    rows.forEach(r => r.classList.remove("table-primary"));
+    if (rows[rowIndex]) {
+        rows[rowIndex].classList.add("table-primary");
+    }
+
+    setFeedback(`Selected Row #${rowIndex + 1} ("${record.itemName || ""}") &rarr; Displayed in Form`);
+};
+
 export const actions = {
-    // 1. Click Row -> Populate in Form
+    // 1. Click "show" button in table row -> Project data vertically into Form
+    onRowShowClick: (event, matchElement) => {
+        event.stopPropagation();
+        const row = matchElement.closest("tr");
+        const rows = Array.from(document.querySelectorAll("#table-simple-body-id tr"));
+        const rowIndex = rows.indexOf(row);
+        if (rowIndex >= 0 && rowIndex < state.dataset.length) {
+            populateForm(state.dataset[rowIndex], rowIndex);
+        }
+    },
+
+    // 2. Click any table row -> Project data vertically into Form
     onRowClickSelect: (event, matchElement) => {
+        if (event.target.tagName === "BUTTON" || event.target.closest("button")) return;
         const row = matchElement;
         const rows = Array.from(document.querySelectorAll("#table-simple-body-id tr"));
         const rowIndex = rows.indexOf(row);
-        if (rowIndex < 0 || rowIndex >= state.dataset.length) return;
-
-        state.selectedIndex = rowIndex;
-        const record = state.dataset[rowIndex];
-
-        state.columns.forEach(col => {
-            const input = document.getElementById(col.columnName);
-            if (input && record[col.columnName] !== undefined) {
-                input.value = record[col.columnName];
-            }
-        });
-
-        rows.forEach(r => r.classList.remove("table-primary"));
-        row.classList.add("table-primary");
-
-        setFeedback(`Loaded Row #${rowIndex + 1} into Data Entry Form`);
+        if (rowIndex >= 0 && rowIndex < state.dataset.length) {
+            populateForm(state.dataset[rowIndex], rowIndex);
+        }
     },
 
-    // 2. Select Dropdown -> Filter Table
-    onDropdownFilter: (event, matchElement) => {
-        const val = (matchElement?.value || "").trim().toLowerCase();
-        const fieldName = matchElement?.getAttribute("data-name") || matchElement?.id || "";
-
-        const filtered = val
-            ? state.dataset.filter(item => {
-                if (fieldName && item[fieldName]) {
-                    return String(item[fieldName]).toLowerCase() === val;
-                }
-                return Object.values(item).some(v => String(v).toLowerCase() === val);
-            })
-            : state.dataset;
-
-        renderTable(filtered);
-        setFeedback(val ? `Filter by ${fieldName}: "${matchElement.value}"` : "Showing all records");
-    },
-
-    // 3. Search Bar -> Filter Table
+    // 3. Search Bar Filter
     onTableSearch: (event, matchElement) => {
         const query = (matchElement?.value || "").trim().toLowerCase();
         const filtered = query
             ? state.dataset.filter(item =>
-                Object.values(item).some(v => String(v ?? "").toLowerCase().includes(query))
+                Object.values(item).some(val => String(val ?? "").toLowerCase().includes(query))
             )
             : state.dataset;
 
         renderTable(filtered);
-        setFeedback(query ? `Search: "${matchElement.value}"` : "Showing all records");
+        setFeedback(query ? `Search: "${matchElement.value.trim()}" (${filtered.length} matches)` : "Showing all records");
     },
 
-    // 4. Form Submit -> Update Row or Add New Row
+    // 4. Submit Form -> Update existing row or Add new record
     onFormSubmit: (event, matchElement) => {
         event.preventDefault();
         const record = {};
         state.columns.forEach(col => {
-            const input = document.getElementById(col.columnName);
+            const input = document.querySelector(`#form-simple-form-id #${col.columnName}`);
             if (input) record[col.columnName] = input.value.trim();
         });
 
         if (!record.itemName && !record.category) {
-            alert("Please enter values into form");
+            alert("Please enter values in the form.");
             return;
         }
 
@@ -110,17 +116,40 @@ export const actions = {
             setFeedback(`Updated Row #${state.selectedIndex + 1} from Form`);
         } else {
             state.dataset.push(record);
-            setFeedback(`Added new record "${record.itemName}" to Table!`);
+            setFeedback(`Added new record "${record.itemName}" from Form to Table`);
         }
 
         renderTable(state.dataset);
     },
 
-    // 5. Form Reset
+    // 5. Reset Form
     onFormReset: (event, matchElement) => {
         state.selectedIndex = -1;
         document.querySelectorAll("#table-simple-body-id tr").forEach(r => r.classList.remove("table-primary"));
-        setFeedback("Form cleared. Select a table row to edit.");
+        setFeedback("Form reset. Select a table row to view or edit.");
+    },
+
+    // 6. Save from Table Footer Inputs
+    onFooterSave: (event, matchElement) => {
+        const footerRow = matchElement.closest("tr");
+        if (!footerRow) return;
+
+        const newRecord = {};
+        state.columns.forEach(col => {
+            const input = footerRow.querySelector(`input[name="${col.columnName}"]`);
+            if (input) {
+                newRecord[col.columnName] = input.value.trim();
+                input.value = "";
+            }
+        });
+
+        if (Object.values(newRecord).some(v => v.length > 0)) {
+            state.dataset.push(newRecord);
+            renderTable(state.dataset);
+            setFeedback(`Added new record "${newRecord.itemName || ""}" from Footer to Table!`);
+        } else {
+            setFeedback("Please enter values into footer row inputs before saving.");
+        }
     }
 };
 

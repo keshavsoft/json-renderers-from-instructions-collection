@@ -6,16 +6,16 @@ const setLog = (text) => {
         logBox.className = "alert alert-info mt-3 shadow-sm";
         document.getElementById("dom-render-container")?.prepend(logBox);
     }
-    logBox.innerHTML = `<strong>Interactive Event:</strong> ${text}`;
+    logBox.innerHTML = `<strong>Live Interaction:</strong> ${text}`;
 };
 
 export const actions = {
     onSelectChoose: (event, matchElement) => {
-        setLog(`Select Dropdown [${matchElement.id}] changed to: <span class="badge bg-primary fs-6">${matchElement.value}</span>`);
+        setLog(`Dropdown Selection [${matchElement.id || matchElement.name}]: <span class="badge bg-primary fs-6">${matchElement.value}</span>`);
     },
 
     onDataListInput: (event, matchElement) => {
-        setLog(`DataList Autocomplete [${matchElement.name}] typed: <span class="badge bg-success fs-6">${matchElement.value}</span>`);
+        setLog(`Autocomplete Input [${matchElement.name}]: typed <span class="badge bg-success fs-6">${matchElement.value}</span> (matched from &lt;datalist id="${matchElement.getAttribute("list")}"&gt;)`);
     }
 };
 

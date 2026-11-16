@@ -1,7 +1,12 @@
 [
   {
+    "event": "click",
+    "selector": "#table-simple-body-id tr",
+    "action": "onRowClickSelect"
+  },
+  {
     "event": "change",
-    "selector": "select.form-select",
+    "selector": "#select-base-id select",
     "action": "onDropdownFilter"
   },
   {

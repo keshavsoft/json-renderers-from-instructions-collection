@@ -1,6 +1,11 @@
 [
   {
     "event": "click",
+    "selector": "#table-simple-body-id .ks-btn-show",
+    "action": "onRowShowClick"
+  },
+  {
+    "event": "click",
     "selector": "#table-simple-body-id tr",
     "action": "onRowClickSelect"
   },

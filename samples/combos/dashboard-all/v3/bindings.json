@@ -1,13 +1,13 @@
 [
   {
     "event": "click",
-    "selector": "#table-simple-body-id tr",
-    "action": "onRowClickSelect"
+    "selector": "#table-simple-body-id .ks-btn-show",
+    "action": "onRowShowClick"
   },
   {
-    "event": "change",
-    "selector": "select.form-select",
-    "action": "onDropdownFilter"
+    "event": "click",
+    "selector": "#table-simple-body-id tr",
+    "action": "onRowClickSelect"
   },
   {
     "event": "input",
@@ -23,5 +23,10 @@
     "event": "click",
     "selector": "#form-simple-reset-button-id",
     "action": "onFormReset"
+  },
+  {
+    "event": "click",
+    "selector": ".ks-btn-save",
+    "action": "onFooterSave"
   }
 ]

@@ -27,7 +27,10 @@ const renderTable = (filteredData) => {
         renderers: [
             {
                 type: "table.simple",
-                options: { showSerial: false }
+                options: {
+                    showSerial: true,
+                    showOptions: true
+                }
             }
         ],
         classToApply: "",
@@ -36,6 +39,28 @@ const renderTable = (filteredData) => {
 };
 
 export const actions = {
+    onRowClickSelect: (event, matchElement) => {
+        const row = matchElement;
+        const rows = Array.from(document.querySelectorAll("#table-simple-body-id tr"));
+        const rowIndex = rows.indexOf(row);
+        if (rowIndex < 0 || rowIndex >= state.dataset.length) return;
+
+        const record = state.dataset[rowIndex];
+        rows.forEach(r => r.classList.remove("table-primary"));
+        row.classList.add("table-primary");
+
+        // Sync dropdowns to match the selected row
+        state.columns.forEach(col => {
+            const sel = document.querySelector(`#select-base-id select[name="${col.columnName}"]`) ||
+                        document.querySelector(`#select-base-id #${col.columnName}`);
+            if (sel && record[col.columnName]) {
+                sel.value = record[col.columnName];
+            }
+        });
+
+        setFeedback(`Selected Row #${rowIndex + 1} ("${record.itemName || ""}") &rarr; Synced with Dropdowns`);
+    },
+
     onDropdownFilter: (event, matchElement) => {
         const val = (matchElement?.value || "").trim().toLowerCase();
         const fieldName = matchElement?.getAttribute("data-name") || matchElement?.id || "";
@@ -57,7 +82,7 @@ export const actions = {
         const query = (matchElement?.value || "").trim().toLowerCase();
         const filtered = query
             ? state.dataset.filter(item =>
-                Object.values(item).some(v => String(v ?? "").toLowerCase().includes(query))
+                Object.values(item).some(val => String(val ?? "").toLowerCase().includes(query))
             )
             : state.dataset;
 
