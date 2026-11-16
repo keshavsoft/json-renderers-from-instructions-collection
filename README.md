@@ -7,8 +7,8 @@
 [![npm version](https://img.shields.io/npm/v/json-renderers-from-instructions-collection.svg?style=flat-square&color=2563eb)](https://www.npmjs.com/package/json-renderers-from-instructions-collection)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](./package.json)
 [![Type: Module](https://img.shields.io/badge/Module-ESM-success.svg?style=flat-square)](./package.json)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-0ea5e9.svg?style=flat-square&logo=github)](https://keshavsoft.github.io/json-renderers-from-instructions-collection/samples/v1/index.html)
-[![Interactive POC](https://img.shields.io/badge/Interactive%20POC-Live%20Lab-10b981.svg?style=flat-square)](https://keshavsoft.github.io/json-renderers-from-instructions-collection/samples/interactive/v1/index.html)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-0ea5e9.svg?style=flat-square&logo=github)](https://keshavsoft.github.io/json-renderers-from-instructions-collection/)
+
 
 <p align="center">
   Render coordinated UI combinations (<b>Form + Table</b>, <b>Select + Table</b>, or <b>Full Dashboards</b>) in <b>1 single statement</b> from a shared Single-Source-of-Truth schema and dataset.
