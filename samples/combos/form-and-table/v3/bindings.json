@@ -1,0 +1,22 @@
+[
+  {
+    "event": "click",
+    "selector": "#table-simple-body-id tr",
+    "action": "onRowClickSelect"
+  },
+  {
+    "event": "click",
+    "selector": "#form-simple-submit-button-id",
+    "action": "onFormSubmit"
+  },
+  {
+    "event": "click",
+    "selector": "#form-simple-reset-button-id",
+    "action": "onFormReset"
+  },
+  {
+    "event": "input",
+    "selector": "#tableSearch",
+    "action": "onTableSearch"
+  }
+]

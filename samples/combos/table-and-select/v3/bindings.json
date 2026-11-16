@@ -1,0 +1,12 @@
+[
+  {
+    "event": "change",
+    "selector": "select.form-select",
+    "action": "onDropdownFilter"
+  },
+  {
+    "event": "input",
+    "selector": "#tableSearch",
+    "action": "onSearchInput"
+  }
+]

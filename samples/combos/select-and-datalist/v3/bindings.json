@@ -1,0 +1,12 @@
+[
+  {
+    "event": "change",
+    "selector": "select.form-select",
+    "action": "onSelectChoose"
+  },
+  {
+    "event": "input",
+    "selector": "input.form-control[list]",
+    "action": "onDataListInput"
+  }
+]
