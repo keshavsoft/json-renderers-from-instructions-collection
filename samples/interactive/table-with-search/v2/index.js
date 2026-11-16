@@ -1,7 +1,7 @@
 import columns from "./columns.json" with { type: "json" };
 import initialData from "./data.json" with { type: "json" };
 import bindings from "./bindings.json" with { type: "json" };
-import render from "../../../../docs/dist/v1/min.js";
+import render from "../../../../docs/dist/v2/min.js";
 import { bindEvents } from "../../../../vendor/dom-primitive-bindings.min.js";
 import actions, { initState } from "./actions.js";
 
@@ -16,7 +16,7 @@ render({
     appendPosition: "replace",
     renderers: [
         {
-            type: "table.bodyOnly",
+            type: "table.simple",
             options: {
                 showSerial: true,
                 showSearch: true

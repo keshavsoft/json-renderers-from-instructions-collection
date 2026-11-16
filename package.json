@@ -1,6 +1,6 @@
 {
   "name": "json-renderers-from-instructions-collection",
-  "version": "1.0.0",
+  "version": "1.2.1",
   "description": "Composite multi-renderer orchestrator driven by declarative instructions and collections",
   "type": "module",
   "main": "src/index.js",
@@ -17,8 +17,8 @@
   "dependencies": {
     "@keshavsoft/json-to-dom": "^42.1.5",
     "json-renderers-guard": "^1.5.3",
-    "json-renderers-run-instructions": "^1.5.4",
+    "json-renderers-run-instructions": "^1.5.6",
     "json-renderers-run-options": "^1.1.1",
-    "spec-repo": "^1.8.1"
+    "spec-repo": "^1.10.1"
   }
 }
