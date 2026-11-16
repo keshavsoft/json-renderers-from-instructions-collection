@@ -16,10 +16,9 @@ render({
     appendPosition: "replace",
     renderers: [
         {
-            type: "table.simple",
+            type: "table.withSearch",
             options: {
-                showSerial: true,
-                showSearch: true
+                showSerial: false
             }
         }
     ],

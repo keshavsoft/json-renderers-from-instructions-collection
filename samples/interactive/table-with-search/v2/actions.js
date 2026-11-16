@@ -44,7 +44,10 @@ const renderBodyOnly = (filteredData) => {
             showLog: false
         });
 
-        const generatedBody = temporaryTarget.querySelector("#table-body-only-id");
+        const generatedBody = temporaryTarget.querySelector("#table-body-only-id") ||
+            temporaryTarget.querySelector("#ks-id") ||
+            temporaryTarget.querySelector("[data-role='table-body']") ||
+            temporaryTarget.firstElementChild;
         if (!generatedBody) {
             throw new Error('The table.bodyOnly renderer did not produce "table-body-only-id".');
         }

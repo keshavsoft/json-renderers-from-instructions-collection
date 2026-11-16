@@ -1,8 +1,9 @@
 import buildSingleSpec from "./buildSingleSpec.js";
-import { definitions as fallbackDefinitions } from "spec-repo";
+import { definitions as fallbackDefinitions, spec as fallbackSpec } from "spec-repo";
 
 export const buildSpec = ({
     definitions = fallbackDefinitions,
+    spec = fallbackSpec,
     renderers = [],
     data = [],
     columns = [],
@@ -16,6 +17,7 @@ export const buildSpec = ({
         const rendererConfig = typeof item === "string" ? { type: item } : item;
         const loopInsideBuiltSpec = buildSingleSpec({
             definitions,
+            spec,
             type: rendererConfig.type,
             data: rendererConfig.data || data,
             columns: rendererConfig.columns || columns,
@@ -23,7 +25,7 @@ export const buildSpec = ({
             showLog
         });
 
-        return loopInsideBuiltSpec?.base;
+        return loopInsideBuiltSpec?.base ?? loopInsideBuiltSpec;
     });
 
     return childSpecs;

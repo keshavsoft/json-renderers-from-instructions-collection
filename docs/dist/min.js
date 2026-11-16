@@ -185,45 +185,45 @@ var oe = class extends SyntaxError {
 };
 function se(e, t) {
 	t = t === void 0 ? {} : t;
-	let n = {}, r = t.grammarSource, i = { jsonpath: zr }, a = zr, o = "length", s = "count", c = "match", l = "search", u = "value", d = "subsetof", f = "anyof", p = "noneof", m = "sizeof", h = "size", g = "empty", ee = "true", _ = "false", v = "null", y = /^[,\]]/, b = /^[+\-]/, x = /^[*\/]/, te = /^[a-zA-Z_]/, S = /^[\x80-\uFFFF_]/, C = /^[a-zA-Z0-9_]/, w = /^[0-9@$\-]/, ne = /^[^\/\\]/, T = /^[gimsuy]/, se = /^[a-zA-Z_\x80-\uD7FF\uE000-\uFFFF]/, ce = /^[\uD800-\uDBFF]/, le = /^[\uDC00-\uDFFF]/, E = /^[0-9]/, ue = /^[1-9]/, de = /^[eE]/, fe = /^["\\]/, pe = /^['\\]/, me = /^[ -\uD7FF\uE000-\uFFFF]/, he = /^[dD]/, ge = /^[89abAB]/, _e = /^[c-fC-F]/, ve = /^[0-9a-fA-F]/, ye = /^[ \t\n\r]/, be = q([",", "]"], !1, !1, !1), xe = K("length", !1), Se = K("count", !1), Ce = K("match", !1), we = K("search", !1), Te = K("value", !1), D = q(["+", "-"], !1, !1, !1), Ee = q(["*", "/"], !1, !1, !1), De = Pr("string"), Oe = q([
+	let n = {}, r = t.grammarSource, i = { jsonpath: Rr }, a = Rr, o = "length", s = "count", c = "match", l = "search", u = "value", d = "subsetof", f = "anyof", p = "noneof", m = "sizeof", h = "size", g = "empty", ee = "true", _ = "false", v = "null", y = /^[,\]]/, b = /^[+\-]/, x = /^[*\/]/, te = /^[a-zA-Z_]/, S = /^[\x80-\uFFFF_]/, C = /^[a-zA-Z0-9_]/, w = /^[0-9@$\-]/, ne = /^[^\/\\]/, T = /^[gimsuy]/, se = /^[a-zA-Z_\x80-\uD7FF\uE000-\uFFFF]/, ce = /^[\uD800-\uDBFF]/, le = /^[\uDC00-\uDFFF]/, E = /^[0-9]/, ue = /^[1-9]/, de = /^[eE]/, fe = /^["\\]/, pe = /^['\\]/, me = /^[ -\uD7FF\uE000-\uFFFF]/, he = /^[dD]/, ge = /^[89abAB]/, _e = /^[c-fC-F]/, ve = /^[0-9a-fA-F]/, ye = /^[ \t\n\r]/, be = J([",", "]"], !1, !1, !1), xe = q("length", !1), Se = q("count", !1), Ce = q("match", !1), we = q("search", !1), Te = q("value", !1), D = J(["+", "-"], !1, !1, !1), Ee = J(["*", "/"], !1, !1, !1), De = Nr("string"), Oe = J([
 		["a", "z"],
 		["A", "Z"],
 		"_"
-	], !1, !1, !1), ke = q([["", "￿"], "_"], !1, !1, !1), O = q([
+	], !1, !1, !1), ke = J([["", "￿"], "_"], !1, !1, !1), O = J([
 		["a", "z"],
 		["A", "Z"],
 		["0", "9"],
 		"_"
-	], !1, !1, !1), k = K("-", !1), Ae = q([
+	], !1, !1, !1), Ae = q("-", !1), je = J([
 		["0", "9"],
 		"@",
 		"$",
 		"-"
-	], !1, !1, !1), je = K("$", !1), Me = K("@", !1), Ne = K("..", !1), Pe = K(".", !1), Fe = K("*", !1), Ie = K("&&", !1), Le = K("||", !1), Re = K("!", !1), ze = K("==", !1), Be = K("!=", !1), Ve = K(">=", !1), He = K(">", !1), Ue = K("<=", !1), We = K("<", !1), Ge = K("=~", !1), Ke = K("in", !1), qe = K("nin", !1), Je = K("subsetof", !1), Ye = K("anyof", !1), Xe = K("noneof", !1), Ze = K("sizeof", !1), Qe = K("size", !1), $e = K("empty", !1), et = K("true", !1), tt = K("false", !1), nt = K("null", !1), rt = K("{", !1), it = K("}", !1), at = K("[", !1), ot = K("]", !1), st = K(":", !1), ct = K(",", !1), lt = K("(", !1), ut = K(")", !1), dt = K("?", !1), ft = Pr("regex"), pt = K("/", !1), mt = q(["/", "\\"], !0, !1, !1), A = K("\\", !1), ht = Mr(), gt = q([
+	], !1, !1, !1), Me = q("$", !1), Ne = q("@", !1), Pe = q("..", !1), Fe = q(".", !1), Ie = q("*", !1), Le = q("&&", !1), Re = q("||", !1), ze = q("!", !1), Be = q("==", !1), Ve = q("!=", !1), He = q(">=", !1), Ue = q(">", !1), We = q("<=", !1), Ge = q("<", !1), Ke = q("=~", !1), qe = q("in", !1), Je = q("nin", !1), Ye = q("subsetof", !1), Xe = q("anyof", !1), Ze = q("noneof", !1), Qe = q("sizeof", !1), $e = q("size", !1), et = q("empty", !1), tt = q("true", !1), nt = q("false", !1), rt = q("null", !1), it = q("{", !1), k = q("}", !1), at = q("[", !1), ot = q("]", !1), st = q(":", !1), ct = q(",", !1), lt = q("(", !1), ut = q(")", !1), dt = q("?", !1), ft = Nr("regex"), A = q("/", !1), pt = J(["/", "\\"], !0, !1, !1), j = q("\\", !1), mt = jr(), ht = J([
 		"g",
 		"i",
 		"m",
 		"s",
 		"u",
 		"y"
-	], !1, !1, !1), _t = q([
+	], !1, !1, !1), gt = J([
 		["a", "z"],
 		["A", "Z"],
 		"_",
 		["", "퟿"],
 		["", "￿"]
-	], !1, !1, !1), vt = q([["\ud800", "\udbff"]], !1, !1, !1), yt = q([["\udc00", "\udfff"]], !1, !1, !1), j = q([["0", "9"]], !1, !1, !1), bt = Pr("number"), xt = K("0", !1), St = q([["1", "9"]], !1, !1, !1), Ct = Pr("integer"), wt = q(["e", "E"], !1, !1, !1), M = K("\"", !1), N = K("'", !1), P = q(["\"", "\\"], !1, !1, !1), Tt = q(["'", "\\"], !1, !1, !1), F = q([[" ", "퟿"], ["", "￿"]], !1, !1, !1), Et = K("b", !1), Dt = K("f", !1), Ot = K("n", !1), kt = K("r", !1), At = K("t", !1), jt = K("u", !1), Mt = q(["d", "D"], !1, !1, !1), Nt = q([
+	], !1, !1, !1), _t = J([["\ud800", "\udbff"]], !1, !1, !1), vt = J([["\udc00", "\udfff"]], !1, !1, !1), M = J([["0", "9"]], !1, !1, !1), yt = Nr("number"), bt = q("0", !1), xt = J([["1", "9"]], !1, !1, !1), St = Nr("integer"), Ct = J(["e", "E"], !1, !1, !1), wt = q("\"", !1), N = q("'", !1), P = J(["\"", "\\"], !1, !1, !1), Tt = J(["'", "\\"], !1, !1, !1), F = J([[" ", "퟿"], ["", "￿"]], !1, !1, !1), Et = q("b", !1), Dt = q("f", !1), Ot = q("n", !1), kt = q("r", !1), At = q("t", !1), jt = q("u", !1), Mt = J(["d", "D"], !1, !1, !1), Nt = J([
 		"8",
 		"9",
 		"a",
 		"b",
 		"A",
 		"B"
-	], !1, !1, !1), Pt = K("\\u", !1), Ft = q([["c", "f"], ["C", "F"]], !1, !1, !1), It = q([
+	], !1, !1, !1), Pt = q("\\u", !1), Ft = J([["c", "f"], ["C", "F"]], !1, !1, !1), It = J([
 		["0", "9"],
 		["a", "f"],
 		["A", "F"]
-	], !1, !1, !1), Lt = q([
+	], !1, !1, !1), Lt = J([
 		" ",
 		"	",
 		"\n",
@@ -323,16 +323,16 @@ function se(e, t) {
 			value: e
 		};
 	}
-	function $t(e) {
+	function R(e) {
 		return {
 			type: "notExpression",
 			value: e
 		};
 	}
-	function en(e, t) {
+	function $t(e, t) {
 		return t !== null || ie(e);
 	}
-	function tn(e, t) {
+	function en(e, t) {
 		if (t === null) return e;
 		let n = t[1];
 		return n.operator === "reg" ? {
@@ -352,113 +352,113 @@ function se(e, t) {
 			right: n.right
 		};
 	}
-	function nn(e, t) {
+	function tn(e, t) {
 		return {
 			operator: e,
 			right: t
 		};
 	}
-	function rn(e) {
+	function nn(e) {
 		return {
 			operator: "reg",
 			right: e
 		};
 	}
-	function an() {
+	function rn() {
 		return { operator: "empty" };
 	}
-	function on() {
+	function an() {
 		return "eq";
 	}
-	function sn() {
+	function on() {
 		return "ne";
 	}
-	function cn() {
+	function sn() {
 		return "le";
 	}
-	function R() {
+	function z() {
 		return "lt";
 	}
-	function ln() {
+	function cn() {
 		return "ge";
 	}
-	function un() {
+	function ln() {
 		return "gt";
 	}
-	function dn() {
+	function un() {
 		return "in";
 	}
-	function fn() {
+	function dn() {
 		return "nin";
 	}
-	function pn() {
+	function fn() {
 		return "subsetof";
 	}
-	function mn() {
+	function pn() {
 		return "anyof";
 	}
-	function hn() {
+	function mn() {
 		return "noneof";
 	}
-	function gn() {
+	function hn() {
 		return "sizeof";
 	}
-	function _n() {
+	function gn() {
 		return "size";
 	}
-	function vn(e) {
+	function _n(e) {
 		return {
 			type: "groupExpression",
 			value: e
 		};
 	}
-	function yn() {
+	function vn() {
 		return {
 			type: "value",
 			value: !0,
 			subtype: "boolean"
 		};
 	}
-	function bn() {
+	function yn() {
 		return {
 			type: "value",
 			value: !1,
 			subtype: "boolean"
 		};
 	}
-	function xn() {
+	function bn() {
 		return {
 			type: "value",
 			value: null,
 			subtype: "null"
 		};
 	}
-	function Sn(e, t) {
+	function xn(e, t) {
 		return {
 			type: "functionCall",
 			name: e,
 			args: t || []
 		};
 	}
-	function Cn() {
+	function Sn() {
 		return "length";
 	}
-	function wn() {
+	function Cn() {
 		return "count";
 	}
-	function Tn() {
+	function wn() {
 		return "match";
 	}
-	function En() {
+	function Tn() {
 		return "search";
 	}
-	function Dn() {
+	function En() {
 		return "value";
 	}
-	function On(e, t) {
+	function Dn(e, t) {
 		return [e, ...t.map((e) => e[3])];
 	}
-	function kn(e, t) {
+	function On(e, t) {
 		return t.length === 0 ? e : ae(e, t, (e, t) => ({
 			type: "operation",
 			operator: t[1] === "+" ? "plus" : "minus",
@@ -466,7 +466,7 @@ function se(e, t) {
 			right: t[3]
 		}));
 	}
-	function An(e, t) {
+	function kn(e, t) {
 		return t.length === 0 ? e : ae(e, t, (e, t) => ({
 			type: "operation",
 			operator: t[1] === "*" ? "multi" : "div",
@@ -474,25 +474,25 @@ function se(e, t) {
 			right: t[3]
 		}));
 	}
-	function jn(e) {
+	function An(e) {
 		return {
 			type: "groupOperation",
 			value: e
 		};
 	}
-	function Mn(e) {
+	function jn(e) {
 		return {
 			type: "root",
 			next: re(e)
 		};
 	}
-	function Nn(e) {
+	function Mn(e) {
 		return {
 			type: "current",
 			next: re(e)
 		};
 	}
-	function Pn(e, t, n) {
+	function Nn(e, t, n) {
 		return {
 			type: "slices",
 			start: e === null ? null : e[0],
@@ -500,28 +500,28 @@ function se(e, t) {
 			step: n ? n[2] === null ? null : n[2] : null
 		};
 	}
-	function Fn() {
+	function Pn() {
 		return { type: "wildcard" };
 	}
-	function In(e) {
+	function Fn(e) {
 		return {
 			type: "numericLiteral",
 			value: e
 		};
 	}
-	function Ln(e) {
+	function In(e) {
 		return {
 			type: "stringLiteral",
-			value: $(e)
+			value: _a(e)
 		};
 	}
-	function Rn(e) {
+	function Ln(e) {
 		return {
 			type: "identifier",
 			value: e
 		};
 	}
-	function zn(e, t) {
+	function Rn(e, t) {
 		return {
 			type: "value",
 			subtype: "regex",
@@ -529,190 +529,190 @@ function se(e, t) {
 			opts: t || ""
 		};
 	}
-	function Bn(e) {
+	function zn(e) {
 		return {
 			type: "value",
 			subtype: "string",
 			value: e
 		};
 	}
-	function Vn(e) {
+	function Bn(e) {
 		return {
 			type: "value",
 			subtype: "number",
 			value: e
 		};
 	}
-	function Hn() {
+	function Vn() {
 		return {
 			type: "value",
 			value: !0,
 			subtype: "boolean"
 		};
 	}
-	function Un() {
+	function Hn() {
 		return {
 			type: "value",
 			value: !1,
 			subtype: "boolean"
 		};
 	}
-	function Wn() {
+	function Un() {
 		return {
 			type: "value",
 			value: null,
 			subtype: "null"
 		};
 	}
-	function Gn(e) {
+	function Wn(e) {
 		return e;
 	}
-	function Kn(e) {
-		for (let [t] of e || []) $(t);
+	function Gn(e) {
+		for (let [t] of e || []) _a(t);
 		return {
 			type: "value",
 			subtype: "object",
 			value: Object.fromEntries(e || [])
 		};
 	}
-	function qn(e, t) {
+	function Kn(e, t) {
 		return [e, ...t.map((e) => e[3])];
 	}
-	function Jn(e, t) {
+	function qn(e, t) {
 		return [e, t.value];
 	}
-	function Yn(e) {
+	function Jn(e) {
 		return {
 			type: "value",
 			subtype: "array",
 			value: e || []
 		};
 	}
-	function Xn(e, t) {
+	function Yn(e, t) {
 		return [e.value, ...t.map((e) => e[3].value)];
 	}
-	function Zn(e) {
-		return $(e);
+	function Xn(e) {
+		return _a(e);
 	}
-	function Qn(e) {
-		return $(e);
+	function Zn(e) {
+		return _a(e);
+	}
+	function Qn() {
+		return "true";
 	}
 	function $n() {
-		return "true";
+		return "false";
 	}
 	function er() {
-		return "false";
-	}
-	function tr() {
 		return "null";
 	}
-	function nr(e) {
-		return $(e);
+	function tr(e) {
+		return _a(e);
 	}
-	function rr() {
+	function nr() {
 		return "true";
 	}
-	function ir() {
+	function rr() {
 		return "false";
 	}
-	function ar() {
+	function ir() {
 		return "null";
 	}
-	function or(e) {
+	function ar(e) {
 		return "/" + e.map((e) => Array.isArray(e) ? e.join("") : e).join("") + "/";
 	}
-	function sr(e) {
+	function or(e) {
 		return e.join("");
 	}
-	function cr(e, t) {
-		let n = parseFloat(kr());
-		return !e && !t && (n < -9007199254740991 || n > 9007199254740991) && Ar("Integer out of I-JSON range [-(2^53)+1, (2^53)-1]"), n;
+	function sr(e, t) {
+		let n = parseFloat(Or());
+		return !e && !t && (n < -9007199254740991 || n > 9007199254740991) && kr("Integer out of I-JSON range [-(2^53)+1, (2^53)-1]"), n;
 	}
-	function lr() {
-		let e = parseInt(kr(), 10);
-		return (e < -9007199254740991 || e > 9007199254740991) && Ar("Integer out of I-JSON range [-(2^53)+1, (2^53)-1]"), e;
+	function cr() {
+		let e = parseInt(Or(), 10);
+		return (e < -9007199254740991 || e > 9007199254740991) && kr("Integer out of I-JSON range [-(2^53)+1, (2^53)-1]"), e;
+	}
+	function lr(e) {
+		return e.join("");
 	}
 	function ur(e) {
 		return e.join("");
 	}
 	function dr(e) {
-		return e.join("");
-	}
-	function fr(e) {
 		return e;
 	}
-	function pr() {
+	function fr() {
 		return "\"";
 	}
-	function mr(e) {
+	function pr(e) {
 		return e;
-	}
-	function z(e) {
-		return e;
-	}
-	function hr() {
-		return "'";
 	}
 	function B(e) {
 		return e;
 	}
-	function gr() {
+	function mr() {
+		return "'";
+	}
+	function V(e) {
+		return e;
+	}
+	function hr() {
 		return "\\";
 	}
-	function _r() {
+	function gr() {
 		return "/";
 	}
-	function vr() {
+	function _r() {
 		return "\b";
 	}
-	function yr() {
+	function vr() {
 		return "\f";
 	}
-	function br() {
+	function yr() {
 		return "\n";
 	}
-	function xr() {
+	function br() {
 		return "\r";
 	}
-	function Sr() {
+	function xr() {
 		return "	";
 	}
-	function Cr(e, t) {
+	function Sr(e, t) {
 		return String.fromCharCode(parseInt(e, 16), parseInt(t, 16));
 	}
-	function wr(e) {
+	function Cr(e) {
 		let t = parseInt(e, 16);
 		return t >= 55296 && t <= 57343;
 	}
-	function Tr(e) {
+	function wr(e) {
 		return String.fromCharCode(parseInt(e, 16));
 	}
-	let V = t.peg$currPos | 0, H = V, U = [{
+	let H = t.peg$currPos | 0, U = H, W = [{
 		line: 1,
 		column: 1
-	}], W = V, Er = t.peg$maxFailExpected || [], G = t.peg$silentFails | 0, Dr = /* @__PURE__ */ new Map(), Or;
+	}], G = H, Tr = t.peg$maxFailExpected || [], K = t.peg$silentFails | 0, Er = /* @__PURE__ */ new Map(), Dr;
 	if (t.startRule) {
 		if (!(t.startRule in i)) throw Error("Can't start parsing from rule \"" + t.startRule + "\".");
 		a = i[t.startRule];
 	}
-	function kr() {
-		return e.substring(H, V);
+	function Or() {
+		return e.substring(U, H);
 	}
-	function Ar(e, t) {
-		throw t = t === void 0 ? Ir(H, V) : t, Lr(e, t);
+	function kr(e, t) {
+		throw t = t === void 0 ? Fr(U, H) : t, Ir(e, t);
 	}
-	function jr(t = V) {
+	function Ar(t = H) {
 		let n = e.codePointAt(t);
 		return n === void 0 ? "" : String.fromCodePoint(n);
 	}
-	function K(e, t) {
+	function q(e, t) {
 		return {
 			type: "literal",
 			text: e,
 			ignoreCase: t
 		};
 	}
-	function q(e, t, n, r) {
+	function J(e, t, n, r) {
 		return {
 			type: "class",
 			parts: e,
@@ -721,31 +721,31 @@ function se(e, t) {
 			unicode: r
 		};
 	}
-	function Mr() {
+	function jr() {
 		return { type: "any" };
 	}
-	function Nr() {
+	function Mr() {
 		return { type: "end" };
 	}
-	function Pr(e) {
+	function Nr(e) {
 		return {
 			type: "other",
 			description: e
 		};
 	}
-	function Fr(t) {
-		let n = U[t], r;
+	function Pr(t) {
+		let n = W[t], r;
 		if (n) return n;
-		if (t >= U.length) r = U.length - 1;
-		else for (r = t; !U[--r];);
-		for (n = U[r], n = {
+		if (t >= W.length) r = W.length - 1;
+		else for (r = t; !W[--r];);
+		for (n = W[r], n = {
 			line: n.line,
 			column: n.column
 		}; r < t;) e.charCodeAt(r) === 10 ? (n.line++, n.column = 1) : n.column++, r++;
-		return U[t] = n, n;
+		return W[t] = n, n;
 	}
-	function Ir(e, t, n) {
-		let i = Fr(e), a = Fr(t), o = {
+	function Fr(e, t, n) {
+		let i = Pr(e), a = Pr(t), o = {
 			source: r,
 			start: {
 				offset: e,
@@ -760,599 +760,599 @@ function se(e, t) {
 		};
 		return n && r && typeof r.offset == "function" && (o.start = r.offset(o.start), o.end = r.offset(o.end)), o;
 	}
-	function J(e) {
-		V < W || (V > W && (W = V, Er = []), Er.push(e));
+	function Y(e) {
+		H < G || (H > G && (G = H, Tr = []), Tr.push(e));
 	}
-	function Lr(e, t) {
+	function Ir(e, t) {
 		return new oe(e, null, null, t);
 	}
-	function Rr(e, t, n) {
+	function Lr(e, t, n) {
 		return new oe(oe.buildMessage(e, t), e, t, n);
 	}
-	function zr() {
+	function Rr() {
 		let e, t, r, i;
-		return e = V, t = Ci(), t === n ? (V = e, e = n) : (r = Br(), i = _a(), i === n ? (V = e, e = n) : (H = e, e = Rt(r))), e;
+		return e = H, t = Si(), t === n ? (H = e, e = n) : (r = zr(), i = ga(), i === n ? (H = e, e = n) : (U = e, e = Rt(r))), e;
+	}
+	function zr() {
+		let e, t, r, i, a;
+		for (e = H, t = [], r = H, i = $(), a = Br(), a === n ? (H = r, r = n) : (i = [i, a], r = i); r !== n;) t.push(r), r = H, i = $(), a = Br(), a === n ? (H = r, r = n) : (i = [i, a], r = i);
+		return U = e, t = zt(t), e = t, e;
 	}
 	function Br() {
-		let e, t, r, i, a;
-		for (e = V, t = [], r = V, i = Q(), a = Vr(), a === n ? (V = r, r = n) : (i = [i, a], r = i); r !== n;) t.push(r), r = V, i = Q(), a = Vr(), a === n ? (V = r, r = n) : (i = [i, a], r = i);
-		return H = e, t = zt(t), e = t, e;
+		let e;
+		return e = Hr(), e === n && (e = Vr()), e;
 	}
 	function Vr() {
-		let e;
-		return e = Ur(), e === n && (e = Hr()), e;
+		let e, t, r;
+		return e = H, t = Ti(), t === n ? (H = e, e = n) : (r = Ur(), r === n ? (H = e, e = n) : (U = e, e = Bt(r))), e === n && (e = H, t = Gr(), t !== n && (U = e, t = Vt(t)), e = t), e;
 	}
 	function Hr() {
 		let e, t, r;
-		return e = V, t = Ei(), t === n ? (V = e, e = n) : (r = Wr(), r === n ? (V = e, e = n) : (H = e, e = Bt(r))), e === n && (e = V, t = Kr(), t !== n && (H = e, t = Vt(t)), e = t), e;
+		return e = H, t = wi(), t === n ? (H = e, e = n) : (r = Wr(), r === n ? (H = e, e = n) : (U = e, e = Ht(r))), e;
 	}
 	function Ur() {
-		let e, t, r;
-		return e = V, t = Ti(), t === n ? (V = e, e = n) : (r = Gr(), r === n ? (V = e, e = n) : (H = e, e = Ht(r))), e;
+		let e, t;
+		return e = H, t = Ei(), t !== n && (U = e, t = Ut()), e = t, e === n && (e = H, t = xi(), t !== n && (U = e, t = Wt(t)), e = t), e;
 	}
 	function Wr() {
 		let e, t;
-		return e = V, t = Di(), t !== n && (H = e, t = Ut()), e = t, e === n && (e = V, t = Si(), t !== n && (H = e, t = Wt(t)), e = t), e;
+		return e = H, t = Ei(), t !== n && (U = e, t = I()), e = t, e === n && (e = H, t = xi(), t !== n && (U = e, t = Gt(t)), e = t, e === n && (e = H, t = Gr(), t !== n && (U = e, t = Kt(t)), e = t)), e;
 	}
 	function Gr() {
-		let e, t;
-		return e = V, t = Di(), t !== n && (H = e, t = I()), e = t, e === n && (e = V, t = Si(), t !== n && (H = e, t = Gt(t)), e = t, e === n && (e = V, t = Kr(), t !== n && (H = e, t = Kt(t)), e = t)), e;
+		let e, t, r, i;
+		return e = H, t = Xi(), t === n ? (H = e, e = n) : ($(), r = Kr(), r === n ? (H = e, e = n) : ($(), i = Zi(), i === n ? (H = e, e = n) : (U = e, e = qt(r)))), e;
 	}
 	function Kr() {
-		let e, t, r, i;
-		return e = V, t = Zi(), t === n ? (V = e, e = n) : (Q(), r = qr(), r === n ? (V = e, e = n) : (Q(), i = Qi(), i === n ? (V = e, e = n) : (H = e, e = qt(r)))), e;
-	}
-	function qr() {
 		let e, t, r, i, a, o, s, c;
-		if (e = V, t = di(), t !== n) {
-			for (r = [], i = V, a = Q(), o = Y(), o === n ? (V = i, i = n) : (s = Q(), c = di(), c === n ? (V = i, i = n) : (a = [
+		if (e = H, t = ui(), t !== n) {
+			for (r = [], i = H, a = $(), o = X(), o === n ? (H = i, i = n) : (s = $(), c = ui(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
-			], i = a)); i !== n;) r.push(i), i = V, a = Q(), o = Y(), o === n ? (V = i, i = n) : (s = Q(), c = di(), c === n ? (V = i, i = n) : (a = [
+			], i = a)); i !== n;) r.push(i), i = H, a = $(), o = X(), o === n ? (H = i, i = n) : (s = $(), c = ui(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
 			], i = a));
-			H = e, e = L(t, r);
-		} else V = e, e = n;
+			U = e, e = L(t, r);
+		} else H = e, e = n;
 		return e;
 	}
-	function Jr() {
+	function qr() {
 		let t, r, i, a, o, s, c, l, u;
-		return t = V, r = na(), r === n ? (V = t, t = n) : (Q(), i = ea(), i === n ? (V = t, t = n) : (Q(), a = Yr(), a === n ? (V = t, t = n) : (Q(), o = ta(), o === n ? (V = t, t = n) : (s = V, G++, c = V, l = Q(), u = e.charAt(V), y.test(u) ? V++ : (u = n, G === 0 && J(be)), u === n ? (V = c, c = n) : (l = [l, u], c = l), G--, c === n ? s = n : (V = s, s = void 0), s === n ? (V = t, t = n) : (H = t, t = Jt(a)))))), t === n && (t = V, r = na(), r === n ? (V = t, t = n) : (Q(), i = Yr(), i === n ? (V = t, t = n) : (H = t, t = Yt(i)))), t;
+		return t = H, r = ta(), r === n ? (H = t, t = n) : ($(), i = $i(), i === n ? (H = t, t = n) : ($(), a = Jr(), a === n ? (H = t, t = n) : ($(), o = ea(), o === n ? (H = t, t = n) : (s = H, K++, c = H, l = $(), u = e.charAt(H), y.test(u) ? H++ : (u = n, K === 0 && Y(be)), u === n ? (H = c, c = n) : (l = [l, u], c = l), K--, c === n ? s = n : (H = s, s = void 0), s === n ? (H = t, t = n) : (U = t, t = Jt(a)))))), t === n && (t = H, r = ta(), r === n ? (H = t, t = n) : ($(), i = Jr(), i === n ? (H = t, t = n) : (U = t, t = Yt(i)))), t;
 	}
-	function Yr() {
-		let e, t, r, i, a, o, s, c, l = V * 91 + 10, u = Dr.get(l);
-		if (u) return V = u.nextPos, u.result;
-		if (e = V, t = Xr(), t !== n) {
-			for (r = [], i = V, a = Q(), o = ki(), o === n ? (V = i, i = n) : (s = Q(), c = Xr(), c === n ? (V = i, i = n) : (a = [
+	function Jr() {
+		let e, t, r, i, a, o, s, c, l = H * 91 + 10, u = Er.get(l);
+		if (u) return H = u.nextPos, u.result;
+		if (e = H, t = Yr(), t !== n) {
+			for (r = [], i = H, a = $(), o = Oi(), o === n ? (H = i, i = n) : (s = $(), c = Yr(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
-			], i = a)); i !== n;) r.push(i), i = V, a = Q(), o = ki(), o === n ? (V = i, i = n) : (s = Q(), c = Xr(), c === n ? (V = i, i = n) : (a = [
+			], i = a)); i !== n;) r.push(i), i = H, a = $(), o = Oi(), o === n ? (H = i, i = n) : (s = $(), c = Yr(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
 			], i = a));
-			H = e, e = Xt(t, r);
-		} else V = e, e = n;
-		return Dr.set(l, {
-			nextPos: V,
+			U = e, e = Xt(t, r);
+		} else H = e, e = n;
+		return Er.set(l, {
+			nextPos: H,
 			result: e
 		}), e;
 	}
-	function Xr() {
+	function Yr() {
 		let e, t, r, i, a, o, s, c;
-		if (e = V, t = Zr(), t !== n) {
-			for (r = [], i = V, a = Q(), o = Oi(), o === n ? (V = i, i = n) : (s = Q(), c = Zr(), c === n ? (V = i, i = n) : (a = [
+		if (e = H, t = Xr(), t !== n) {
+			for (r = [], i = H, a = $(), o = Di(), o === n ? (H = i, i = n) : (s = $(), c = Xr(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
-			], i = a)); i !== n;) r.push(i), i = V, a = Q(), o = Oi(), o === n ? (V = i, i = n) : (s = Q(), c = Zr(), c === n ? (V = i, i = n) : (a = [
+			], i = a)); i !== n;) r.push(i), i = H, a = $(), o = Di(), o === n ? (H = i, i = n) : (s = $(), c = Xr(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
 			], i = a));
-			H = e, e = Zt(t, r);
-		} else V = e, e = n;
+			U = e, e = Zt(t, r);
+		} else H = e, e = n;
 		return e;
+	}
+	function Xr() {
+		let e, t, r, i, a;
+		return e = H, t = ki(), t === n ? (H = e, e = n) : ($(), r = $i(), r === n ? (H = e, e = n) : ($(), i = Jr(), i === n ? (H = e, e = n) : ($(), a = ea(), a === n ? (H = e, e = n) : (U = e, e = Qt(i))))), e === n && (e = H, t = ki(), t === n ? (H = e, e = n) : ($(), r = ei(), r === n ? (H = e, e = n) : (U = e, e = R(r))), e === n && (e = Zr())), e;
 	}
 	function Zr() {
 		let e, t, r, i, a;
-		return e = V, t = Ai(), t === n ? (V = e, e = n) : (Q(), r = ea(), r === n ? (V = e, e = n) : (Q(), i = Yr(), i === n ? (V = e, e = n) : (Q(), a = ta(), a === n ? (V = e, e = n) : (H = e, e = Qt(i))))), e === n && (e = V, t = Ai(), t === n ? (V = e, e = n) : (Q(), r = ti(), r === n ? (V = e, e = n) : (H = e, e = $t(r))), e === n && (e = Qr())), e;
+		return e = H, t = ai(), t === n ? (H = e, e = n) : (r = H, i = $(), a = Qr(), a === n ? (H = r, r = n) : (i = [i, a], r = i), r === n && (r = null), U = H, i = $t(t, r), i = i ? void 0 : n, i === n ? (H = e, e = n) : (U = e, e = en(t, r))), e === n && (e = ei()), e;
 	}
 	function Qr() {
-		let e, t, r, i, a;
-		return e = V, t = oi(), t === n ? (V = e, e = n) : (r = V, i = Q(), a = $r(), a === n ? (V = r, r = n) : (i = [i, a], r = i), r === n && (r = null), H = V, i = en(t, r), i = i ? void 0 : n, i === n ? (V = e, e = n) : (H = e, e = tn(t, r))), e === n && (e = ti()), e;
+		let e, t, r;
+		return e = H, t = $r(), t === n ? (H = e, e = n) : ($(), r = ai(), r === n ? (H = e, e = n) : (U = e, e = tn(t, r))), e === n && (e = H, t = Ii(), t === n ? (H = e, e = n) : ($(), r = di(), r === n ? (H = e, e = n) : (U = e, e = nn(r))), e === n && (e = H, t = Wi(), t !== n && (U = e, t = rn()), e = t)), e;
 	}
 	function $r() {
-		let e, t, r;
-		return e = V, t = ei(), t === n ? (V = e, e = n) : (Q(), r = oi(), r === n ? (V = e, e = n) : (H = e, e = nn(t, r))), e === n && (e = V, t = Li(), t === n ? (V = e, e = n) : (Q(), r = fi(), r === n ? (V = e, e = n) : (H = e, e = rn(r))), e === n && (e = V, t = Gi(), t !== n && (H = e, t = an()), e = t)), e;
+		let e, t;
+		return e = H, t = Ai(), t !== n && (U = e, t = an()), e = t, e === n && (e = H, t = ji(), t !== n && (U = e, t = on()), e = t, e === n && (e = H, t = Pi(), t !== n && (U = e, t = sn()), e = t, e === n && (e = H, t = Fi(), t !== n && (U = e, t = z()), e = t, e === n && (e = H, t = Mi(), t !== n && (U = e, t = cn()), e = t, e === n && (e = H, t = Ni(), t !== n && (U = e, t = ln()), e = t, e === n && (e = H, t = Li(), t !== n && (U = e, t = un()), e = t, e === n && (e = H, t = Ri(), t !== n && (U = e, t = dn()), e = t, e === n && (e = H, t = zi(), t !== n && (U = e, t = fn()), e = t, e === n && (e = H, t = Bi(), t !== n && (U = e, t = pn()), e = t, e === n && (e = H, t = Vi(), t !== n && (U = e, t = mn()), e = t, e === n && (e = H, t = Hi(), t !== n && (U = e, t = hn()), e = t, e === n && (e = H, t = Ui(), t !== n && (U = e, t = gn()), e = t)))))))))))), e;
 	}
 	function ei() {
-		let e, t;
-		return e = V, t = ji(), t !== n && (H = e, t = on()), e = t, e === n && (e = V, t = Mi(), t !== n && (H = e, t = sn()), e = t, e === n && (e = V, t = Fi(), t !== n && (H = e, t = cn()), e = t, e === n && (e = V, t = Ii(), t !== n && (H = e, t = R()), e = t, e === n && (e = V, t = Ni(), t !== n && (H = e, t = ln()), e = t, e === n && (e = V, t = Pi(), t !== n && (H = e, t = un()), e = t, e === n && (e = V, t = Ri(), t !== n && (H = e, t = dn()), e = t, e === n && (e = V, t = zi(), t !== n && (H = e, t = fn()), e = t, e === n && (e = V, t = Bi(), t !== n && (H = e, t = pn()), e = t, e === n && (e = V, t = Vi(), t !== n && (H = e, t = mn()), e = t, e === n && (e = V, t = Hi(), t !== n && (H = e, t = hn()), e = t, e === n && (e = V, t = Ui(), t !== n && (H = e, t = gn()), e = t, e === n && (e = V, t = Wi(), t !== n && (H = e, t = _n()), e = t)))))))))))), e;
+		let e, t, r, i;
+		return e = H, t = $i(), t === n ? (H = e, e = n) : ($(), r = Jr(), r === n ? (H = e, e = n) : ($(), i = ea(), i === n ? (H = e, e = n) : (U = e, e = _n(r)))), e === n && (e = ti(), e === n && (e = ci(), e === n && (e = H, t = Gi(), t !== n && (U = e, t = vn()), e = t, e === n && (e = H, t = Ki(), t !== n && (U = e, t = yn()), e = t, e === n && (e = H, t = qi(), t !== n && (U = e, t = bn()), e = t))))), e;
 	}
 	function ti() {
-		let e, t, r, i;
-		return e = V, t = ea(), t === n ? (V = e, e = n) : (Q(), r = Yr(), r === n ? (V = e, e = n) : (Q(), i = ta(), i === n ? (V = e, e = n) : (H = e, e = vn(r)))), e === n && (e = ni(), e === n && (e = li(), e === n && (e = V, t = Ki(), t !== n && (H = e, t = yn()), e = t, e === n && (e = V, t = qi(), t !== n && (H = e, t = bn()), e = t, e === n && (e = V, t = Ji(), t !== n && (H = e, t = xn()), e = t))))), e;
+		let e, t, r, i, a;
+		return e = H, t = ni(), t === n ? (H = e, e = n) : (r = $i(), r === n ? (H = e, e = n) : ($(), i = ri(), i === n && (i = null), $(), a = ea(), a === n ? (H = e, e = n) : (U = e, e = xn(t, i)))), e;
 	}
 	function ni() {
-		let e, t, r, i, a;
-		return e = V, t = ri(), t === n ? (V = e, e = n) : (r = ea(), r === n ? (V = e, e = n) : (Q(), i = ii(), i === n && (i = null), Q(), a = ta(), a === n ? (V = e, e = n) : (H = e, e = Sn(t, i)))), e;
+		let t, r;
+		return t = H, e.substr(H, 6) === o ? (r = o, H += 6) : (r = n, K === 0 && Y(xe)), r !== n && (U = t, r = Sn()), t = r, t === n && (t = H, e.substr(H, 5) === s ? (r = s, H += 5) : (r = n, K === 0 && Y(Se)), r !== n && (U = t, r = Cn()), t = r, t === n && (t = H, e.substr(H, 5) === c ? (r = c, H += 5) : (r = n, K === 0 && Y(Ce)), r !== n && (U = t, r = wn()), t = r, t === n && (t = H, e.substr(H, 6) === l ? (r = l, H += 6) : (r = n, K === 0 && Y(we)), r !== n && (U = t, r = Tn()), t = r, t === n && (t = H, e.substr(H, 5) === u ? (r = u, H += 5) : (r = n, K === 0 && Y(Te)), r !== n && (U = t, r = En()), t = r)))), t;
 	}
 	function ri() {
-		let t, r;
-		return t = V, e.substr(V, 6) === o ? (r = o, V += 6) : (r = n, G === 0 && J(xe)), r !== n && (H = t, r = Cn()), t = r, t === n && (t = V, e.substr(V, 5) === s ? (r = s, V += 5) : (r = n, G === 0 && J(Se)), r !== n && (H = t, r = wn()), t = r, t === n && (t = V, e.substr(V, 5) === c ? (r = c, V += 5) : (r = n, G === 0 && J(Ce)), r !== n && (H = t, r = Tn()), t = r, t === n && (t = V, e.substr(V, 6) === l ? (r = l, V += 6) : (r = n, G === 0 && J(we)), r !== n && (H = t, r = En()), t = r, t === n && (t = V, e.substr(V, 5) === u ? (r = u, V += 5) : (r = n, G === 0 && J(Te)), r !== n && (H = t, r = Dn()), t = r)))), t;
-	}
-	function ii() {
 		let e, t, r, i, a, o, s, c;
-		if (e = V, t = ai(), t !== n) {
-			for (r = [], i = V, a = Q(), o = Y(), o === n ? (V = i, i = n) : (s = Q(), c = ai(), c === n ? (V = i, i = n) : (a = [
+		if (e = H, t = ii(), t !== n) {
+			for (r = [], i = H, a = $(), o = X(), o === n ? (H = i, i = n) : (s = $(), c = ii(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
-			], i = a)); i !== n;) r.push(i), i = V, a = Q(), o = Y(), o === n ? (V = i, i = n) : (s = Q(), c = ai(), c === n ? (V = i, i = n) : (a = [
+			], i = a)); i !== n;) r.push(i), i = H, a = $(), o = X(), o === n ? (H = i, i = n) : (s = $(), c = ii(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
 			], i = a));
-			H = e, e = On(t, r);
-		} else V = e, e = n;
+			U = e, e = Dn(t, r);
+		} else H = e, e = n;
 		return e;
 	}
-	function ai() {
+	function ii() {
 		let e;
-		return e = oi(), e === n && (e = mi()), e;
+		return e = ai(), e === n && (e = pi()), e;
 	}
-	function oi() {
-		let t, r, i, a, o, s, c, l, u = V * 91 + 21, d = Dr.get(u);
-		if (d) return V = d.nextPos, d.result;
-		if (t = V, r = si(), r !== n) {
-			for (i = [], a = V, o = Q(), s = e.charAt(V), b.test(s) ? V++ : (s = n, G === 0 && J(D)), s === n ? (V = a, a = n) : (c = Q(), l = si(), l === n ? (V = a, a = n) : (o = [
+	function ai() {
+		let t, r, i, a, o, s, c, l, u = H * 91 + 21, d = Er.get(u);
+		if (d) return H = d.nextPos, d.result;
+		if (t = H, r = oi(), r !== n) {
+			for (i = [], a = H, o = $(), s = e.charAt(H), b.test(s) ? H++ : (s = n, K === 0 && Y(D)), s === n ? (H = a, a = n) : (c = $(), l = oi(), l === n ? (H = a, a = n) : (o = [
 				o,
 				s,
 				c,
 				l
-			], a = o)); a !== n;) i.push(a), a = V, o = Q(), s = e.charAt(V), b.test(s) ? V++ : (s = n, G === 0 && J(D)), s === n ? (V = a, a = n) : (c = Q(), l = si(), l === n ? (V = a, a = n) : (o = [
+			], a = o)); a !== n;) i.push(a), a = H, o = $(), s = e.charAt(H), b.test(s) ? H++ : (s = n, K === 0 && Y(D)), s === n ? (H = a, a = n) : (c = $(), l = oi(), l === n ? (H = a, a = n) : (o = [
 				o,
 				s,
 				c,
 				l
 			], a = o));
-			H = t, t = kn(r, i);
-		} else V = t, t = n;
-		return Dr.set(u, {
-			nextPos: V,
+			U = t, t = On(r, i);
+		} else H = t, t = n;
+		return Er.set(u, {
+			nextPos: H,
 			result: t
 		}), t;
 	}
-	function si() {
+	function oi() {
 		let t, r, i, a, o, s, c, l;
-		if (t = V, r = ci(), r !== n) {
-			for (i = [], a = V, o = Q(), s = e.charAt(V), x.test(s) ? V++ : (s = n, G === 0 && J(Ee)), s === n ? (V = a, a = n) : (c = Q(), l = ci(), l === n ? (V = a, a = n) : (o = [
+		if (t = H, r = si(), r !== n) {
+			for (i = [], a = H, o = $(), s = e.charAt(H), x.test(s) ? H++ : (s = n, K === 0 && Y(Ee)), s === n ? (H = a, a = n) : (c = $(), l = si(), l === n ? (H = a, a = n) : (o = [
 				o,
 				s,
 				c,
 				l
-			], a = o)); a !== n;) i.push(a), a = V, o = Q(), s = e.charAt(V), x.test(s) ? V++ : (s = n, G === 0 && J(Ee)), s === n ? (V = a, a = n) : (c = Q(), l = ci(), l === n ? (V = a, a = n) : (o = [
+			], a = o)); a !== n;) i.push(a), a = H, o = $(), s = e.charAt(H), x.test(s) ? H++ : (s = n, K === 0 && Y(Ee)), s === n ? (H = a, a = n) : (c = $(), l = si(), l === n ? (H = a, a = n) : (o = [
 				o,
 				s,
 				c,
 				l
 			], a = o));
-			H = t, t = An(r, i);
-		} else V = t, t = n;
+			U = t, t = kn(r, i);
+		} else H = t, t = n;
 		return t;
 	}
-	function ci() {
+	function si() {
 		let e, t, r, i;
-		return e = V, t = ea(), t === n ? (V = e, e = n) : (Q(), r = oi(), r === n ? (V = e, e = n) : (Q(), i = ta(), i === n ? (V = e, e = n) : (H = e, e = jn(r)))), e === n && (e = ni(), e === n && (e = pi(), e === n && (e = li()))), e;
+		return e = H, t = $i(), t === n ? (H = e, e = n) : ($(), r = ai(), r === n ? (H = e, e = n) : ($(), i = ea(), i === n ? (H = e, e = n) : (U = e, e = An(r)))), e === n && (e = ti(), e === n && (e = fi(), e === n && (e = ci()))), e;
+	}
+	function ci() {
+		let e, t, r;
+		return e = H, t = Si(), t === n ? (H = e, e = n) : (r = zr(), r === n ? (H = e, e = n) : (U = e, e = jn(r))), e === n && (e = H, t = Ci(), t === n ? (H = e, e = n) : (r = zr(), r === n ? (H = e, e = n) : (U = e, e = Mn(r)))), e;
 	}
 	function li() {
-		let e, t, r;
-		return e = V, t = Ci(), t === n ? (V = e, e = n) : (r = Br(), r === n ? (V = e, e = n) : (H = e, e = Mn(r))), e === n && (e = V, t = wi(), t === n ? (V = e, e = n) : (r = Br(), r === n ? (V = e, e = n) : (H = e, e = Nn(r)))), e;
-	}
-	function ui() {
 		let e, t, r, i, a, o, s, c, l;
-		return e = V, t = V, r = ua(), r === n ? (V = t, t = n) : (i = Q(), r = [r, i], t = r), t === n && (t = null), r = $i(), r === n ? (V = e, e = n) : (i = Q(), a = V, o = ua(), o === n ? (V = a, a = n) : (s = Q(), o = [o, s], a = o), a === n && (a = null), o = V, s = $i(), s === n ? (V = o, o = n) : (c = Q(), l = ua(), l === n && (l = null), s = [
+		return e = H, t = H, r = la(), r === n ? (H = t, t = n) : (i = $(), r = [r, i], t = r), t === n && (t = null), r = Qi(), r === n ? (H = e, e = n) : (i = $(), a = H, o = la(), o === n ? (H = a, a = n) : (s = $(), o = [o, s], a = o), a === n && (a = null), o = H, s = Qi(), s === n ? (H = o, o = n) : (c = $(), l = la(), l === n && (l = null), s = [
 			s,
 			c,
 			l
-		], o = s), o === n && (o = null), H = e, e = Pn(t, a, o)), e;
+		], o = s), o === n && (o = null), U = e, e = Nn(t, a, o)), e;
+	}
+	function ui() {
+		let e, t;
+		return e = qr(), e === n && (e = li(), e === n && (e = H, t = Ei(), t !== n && (U = e, t = Pn()), e = t, e === n && (e = H, t = la(), t !== n && (U = e, t = Fn(t)), e = t, e === n && (e = H, t = da(), t !== n && (U = e, t = In(t)), e = t, e === n && (e = H, t = yi(), t !== n && (U = e, t = Ln(t)), e = t))))), e;
 	}
 	function di() {
-		let e, t;
-		return e = Jr(), e === n && (e = ui(), e === n && (e = V, t = Di(), t !== n && (H = e, t = Fn()), e = t, e === n && (e = V, t = ua(), t !== n && (H = e, t = In(t)), e = t, e === n && (e = V, t = fa(), t !== n && (H = e, t = Ln(t)), e = t, e === n && (e = V, t = bi(), t !== n && (H = e, t = Rn(t)), e = t))))), e;
+		let e, t, r;
+		return e = H, t = na(), t === n ? (H = e, e = n) : (r = ra(), U = e, e = Rn(t, r)), e;
 	}
 	function fi() {
-		let e, t, r;
-		return e = V, t = ra(), t === n ? (V = e, e = n) : (r = ia(), H = e, e = zn(t, r)), e;
+		let e, t;
+		return e = H, t = pi(), t !== n && (U = e, t = zn(t)), e = t, e === n && (e = H, t = sa(), t !== n && (U = e, t = Bn(t)), e = t, e === n && (e = mi(), e === n && (e = _i(), e === n && (e = H, t = Gi(), t !== n && (U = e, t = Vn()), e = t, e === n && (e = H, t = Ki(), t !== n && (U = e, t = Hn()), e = t, e === n && (e = H, t = qi(), t !== n && (U = e, t = Un()), e = t)))))), e;
 	}
 	function pi() {
 		let e, t;
-		return e = V, t = mi(), t !== n && (H = e, t = Bn(t)), e = t, e === n && (e = V, t = ca(), t !== n && (H = e, t = Vn(t)), e = t, e === n && (e = hi(), e === n && (e = vi(), e === n && (e = V, t = Ki(), t !== n && (H = e, t = Hn()), e = t, e === n && (e = V, t = qi(), t !== n && (H = e, t = Un()), e = t, e === n && (e = V, t = Ji(), t !== n && (H = e, t = Wn()), e = t)))))), e;
+		return K++, e = H, t = da(), t !== n && (U = e, t = Wn(t)), e = t, K--, e === n && (t = n, K === 0 && Y(De)), e;
 	}
 	function mi() {
-		let e, t;
-		return G++, e = V, t = fa(), t !== n && (H = e, t = Gn(t)), e = t, G--, e === n && (t = n, G === 0 && J(De)), e;
+		let e, t, r, i;
+		return e = H, t = Ji(), t === n ? (H = e, e = n) : ($(), r = hi(), r === n && (r = null), $(), i = Yi(), i === n ? (H = e, e = n) : (U = e, e = Gn(r))), e;
 	}
 	function hi() {
-		let e, t, r, i;
-		return e = V, t = Yi(), t === n ? (V = e, e = n) : (Q(), r = gi(), r === n && (r = null), Q(), i = Xi(), i === n ? (V = e, e = n) : (H = e, e = Kn(r))), e;
-	}
-	function gi() {
 		let e, t, r, i, a, o, s, c;
-		if (e = V, t = _i(), t !== n) {
-			for (r = [], i = V, a = Q(), o = Y(), o === n ? (V = i, i = n) : (s = Q(), c = _i(), c === n ? (V = i, i = n) : (a = [
+		if (e = H, t = gi(), t !== n) {
+			for (r = [], i = H, a = $(), o = X(), o === n ? (H = i, i = n) : (s = $(), c = gi(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
-			], i = a)); i !== n;) r.push(i), i = V, a = Q(), o = Y(), o === n ? (V = i, i = n) : (s = Q(), c = _i(), c === n ? (V = i, i = n) : (a = [
+			], i = a)); i !== n;) r.push(i), i = H, a = $(), o = X(), o === n ? (H = i, i = n) : (s = $(), c = gi(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
 			], i = a));
-			H = e, e = qn(t, r);
-		} else V = e, e = n;
+			U = e, e = Kn(t, r);
+		} else H = e, e = n;
 		return e;
+	}
+	function gi() {
+		let e, t, r, i;
+		return e = H, t = da(), t === n ? (H = e, e = n) : ($(), r = Qi(), r === n ? (H = e, e = n) : ($(), i = fi(), i === n ? (H = e, e = n) : (U = e, e = qn(t, i)))), e;
 	}
 	function _i() {
 		let e, t, r, i;
-		return e = V, t = fa(), t === n ? (V = e, e = n) : (Q(), r = $i(), r === n ? (V = e, e = n) : (Q(), i = pi(), i === n ? (V = e, e = n) : (H = e, e = Jn(t, i)))), e;
+		return e = H, t = Xi(), t === n ? (H = e, e = n) : ($(), r = vi(), r === n && (r = null), $(), i = Zi(), i === n ? (H = e, e = n) : (U = e, e = Jn(r))), e;
 	}
 	function vi() {
-		let e, t, r, i;
-		return e = V, t = Zi(), t === n ? (V = e, e = n) : (Q(), r = yi(), r === n && (r = null), Q(), i = Qi(), i === n ? (V = e, e = n) : (H = e, e = Yn(r))), e;
-	}
-	function yi() {
 		let e, t, r, i, a, o, s, c;
-		if (e = V, t = pi(), t !== n) {
-			for (r = [], i = V, a = Q(), o = Y(), o === n ? (V = i, i = n) : (s = Q(), c = pi(), c === n ? (V = i, i = n) : (a = [
+		if (e = H, t = fi(), t !== n) {
+			for (r = [], i = H, a = $(), o = X(), o === n ? (H = i, i = n) : (s = $(), c = fi(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
-			], i = a)); i !== n;) r.push(i), i = V, a = Q(), o = Y(), o === n ? (V = i, i = n) : (s = Q(), c = pi(), c === n ? (V = i, i = n) : (a = [
+			], i = a)); i !== n;) r.push(i), i = H, a = $(), o = X(), o === n ? (H = i, i = n) : (s = $(), c = fi(), c === n ? (H = i, i = n) : (a = [
 				a,
 				o,
 				s,
 				c
 			], i = a));
-			H = e, e = Xn(t, r);
-		} else V = e, e = n;
+			U = e, e = Yn(t, r);
+		} else H = e, e = n;
 		return e;
 	}
-	function bi() {
+	function yi() {
 		let t, r, i, a, o, s;
-		if (t = V, r = V, i = V, a = e.charAt(V), te.test(a) ? V++ : (a = n, G === 0 && J(Oe)), a !== n) {
-			for (o = [], s = xi(); s !== n;) o.push(s), s = xi();
+		if (t = H, r = H, i = H, a = e.charAt(H), te.test(a) ? H++ : (a = n, K === 0 && Y(Oe)), a !== n) {
+			for (o = [], s = bi(); s !== n;) o.push(s), s = bi();
 			a = [a, o], i = a;
-		} else V = i, i = n;
-		if (r = i === n ? i : e.substring(r, V), r !== n && (H = t, r = Zn(r)), t = r, t === n) {
-			if (t = V, r = V, i = [], a = e.charAt(V), S.test(a) ? V++ : (a = n, G === 0 && J(ke)), a !== n) for (; a !== n;) i.push(a), a = e.charAt(V), S.test(a) ? V++ : (a = n, G === 0 && J(ke));
+		} else H = i, i = n;
+		if (r = i === n ? i : e.substring(r, H), r !== n && (U = t, r = Xn(r)), t = r, t === n) {
+			if (t = H, r = H, i = [], a = e.charAt(H), S.test(a) ? H++ : (a = n, K === 0 && Y(ke)), a !== n) for (; a !== n;) i.push(a), a = e.charAt(H), S.test(a) ? H++ : (a = n, K === 0 && Y(ke));
 			else i = n;
-			r = i === n ? i : e.substring(r, V), r !== n && (H = t, r = Qn(r)), t = r, t === n && (t = V, r = Ki(), r !== n && (H = t, r = $n()), t = r, t === n && (t = V, r = qi(), r !== n && (H = t, r = er()), t = r, t === n && (t = V, r = Ji(), r !== n && (H = t, r = tr()), t = r)));
+			r = i === n ? i : e.substring(r, H), r !== n && (U = t, r = Zn(r)), t = r, t === n && (t = H, r = Gi(), r !== n && (U = t, r = Qn()), t = r, t === n && (t = H, r = Ki(), r !== n && (U = t, r = $n()), t = r, t === n && (t = H, r = qi(), r !== n && (U = t, r = er()), t = r)));
 		}
 		return t;
 	}
-	function xi() {
+	function bi() {
 		let t, r, i, a;
-		return t = e.charAt(V), C.test(t) ? V++ : (t = n, G === 0 && J(O)), t === n && (t = V, e.charCodeAt(V) === 45 ? (r = "-", V++) : (r = n, G === 0 && J(k)), r === n ? (V = t, t = n) : (i = V, G++, a = e.charAt(V), w.test(a) ? V++ : (a = n, G === 0 && J(Ae)), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r))), t;
+		return t = e.charAt(H), C.test(t) ? H++ : (t = n, K === 0 && Y(O)), t === n && (t = H, e.charCodeAt(H) === 45 ? (r = "-", H++) : (r = n, K === 0 && Y(Ae)), r === n ? (H = t, t = n) : (i = H, K++, a = e.charAt(H), w.test(a) ? H++ : (a = n, K === 0 && Y(je)), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r))), t;
+	}
+	function xi() {
+		let e, t;
+		return e = H, t = ia(), t !== n && (U = e, t = tr(t)), e = t, e === n && (e = H, t = Gi(), t !== n && (U = e, t = nr()), e = t, e === n && (e = H, t = Ki(), t !== n && (U = e, t = rr()), e = t, e === n && (e = H, t = qi(), t !== n && (U = e, t = ir()), e = t))), e;
 	}
 	function Si() {
-		let e, t;
-		return e = V, t = aa(), t !== n && (H = e, t = nr(t)), e = t, e === n && (e = V, t = Ki(), t !== n && (H = e, t = rr()), e = t, e === n && (e = V, t = qi(), t !== n && (H = e, t = ir()), e = t, e === n && (e = V, t = Ji(), t !== n && (H = e, t = ar()), e = t))), e;
+		let t;
+		return e.charCodeAt(H) === 36 ? (t = "$", H++) : (t = n, K === 0 && Y(Me)), t;
 	}
 	function Ci() {
 		let t;
-		return e.charCodeAt(V) === 36 ? (t = "$", V++) : (t = n, G === 0 && J(je)), t;
+		return e.charCodeAt(H) === 64 ? (t = "@", H++) : (t = n, K === 0 && Y(Ne)), t;
 	}
 	function wi() {
 		let t;
-		return e.charCodeAt(V) === 64 ? (t = "@", V++) : (t = n, G === 0 && J(Me)), t;
+		return e.substr(H, 2) === ".." ? (t = "..", H += 2) : (t = n, K === 0 && Y(Pe)), t;
 	}
 	function Ti() {
 		let t;
-		return e.substr(V, 2) === ".." ? (t = "..", V += 2) : (t = n, G === 0 && J(Ne)), t;
+		return e.charCodeAt(H) === 46 ? (t = ".", H++) : (t = n, K === 0 && Y(Fe)), t;
 	}
 	function Ei() {
 		let t;
-		return e.charCodeAt(V) === 46 ? (t = ".", V++) : (t = n, G === 0 && J(Pe)), t;
+		return e.charCodeAt(H) === 42 ? (t = "*", H++) : (t = n, K === 0 && Y(Ie)), t;
 	}
 	function Di() {
 		let t;
-		return e.charCodeAt(V) === 42 ? (t = "*", V++) : (t = n, G === 0 && J(Fe)), t;
+		return e.substr(H, 2) === "&&" ? (t = "&&", H += 2) : (t = n, K === 0 && Y(Le)), t;
 	}
 	function Oi() {
 		let t;
-		return e.substr(V, 2) === "&&" ? (t = "&&", V += 2) : (t = n, G === 0 && J(Ie)), t;
+		return e.substr(H, 2) === "||" ? (t = "||", H += 2) : (t = n, K === 0 && Y(Re)), t;
 	}
 	function ki() {
 		let t;
-		return e.substr(V, 2) === "||" ? (t = "||", V += 2) : (t = n, G === 0 && J(Le)), t;
+		return e.charCodeAt(H) === 33 ? (t = "!", H++) : (t = n, K === 0 && Y(ze)), t;
 	}
 	function Ai() {
 		let t;
-		return e.charCodeAt(V) === 33 ? (t = "!", V++) : (t = n, G === 0 && J(Re)), t;
+		return e.substr(H, 2) === "==" ? (t = "==", H += 2) : (t = n, K === 0 && Y(Be)), t;
 	}
 	function ji() {
 		let t;
-		return e.substr(V, 2) === "==" ? (t = "==", V += 2) : (t = n, G === 0 && J(ze)), t;
+		return e.substr(H, 2) === "!=" ? (t = "!=", H += 2) : (t = n, K === 0 && Y(Ve)), t;
 	}
 	function Mi() {
 		let t;
-		return e.substr(V, 2) === "!=" ? (t = "!=", V += 2) : (t = n, G === 0 && J(Be)), t;
+		return e.substr(H, 2) === ">=" ? (t = ">=", H += 2) : (t = n, K === 0 && Y(He)), t;
 	}
 	function Ni() {
 		let t;
-		return e.substr(V, 2) === ">=" ? (t = ">=", V += 2) : (t = n, G === 0 && J(Ve)), t;
+		return e.charCodeAt(H) === 62 ? (t = ">", H++) : (t = n, K === 0 && Y(Ue)), t;
 	}
 	function Pi() {
 		let t;
-		return e.charCodeAt(V) === 62 ? (t = ">", V++) : (t = n, G === 0 && J(He)), t;
+		return e.substr(H, 2) === "<=" ? (t = "<=", H += 2) : (t = n, K === 0 && Y(We)), t;
 	}
 	function Fi() {
 		let t;
-		return e.substr(V, 2) === "<=" ? (t = "<=", V += 2) : (t = n, G === 0 && J(Ue)), t;
+		return e.charCodeAt(H) === 60 ? (t = "<", H++) : (t = n, K === 0 && Y(Ge)), t;
 	}
 	function Ii() {
 		let t;
-		return e.charCodeAt(V) === 60 ? (t = "<", V++) : (t = n, G === 0 && J(We)), t;
+		return e.substr(H, 2) === "=~" ? (t = "=~", H += 2) : (t = n, K === 0 && Y(Ke)), t;
 	}
 	function Li() {
-		let t;
-		return e.substr(V, 2) === "=~" ? (t = "=~", V += 2) : (t = n, G === 0 && J(Ge)), t;
+		let t, r, i, a;
+		return t = H, e.substr(H, 2) === "in" ? (r = "in", H += 2) : (r = n, K === 0 && Y(qe)), r === n ? (H = t, t = n) : (i = H, K++, a = Q(), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r)), t;
 	}
 	function Ri() {
 		let t, r, i, a;
-		return t = V, e.substr(V, 2) === "in" ? (r = "in", V += 2) : (r = n, G === 0 && J(Ke)), r === n ? (V = t, t = n) : (i = V, G++, a = Z(), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r)), t;
+		return t = H, e.substr(H, 3) === "nin" ? (r = "nin", H += 3) : (r = n, K === 0 && Y(Je)), r === n ? (H = t, t = n) : (i = H, K++, a = Q(), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r)), t;
 	}
 	function zi() {
 		let t, r, i, a;
-		return t = V, e.substr(V, 3) === "nin" ? (r = "nin", V += 3) : (r = n, G === 0 && J(qe)), r === n ? (V = t, t = n) : (i = V, G++, a = Z(), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r)), t;
+		return t = H, e.substr(H, 8) === d ? (r = d, H += 8) : (r = n, K === 0 && Y(Ye)), r === n ? (H = t, t = n) : (i = H, K++, a = Q(), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r)), t;
 	}
 	function Bi() {
 		let t, r, i, a;
-		return t = V, e.substr(V, 8) === d ? (r = d, V += 8) : (r = n, G === 0 && J(Je)), r === n ? (V = t, t = n) : (i = V, G++, a = Z(), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r)), t;
+		return t = H, e.substr(H, 5) === f ? (r = f, H += 5) : (r = n, K === 0 && Y(Xe)), r === n ? (H = t, t = n) : (i = H, K++, a = Q(), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r)), t;
 	}
 	function Vi() {
 		let t, r, i, a;
-		return t = V, e.substr(V, 5) === f ? (r = f, V += 5) : (r = n, G === 0 && J(Ye)), r === n ? (V = t, t = n) : (i = V, G++, a = Z(), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r)), t;
+		return t = H, e.substr(H, 6) === p ? (r = p, H += 6) : (r = n, K === 0 && Y(Ze)), r === n ? (H = t, t = n) : (i = H, K++, a = Q(), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r)), t;
 	}
 	function Hi() {
 		let t, r, i, a;
-		return t = V, e.substr(V, 6) === p ? (r = p, V += 6) : (r = n, G === 0 && J(Xe)), r === n ? (V = t, t = n) : (i = V, G++, a = Z(), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r)), t;
+		return t = H, e.substr(H, 6) === m ? (r = m, H += 6) : (r = n, K === 0 && Y(Qe)), r === n ? (H = t, t = n) : (i = H, K++, a = Q(), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r)), t;
 	}
 	function Ui() {
 		let t, r, i, a;
-		return t = V, e.substr(V, 6) === m ? (r = m, V += 6) : (r = n, G === 0 && J(Ze)), r === n ? (V = t, t = n) : (i = V, G++, a = Z(), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r)), t;
+		return t = H, e.substr(H, 4) === h ? (r = h, H += 4) : (r = n, K === 0 && Y($e)), r === n ? (H = t, t = n) : (i = H, K++, a = Q(), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r)), t;
 	}
 	function Wi() {
 		let t, r, i, a;
-		return t = V, e.substr(V, 4) === h ? (r = h, V += 4) : (r = n, G === 0 && J(Qe)), r === n ? (V = t, t = n) : (i = V, G++, a = Z(), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r)), t;
+		return t = H, e.substr(H, 5) === g ? (r = g, H += 5) : (r = n, K === 0 && Y(et)), r === n ? (H = t, t = n) : (i = H, K++, a = Q(), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r)), t;
 	}
 	function Gi() {
 		let t, r, i, a;
-		return t = V, e.substr(V, 5) === g ? (r = g, V += 5) : (r = n, G === 0 && J($e)), r === n ? (V = t, t = n) : (i = V, G++, a = Z(), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r)), t;
+		return t = H, e.substr(H, 4) === ee ? (r = ee, H += 4) : (r = n, K === 0 && Y(tt)), r === n ? (H = t, t = n) : (i = H, K++, a = Q(), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r)), t;
 	}
 	function Ki() {
 		let t, r, i, a;
-		return t = V, e.substr(V, 4) === ee ? (r = ee, V += 4) : (r = n, G === 0 && J(et)), r === n ? (V = t, t = n) : (i = V, G++, a = Z(), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r)), t;
+		return t = H, e.substr(H, 5) === _ ? (r = _, H += 5) : (r = n, K === 0 && Y(nt)), r === n ? (H = t, t = n) : (i = H, K++, a = Q(), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r)), t;
 	}
 	function qi() {
 		let t, r, i, a;
-		return t = V, e.substr(V, 5) === _ ? (r = _, V += 5) : (r = n, G === 0 && J(tt)), r === n ? (V = t, t = n) : (i = V, G++, a = Z(), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r)), t;
+		return t = H, e.substr(H, 4) === v ? (r = v, H += 4) : (r = n, K === 0 && Y(rt)), r === n ? (H = t, t = n) : (i = H, K++, a = Q(), K--, a === n ? i = void 0 : (H = i, i = n), i === n ? (H = t, t = n) : (r = [r, i], t = r)), t;
 	}
 	function Ji() {
-		let t, r, i, a;
-		return t = V, e.substr(V, 4) === v ? (r = v, V += 4) : (r = n, G === 0 && J(nt)), r === n ? (V = t, t = n) : (i = V, G++, a = Z(), G--, a === n ? i = void 0 : (V = i, i = n), i === n ? (V = t, t = n) : (r = [r, i], t = r)), t;
+		let t;
+		return e.charCodeAt(H) === 123 ? (t = "{", H++) : (t = n, K === 0 && Y(it)), t;
 	}
 	function Yi() {
 		let t;
-		return e.charCodeAt(V) === 123 ? (t = "{", V++) : (t = n, G === 0 && J(rt)), t;
+		return e.charCodeAt(H) === 125 ? (t = "}", H++) : (t = n, K === 0 && Y(k)), t;
 	}
 	function Xi() {
 		let t;
-		return e.charCodeAt(V) === 125 ? (t = "}", V++) : (t = n, G === 0 && J(it)), t;
+		return e.charCodeAt(H) === 91 ? (t = "[", H++) : (t = n, K === 0 && Y(at)), t;
 	}
 	function Zi() {
 		let t;
-		return e.charCodeAt(V) === 91 ? (t = "[", V++) : (t = n, G === 0 && J(at)), t;
+		return e.charCodeAt(H) === 93 ? (t = "]", H++) : (t = n, K === 0 && Y(ot)), t;
 	}
 	function Qi() {
 		let t;
-		return e.charCodeAt(V) === 93 ? (t = "]", V++) : (t = n, G === 0 && J(ot)), t;
+		return e.charCodeAt(H) === 58 ? (t = ":", H++) : (t = n, K === 0 && Y(st)), t;
+	}
+	function X() {
+		let t;
+		return e.charCodeAt(H) === 44 ? (t = ",", H++) : (t = n, K === 0 && Y(ct)), t;
 	}
 	function $i() {
 		let t;
-		return e.charCodeAt(V) === 58 ? (t = ":", V++) : (t = n, G === 0 && J(st)), t;
-	}
-	function Y() {
-		let t;
-		return e.charCodeAt(V) === 44 ? (t = ",", V++) : (t = n, G === 0 && J(ct)), t;
+		return e.charCodeAt(H) === 40 ? (t = "(", H++) : (t = n, K === 0 && Y(lt)), t;
 	}
 	function ea() {
 		let t;
-		return e.charCodeAt(V) === 40 ? (t = "(", V++) : (t = n, G === 0 && J(lt)), t;
+		return e.charCodeAt(H) === 41 ? (t = ")", H++) : (t = n, K === 0 && Y(ut)), t;
 	}
 	function ta() {
 		let t;
-		return e.charCodeAt(V) === 41 ? (t = ")", V++) : (t = n, G === 0 && J(ut)), t;
+		return e.charCodeAt(H) === 63 ? (t = "?", H++) : (t = n, K === 0 && Y(dt)), t;
 	}
 	function na() {
-		let t;
-		return e.charCodeAt(V) === 63 ? (t = "?", V++) : (t = n, G === 0 && J(dt)), t;
+		let t, r, i, a, o, s;
+		if (K++, t = H, e.charCodeAt(H) === 47 ? (r = "/", H++) : (r = n, K === 0 && Y(A)), r !== n) {
+			for (i = [], a = e.charAt(H), ne.test(a) ? H++ : (a = n, K === 0 && Y(pt)), a === n && (a = H, e.charCodeAt(H) === 92 ? (o = "\\", H++) : (o = n, K === 0 && Y(j)), o === n ? (H = a, a = n) : (e.length > H ? (s = e.charAt(H), H++) : (s = n, K === 0 && Y(mt)), s === n ? (H = a, a = n) : (o = [o, s], a = o))); a !== n;) i.push(a), a = e.charAt(H), ne.test(a) ? H++ : (a = n, K === 0 && Y(pt)), a === n && (a = H, e.charCodeAt(H) === 92 ? (o = "\\", H++) : (o = n, K === 0 && Y(j)), o === n ? (H = a, a = n) : (e.length > H ? (s = e.charAt(H), H++) : (s = n, K === 0 && Y(mt)), s === n ? (H = a, a = n) : (o = [o, s], a = o)));
+			e.charCodeAt(H) === 47 ? (a = "/", H++) : (a = n, K === 0 && Y(A)), a === n ? (H = t, t = n) : (U = t, t = ar(i));
+		} else H = t, t = n;
+		return K--, t === n && (r = n, K === 0 && Y(ft)), t;
 	}
 	function ra() {
-		let t, r, i, a, o, s;
-		if (G++, t = V, e.charCodeAt(V) === 47 ? (r = "/", V++) : (r = n, G === 0 && J(pt)), r !== n) {
-			for (i = [], a = e.charAt(V), ne.test(a) ? V++ : (a = n, G === 0 && J(mt)), a === n && (a = V, e.charCodeAt(V) === 92 ? (o = "\\", V++) : (o = n, G === 0 && J(A)), o === n ? (V = a, a = n) : (e.length > V ? (s = e.charAt(V), V++) : (s = n, G === 0 && J(ht)), s === n ? (V = a, a = n) : (o = [o, s], a = o))); a !== n;) i.push(a), a = e.charAt(V), ne.test(a) ? V++ : (a = n, G === 0 && J(mt)), a === n && (a = V, e.charCodeAt(V) === 92 ? (o = "\\", V++) : (o = n, G === 0 && J(A)), o === n ? (V = a, a = n) : (e.length > V ? (s = e.charAt(V), V++) : (s = n, G === 0 && J(ht)), s === n ? (V = a, a = n) : (o = [o, s], a = o)));
-			e.charCodeAt(V) === 47 ? (a = "/", V++) : (a = n, G === 0 && J(pt)), a === n ? (V = t, t = n) : (H = t, t = or(i));
-		} else V = t, t = n;
-		return G--, t === n && (r = n, G === 0 && J(ft)), t;
+		let t, r, i;
+		for (t = H, r = [], i = e.charAt(H), T.test(i) ? H++ : (i = n, K === 0 && Y(ht)); i !== n;) r.push(i), i = e.charAt(H), T.test(i) ? H++ : (i = n, K === 0 && Y(ht));
+		return U = t, r = or(r), t = r, t;
 	}
 	function ia() {
-		let t, r, i;
-		for (t = V, r = [], i = e.charAt(V), T.test(i) ? V++ : (i = n, G === 0 && J(gt)); i !== n;) r.push(i), i = e.charAt(V), T.test(i) ? V++ : (i = n, G === 0 && J(gt));
-		return H = t, r = sr(r), t = r, t;
+		let t, r, i, a, o;
+		if (t = H, r = H, i = aa(), i !== n) {
+			for (a = [], o = oa(); o !== n;) a.push(o), o = oa();
+			i = [i, a], r = i;
+		} else H = r, r = n;
+		return t = r === n ? r : e.substring(t, H), t;
 	}
 	function aa() {
-		let t, r, i, a, o;
-		if (t = V, r = V, i = oa(), i !== n) {
-			for (a = [], o = sa(); o !== n;) a.push(o), o = sa();
-			i = [i, a], r = i;
-		} else V = r, r = n;
-		return t = r === n ? r : e.substring(t, V), t;
+		let t, r, i;
+		return t = e.charAt(H), se.test(t) ? H++ : (t = n, K === 0 && Y(gt)), t === n && (t = H, r = e.charAt(H), ce.test(r) ? H++ : (r = n, K === 0 && Y(_t)), r === n ? (H = t, t = n) : (i = e.charAt(H), le.test(i) ? H++ : (i = n, K === 0 && Y(vt)), i === n ? (H = t, t = n) : (r = [r, i], t = r))), t;
 	}
 	function oa() {
-		let t, r, i;
-		return t = e.charAt(V), se.test(t) ? V++ : (t = n, G === 0 && J(_t)), t === n && (t = V, r = e.charAt(V), ce.test(r) ? V++ : (r = n, G === 0 && J(vt)), r === n ? (V = t, t = n) : (i = e.charAt(V), le.test(i) ? V++ : (i = n, G === 0 && J(yt)), i === n ? (V = t, t = n) : (r = [r, i], t = r))), t;
+		let t;
+		return t = aa(), t === n && (t = e.charAt(H), E.test(t) ? H++ : (t = n, K === 0 && Y(M))), t;
 	}
 	function sa() {
-		let t;
-		return t = oa(), t === n && (t = e.charAt(V), E.test(t) ? V++ : (t = n, G === 0 && J(j))), t;
+		let t, r, i, a, o, s, c;
+		if (K++, t = H, e.charCodeAt(H) === 45 ? (r = "-", H++) : (r = n, K === 0 && Y(Ae)), r === n && (r = null), i = ca(), i !== n) {
+			if (a = H, e.charCodeAt(H) === 46 ? (o = ".", H++) : (o = n, K === 0 && Y(Fe)), o !== n) {
+				if (s = [], c = e.charAt(H), E.test(c) ? H++ : (c = n, K === 0 && Y(M)), c !== n) for (; c !== n;) s.push(c), c = e.charAt(H), E.test(c) ? H++ : (c = n, K === 0 && Y(M));
+				else s = n;
+				s === n ? (H = a, a = n) : (o = [o, s], a = o);
+			} else H = a, a = n;
+			a === n && (a = null), o = ua(), o === n && (o = null), U = t, t = sr(a, o);
+		} else H = t, t = n;
+		return K--, t === n && (r = n, K === 0 && Y(yt)), t;
 	}
 	function ca() {
-		let t, r, i, a, o, s, c;
-		if (G++, t = V, e.charCodeAt(V) === 45 ? (r = "-", V++) : (r = n, G === 0 && J(k)), r === n && (r = null), i = la(), i !== n) {
-			if (a = V, e.charCodeAt(V) === 46 ? (o = ".", V++) : (o = n, G === 0 && J(Pe)), o !== n) {
-				if (s = [], c = e.charAt(V), E.test(c) ? V++ : (c = n, G === 0 && J(j)), c !== n) for (; c !== n;) s.push(c), c = e.charAt(V), E.test(c) ? V++ : (c = n, G === 0 && J(j));
-				else s = n;
-				s === n ? (V = a, a = n) : (o = [o, s], a = o);
-			} else V = a, a = n;
-			a === n && (a = null), o = da(), o === n && (o = null), H = t, t = cr(a, o);
-		} else V = t, t = n;
-		return G--, t === n && (r = n, G === 0 && J(bt)), t;
-	}
-	function la() {
 		let t, r, i, a;
-		if (e.charCodeAt(V) === 48 ? (t = "0", V++) : (t = n, G === 0 && J(xt)), t === n) {
-			if (t = V, r = e.charAt(V), ue.test(r) ? V++ : (r = n, G === 0 && J(St)), r !== n) {
-				for (i = [], a = e.charAt(V), E.test(a) ? V++ : (a = n, G === 0 && J(j)); a !== n;) i.push(a), a = e.charAt(V), E.test(a) ? V++ : (a = n, G === 0 && J(j));
+		if (e.charCodeAt(H) === 48 ? (t = "0", H++) : (t = n, K === 0 && Y(bt)), t === n) {
+			if (t = H, r = e.charAt(H), ue.test(r) ? H++ : (r = n, K === 0 && Y(xt)), r !== n) {
+				for (i = [], a = e.charAt(H), E.test(a) ? H++ : (a = n, K === 0 && Y(M)); a !== n;) i.push(a), a = e.charAt(H), E.test(a) ? H++ : (a = n, K === 0 && Y(M));
 				r = [r, i], t = r;
-			} else V = t, t = n;
+			} else H = t, t = n;
 		}
 		return t;
 	}
-	function ua() {
+	function la() {
 		let t, r, i, a, o, s;
-		if (G++, t = V, e.charCodeAt(V) === 48 ? (r = "0", V++) : (r = n, G === 0 && J(xt)), r === n) {
-			if (r = V, e.charCodeAt(V) === 45 ? (i = "-", V++) : (i = n, G === 0 && J(k)), i === n && (i = null), a = e.charAt(V), ue.test(a) ? V++ : (a = n, G === 0 && J(St)), a !== n) {
-				for (o = [], s = e.charAt(V), E.test(s) ? V++ : (s = n, G === 0 && J(j)); s !== n;) o.push(s), s = e.charAt(V), E.test(s) ? V++ : (s = n, G === 0 && J(j));
+		if (K++, t = H, e.charCodeAt(H) === 48 ? (r = "0", H++) : (r = n, K === 0 && Y(bt)), r === n) {
+			if (r = H, e.charCodeAt(H) === 45 ? (i = "-", H++) : (i = n, K === 0 && Y(Ae)), i === n && (i = null), a = e.charAt(H), ue.test(a) ? H++ : (a = n, K === 0 && Y(xt)), a !== n) {
+				for (o = [], s = e.charAt(H), E.test(s) ? H++ : (s = n, K === 0 && Y(M)); s !== n;) o.push(s), s = e.charAt(H), E.test(s) ? H++ : (s = n, K === 0 && Y(M));
 				i = [
 					i,
 					a,
 					o
 				], r = i;
-			} else V = r, r = n;
+			} else H = r, r = n;
 		}
-		return r !== n && (H = t, r = lr()), t = r, G--, t === n && (r = n, G === 0 && J(Ct)), t;
+		return r !== n && (U = t, r = cr()), t = r, K--, t === n && (r = n, K === 0 && Y(St)), t;
 	}
-	function da() {
+	function ua() {
 		let t, r, i, a, o;
-		if (t = V, r = e.charAt(V), de.test(r) ? V++ : (r = n, G === 0 && J(wt)), r !== n) {
-			if (i = e.charAt(V), b.test(i) ? V++ : (i = n, G === 0 && J(D)), i === n && (i = null), a = [], o = e.charAt(V), E.test(o) ? V++ : (o = n, G === 0 && J(j)), o !== n) for (; o !== n;) a.push(o), o = e.charAt(V), E.test(o) ? V++ : (o = n, G === 0 && J(j));
+		if (t = H, r = e.charAt(H), de.test(r) ? H++ : (r = n, K === 0 && Y(Ct)), r !== n) {
+			if (i = e.charAt(H), b.test(i) ? H++ : (i = n, K === 0 && Y(D)), i === n && (i = null), a = [], o = e.charAt(H), E.test(o) ? H++ : (o = n, K === 0 && Y(M)), o !== n) for (; o !== n;) a.push(o), o = e.charAt(H), E.test(o) ? H++ : (o = n, K === 0 && Y(M));
 			else a = n;
-			a === n ? (V = t, t = n) : (r = [
+			a === n ? (H = t, t = n) : (r = [
 				r,
 				i,
 				a
 			], t = r);
-		} else V = t, t = n;
+		} else H = t, t = n;
 		return t;
 	}
-	function fa() {
+	function da() {
 		let t, r, i, a;
-		if (G++, t = V, e.charCodeAt(V) === 34 ? (r = "\"", V++) : (r = n, G === 0 && J(M)), r !== n) {
-			for (i = [], a = pa(); a !== n;) i.push(a), a = pa();
-			e.charCodeAt(V) === 34 ? (a = "\"", V++) : (a = n, G === 0 && J(M)), a === n ? (V = t, t = n) : (H = t, t = ur(i));
-		} else V = t, t = n;
+		if (K++, t = H, e.charCodeAt(H) === 34 ? (r = "\"", H++) : (r = n, K === 0 && Y(wt)), r !== n) {
+			for (i = [], a = fa(); a !== n;) i.push(a), a = fa();
+			e.charCodeAt(H) === 34 ? (a = "\"", H++) : (a = n, K === 0 && Y(wt)), a === n ? (H = t, t = n) : (U = t, t = lr(i));
+		} else H = t, t = n;
 		if (t === n) {
-			if (t = V, e.charCodeAt(V) === 39 ? (r = "'", V++) : (r = n, G === 0 && J(N)), r !== n) {
-				for (i = [], a = ma(); a !== n;) i.push(a), a = ma();
-				e.charCodeAt(V) === 39 ? (a = "'", V++) : (a = n, G === 0 && J(N)), a === n ? (V = t, t = n) : (H = t, t = dr(i));
-			} else V = t, t = n;
+			if (t = H, e.charCodeAt(H) === 39 ? (r = "'", H++) : (r = n, K === 0 && Y(N)), r !== n) {
+				for (i = [], a = pa(); a !== n;) i.push(a), a = pa();
+				e.charCodeAt(H) === 39 ? (a = "'", H++) : (a = n, K === 0 && Y(N)), a === n ? (H = t, t = n) : (U = t, t = ur(i));
+			} else H = t, t = n;
 		}
-		return G--, t === n && (r = n, G === 0 && J(De)), t;
+		return K--, t === n && (r = n, K === 0 && Y(De)), t;
+	}
+	function fa() {
+		let t, r, i;
+		return t = H, r = H, K++, i = e.charAt(H), fe.test(i) ? H++ : (i = n, K === 0 && Y(P)), K--, i === n ? r = void 0 : (H = r, r = n), r === n ? (H = t, t = n) : (i = ma(), i === n ? (H = t, t = n) : (U = t, t = dr(i))), t === n && (t = H, e.charCodeAt(H) === 92 ? (r = "\\", H++) : (r = n, K === 0 && Y(j)), r === n ? (H = t, t = n) : (e.charCodeAt(H) === 34 ? (i = "\"", H++) : (i = n, K === 0 && Y(wt)), i === n ? (H = t, t = n) : (U = t, t = fr())), t === n && (t = H, e.charCodeAt(H) === 92 ? (r = "\\", H++) : (r = n, K === 0 && Y(j)), r === n ? (H = t, t = n) : (i = ha(), i === n ? (H = t, t = n) : (U = t, t = pr(i))))), t;
 	}
 	function pa() {
 		let t, r, i;
-		return t = V, r = V, G++, i = e.charAt(V), fe.test(i) ? V++ : (i = n, G === 0 && J(P)), G--, i === n ? r = void 0 : (V = r, r = n), r === n ? (V = t, t = n) : (i = ha(), i === n ? (V = t, t = n) : (H = t, t = fr(i))), t === n && (t = V, e.charCodeAt(V) === 92 ? (r = "\\", V++) : (r = n, G === 0 && J(A)), r === n ? (V = t, t = n) : (e.charCodeAt(V) === 34 ? (i = "\"", V++) : (i = n, G === 0 && J(M)), i === n ? (V = t, t = n) : (H = t, t = pr())), t === n && (t = V, e.charCodeAt(V) === 92 ? (r = "\\", V++) : (r = n, G === 0 && J(A)), r === n ? (V = t, t = n) : (i = ga(), i === n ? (V = t, t = n) : (H = t, t = mr(i))))), t;
+		return t = H, r = H, K++, i = e.charAt(H), pe.test(i) ? H++ : (i = n, K === 0 && Y(Tt)), K--, i === n ? r = void 0 : (H = r, r = n), r === n ? (H = t, t = n) : (i = ma(), i === n ? (H = t, t = n) : (U = t, t = B(i))), t === n && (t = H, e.charCodeAt(H) === 92 ? (r = "\\", H++) : (r = n, K === 0 && Y(j)), r === n ? (H = t, t = n) : (e.charCodeAt(H) === 39 ? (i = "'", H++) : (i = n, K === 0 && Y(N)), i === n ? (H = t, t = n) : (U = t, t = mr())), t === n && (t = H, e.charCodeAt(H) === 92 ? (r = "\\", H++) : (r = n, K === 0 && Y(j)), r === n ? (H = t, t = n) : (i = ha(), i === n ? (H = t, t = n) : (U = t, t = V(i))))), t;
 	}
 	function ma() {
-		let t, r, i;
-		return t = V, r = V, G++, i = e.charAt(V), pe.test(i) ? V++ : (i = n, G === 0 && J(Tt)), G--, i === n ? r = void 0 : (V = r, r = n), r === n ? (V = t, t = n) : (i = ha(), i === n ? (V = t, t = n) : (H = t, t = z(i))), t === n && (t = V, e.charCodeAt(V) === 92 ? (r = "\\", V++) : (r = n, G === 0 && J(A)), r === n ? (V = t, t = n) : (e.charCodeAt(V) === 39 ? (i = "'", V++) : (i = n, G === 0 && J(N)), i === n ? (V = t, t = n) : (H = t, t = hr())), t === n && (t = V, e.charCodeAt(V) === 92 ? (r = "\\", V++) : (r = n, G === 0 && J(A)), r === n ? (V = t, t = n) : (i = ga(), i === n ? (V = t, t = n) : (H = t, t = B(i))))), t;
+		let t, r, i, a;
+		return t = e.charAt(H), me.test(t) ? H++ : (t = n, K === 0 && Y(F)), t === n && (t = H, r = H, i = e.charAt(H), ce.test(i) ? H++ : (i = n, K === 0 && Y(_t)), i === n ? (H = r, r = n) : (a = e.charAt(H), le.test(a) ? H++ : (a = n, K === 0 && Y(vt)), a === n ? (H = r, r = n) : (i = [i, a], r = i)), t = r === n ? r : e.substring(t, H)), t;
 	}
 	function ha() {
-		let t, r, i, a;
-		return t = e.charAt(V), me.test(t) ? V++ : (t = n, G === 0 && J(F)), t === n && (t = V, r = V, i = e.charAt(V), ce.test(i) ? V++ : (i = n, G === 0 && J(vt)), i === n ? (V = r, r = n) : (a = e.charAt(V), le.test(a) ? V++ : (a = n, G === 0 && J(yt)), a === n ? (V = r, r = n) : (i = [i, a], r = i)), t = r === n ? r : e.substring(t, V)), t;
-	}
-	function ga() {
 		let t, r, i, a, o, s, c, l, u, d;
-		return t = V, e.charCodeAt(V) === 92 ? (r = "\\", V++) : (r = n, G === 0 && J(A)), r !== n && (H = t, r = gr()), t = r, t === n && (t = V, e.charCodeAt(V) === 47 ? (r = "/", V++) : (r = n, G === 0 && J(pt)), r !== n && (H = t, r = _r()), t = r, t === n && (t = V, e.charCodeAt(V) === 98 ? (r = "b", V++) : (r = n, G === 0 && J(Et)), r !== n && (H = t, r = vr()), t = r, t === n && (t = V, e.charCodeAt(V) === 102 ? (r = "f", V++) : (r = n, G === 0 && J(Dt)), r !== n && (H = t, r = yr()), t = r, t === n && (t = V, e.charCodeAt(V) === 110 ? (r = "n", V++) : (r = n, G === 0 && J(Ot)), r !== n && (H = t, r = br()), t = r, t === n && (t = V, e.charCodeAt(V) === 114 ? (r = "r", V++) : (r = n, G === 0 && J(kt)), r !== n && (H = t, r = xr()), t = r, t === n && (t = V, e.charCodeAt(V) === 116 ? (r = "t", V++) : (r = n, G === 0 && J(At)), r !== n && (H = t, r = Sr()), t = r, t === n && (t = V, e.charCodeAt(V) === 117 ? (r = "u", V++) : (r = n, G === 0 && J(jt)), r === n ? (V = t, t = n) : (i = V, a = V, o = e.charAt(V), he.test(o) ? V++ : (o = n, G === 0 && J(Mt)), o === n ? (V = a, a = n) : (s = e.charAt(V), ge.test(s) ? V++ : (s = n, G === 0 && J(Nt)), s === n ? (V = a, a = n) : (c = X(), c === n ? (V = a, a = n) : (l = X(), l === n ? (V = a, a = n) : (o = [
+		return t = H, e.charCodeAt(H) === 92 ? (r = "\\", H++) : (r = n, K === 0 && Y(j)), r !== n && (U = t, r = hr()), t = r, t === n && (t = H, e.charCodeAt(H) === 47 ? (r = "/", H++) : (r = n, K === 0 && Y(A)), r !== n && (U = t, r = gr()), t = r, t === n && (t = H, e.charCodeAt(H) === 98 ? (r = "b", H++) : (r = n, K === 0 && Y(Et)), r !== n && (U = t, r = _r()), t = r, t === n && (t = H, e.charCodeAt(H) === 102 ? (r = "f", H++) : (r = n, K === 0 && Y(Dt)), r !== n && (U = t, r = vr()), t = r, t === n && (t = H, e.charCodeAt(H) === 110 ? (r = "n", H++) : (r = n, K === 0 && Y(Ot)), r !== n && (U = t, r = yr()), t = r, t === n && (t = H, e.charCodeAt(H) === 114 ? (r = "r", H++) : (r = n, K === 0 && Y(kt)), r !== n && (U = t, r = br()), t = r, t === n && (t = H, e.charCodeAt(H) === 116 ? (r = "t", H++) : (r = n, K === 0 && Y(At)), r !== n && (U = t, r = xr()), t = r, t === n && (t = H, e.charCodeAt(H) === 117 ? (r = "u", H++) : (r = n, K === 0 && Y(jt)), r === n ? (H = t, t = n) : (i = H, a = H, o = e.charAt(H), he.test(o) ? H++ : (o = n, K === 0 && Y(Mt)), o === n ? (H = a, a = n) : (s = e.charAt(H), ge.test(s) ? H++ : (s = n, K === 0 && Y(Nt)), s === n ? (H = a, a = n) : (c = Z(), c === n ? (H = a, a = n) : (l = Z(), l === n ? (H = a, a = n) : (o = [
 			o,
 			s,
 			c,
 			l
-		], a = o)))), i = a === n ? a : e.substring(i, V), i === n ? (V = t, t = n) : (e.substr(V, 2) === "\\u" ? (a = "\\u", V += 2) : (a = n, G === 0 && J(Pt)), a === n ? (V = t, t = n) : (o = V, s = V, c = e.charAt(V), he.test(c) ? V++ : (c = n, G === 0 && J(Mt)), c === n ? (V = s, s = n) : (l = e.charAt(V), _e.test(l) ? V++ : (l = n, G === 0 && J(Ft)), l === n ? (V = s, s = n) : (u = X(), u === n ? (V = s, s = n) : (d = X(), d === n ? (V = s, s = n) : (c = [
+		], a = o)))), i = a === n ? a : e.substring(i, H), i === n ? (H = t, t = n) : (e.substr(H, 2) === "\\u" ? (a = "\\u", H += 2) : (a = n, K === 0 && Y(Pt)), a === n ? (H = t, t = n) : (o = H, s = H, c = e.charAt(H), he.test(c) ? H++ : (c = n, K === 0 && Y(Mt)), c === n ? (H = s, s = n) : (l = e.charAt(H), _e.test(l) ? H++ : (l = n, K === 0 && Y(Ft)), l === n ? (H = s, s = n) : (u = Z(), u === n ? (H = s, s = n) : (d = Z(), d === n ? (H = s, s = n) : (c = [
 			c,
 			l,
 			u,
 			d
-		], s = c)))), o = s === n ? s : e.substring(o, V), o === n ? (V = t, t = n) : (H = t, t = Cr(i, o))))), t === n && (t = V, e.charCodeAt(V) === 117 ? (r = "u", V++) : (r = n, G === 0 && J(jt)), r === n ? (V = t, t = n) : (i = V, a = V, o = X(), o === n ? (V = a, a = n) : (s = X(), s === n ? (V = a, a = n) : (c = X(), c === n ? (V = a, a = n) : (l = X(), l === n ? (V = a, a = n) : (o = [
+		], s = c)))), o = s === n ? s : e.substring(o, H), o === n ? (H = t, t = n) : (U = t, t = Sr(i, o))))), t === n && (t = H, e.charCodeAt(H) === 117 ? (r = "u", H++) : (r = n, K === 0 && Y(jt)), r === n ? (H = t, t = n) : (i = H, a = H, o = Z(), o === n ? (H = a, a = n) : (s = Z(), s === n ? (H = a, a = n) : (c = Z(), c === n ? (H = a, a = n) : (l = Z(), l === n ? (H = a, a = n) : (o = [
 			o,
 			s,
 			c,
 			l
-		], a = o)))), i = a === n ? a : e.substring(i, V), i === n ? (V = t, t = n) : (H = V, a = wr(i), a = a ? n : void 0, a === n ? (V = t, t = n) : (H = t, t = Tr(i)))))))))))), t;
-	}
-	function X() {
-		let t;
-		return t = e.charAt(V), ve.test(t) ? V++ : (t = n, G === 0 && J(It)), t;
+		], a = o)))), i = a === n ? a : e.substring(i, H), i === n ? (H = t, t = n) : (U = H, a = Cr(i), a = a ? n : void 0, a === n ? (H = t, t = n) : (U = t, t = wr(i)))))))))))), t;
 	}
 	function Z() {
 		let t;
-		return t = e.charAt(V), C.test(t) ? V++ : (t = n, G === 0 && J(O)), t;
+		return t = e.charAt(H), ve.test(t) ? H++ : (t = n, K === 0 && Y(It)), t;
 	}
 	function Q() {
+		let t;
+		return t = e.charAt(H), C.test(t) ? H++ : (t = n, K === 0 && Y(O)), t;
+	}
+	function $() {
 		let t, r;
-		for (G++, t = [], r = e.charAt(V), ye.test(r) ? V++ : (r = n, G === 0 && J(Lt)); r !== n;) t.push(r), r = e.charAt(V), ye.test(r) ? V++ : (r = n, G === 0 && J(Lt));
-		return G--, t;
+		for (K++, t = [], r = e.charAt(H), ye.test(r) ? H++ : (r = n, K === 0 && Y(Lt)); r !== n;) t.push(r), r = e.charAt(H), ye.test(r) ? H++ : (r = n, K === 0 && Y(Lt));
+		return K--, t;
 	}
-	function _a() {
+	function ga() {
 		let t, r;
-		return t = V, G++, e.length > V ? (r = e.charAt(V), V++) : (r = n, G === 0 && J(ht)), G--, r === n ? t = void 0 : (V = t, t = n), t;
+		return t = H, K++, e.length > H ? (r = e.charAt(H), H++) : (r = n, K === 0 && Y(mt)), K--, r === n ? t = void 0 : (H = t, t = n), t;
 	}
-	function $(e) {
-		return e.length > 1e3 && Ar("Member name too long (maximum 1000 characters)"), e;
+	function _a(e) {
+		return e.length > 1e3 && kr("Member name too long (maximum 1000 characters)"), e;
 	}
-	Or = a();
-	let va = Or !== n && V === e.length;
+	Dr = a();
+	let va = Dr !== n && H === e.length;
 	function ya() {
-		throw Or !== n && V < e.length && J(Nr()), Rr(Er, W < e.length ? jr(W) : null, W < e.length ? Ir(W, W + 1) : Ir(W, W));
+		throw Dr !== n && H < e.length && Y(Mr()), Lr(Tr, G < e.length ? Ar(G) : null, G < e.length ? Fr(G, G + 1) : Fr(G, G));
 	}
 	if (t.peg$library) return {
-		peg$result: Or,
-		peg$currPos: V,
+		peg$result: Dr,
+		peg$currPos: H,
 		peg$FAILED: n,
-		peg$maxFailExpected: Er,
-		peg$maxFailPos: W,
+		peg$maxFailExpected: Tr,
+		peg$maxFailPos: G,
 		peg$success: va,
 		peg$throw: va ? void 0 : ya
 	};
-	if (va) return Or;
+	if (va) return Dr;
 	ya();
 }
 var ce = /* @__PURE__ */ new Set([
@@ -1641,7 +1641,7 @@ var me = /* @__PURE__ */ new Set([
 	let t = 0;
 	for (let n = 0; n + 2 < e.length; n++) e[n] === "\\" && (e[n + 1] === "p" || e[n + 1] === "P") && e[n + 2] === "{" && t++;
 	return t;
-}, O = class extends Error {}, k = 0, Ae = 1, je = 2, Me = 3, Ne = 4, Pe = 5, Fe = s(2, 31) - 1, Ie = (e, t) => {
+}, O = class extends Error {}, Ae = 0, je = 1, Me = 2, Ne = 3, Pe = 4, Fe = 5, Ie = s(2, 31) - 1, Le = (e, t) => {
 	let n = e.op.length, r = e.scratch ?? {
 		clist: new Int32Array(n),
 		nlist: new Int32Array(n),
@@ -1652,8 +1652,8 @@ var me = /* @__PURE__ */ new Set([
 		gen: 0,
 		step: 0
 	};
-	return e.scratch = void 0, (r.gen > Fe - t - 2 || r.step > Fe - t - 2) && (r.onList.fill(0), r.atomGen.fill(0), r.gen = 0, r.step = 0), r;
-}, Le = /* @__PURE__ */ new Set([
+	return e.scratch = void 0, (r.gen > Ie - t - 2 || r.step > Ie - t - 2) && (r.onList.fill(0), r.atomGen.fill(0), r.gen = 0, r.step = 0), r;
+}, Re = /* @__PURE__ */ new Set([
 	"^",
 	"$",
 	"\\",
@@ -1669,7 +1669,7 @@ var me = /* @__PURE__ */ new Set([
 	"}",
 	"|",
 	"/"
-]), Re = /^\{(\d+)(?:,(\d*))?\}/, ze = /^[0-9a-fA-F]{4}/, Be = /^\(\?([ims]*)(?:-([ims]*))?:/, Ve = (e) => e === 10 || e === 13 || e === 8232 || e === 8233, He = class {
+]), ze = /^\{(\d+)(?:,(\d*))?\}/, Be = /^[0-9a-fA-F]{4}/, Ve = /^\(\?([ims]*)(?:-([ims]*))?:/, He = (e) => e === 10 || e === 13 || e === 8232 || e === 8233, Ue = class {
 	constructor(e, t, n, r = !1) {
 		this.src = e, this.unicode = t, this.iregexp = r, this.i = 0, this.mods = {
 			i: n.includes("i"),
@@ -1721,7 +1721,7 @@ var me = /* @__PURE__ */ new Set([
 		if (n === "(") {
 			let n = this.mods;
 			if (e[t + 1] === "?") {
-				let r = Be.exec(e.slice(t, t + 12));
+				let r = Ve.exec(e.slice(t, t + 12));
 				if (!r) throw new O("lookaround or named group");
 				let i = l({}, n);
 				for (let e of r[1]) i[e] = !0;
@@ -1742,7 +1742,7 @@ var me = /* @__PURE__ */ new Set([
 		if (n === "\\") return !this.unicode && e[t + 1] === "c" && !/[a-zA-Z]/.test(e[t + 2] ?? "") ? (this.i = t + 1, this.atom("\\\\", "\\")) : (this.i = t + this.escapeLength(t), this.atom(e.slice(t, this.i)));
 		if (n === "*" || n === "+" || n === "?" || n === ")") throw new O("nothing to repeat");
 		let r = e.codePointAt(t), i = this.unicode && r > 65535 ? String.fromCodePoint(r) : n;
-		return this.i = t + i.length, this.atom(Le.has(i) ? `\\${i}` : i, i);
+		return this.i = t + i.length, this.atom(Re.has(i) ? `\\${i}` : i, i);
 	}
 	escapeLength(e) {
 		let { src: t, unicode: n } = this, r = t[e + 1];
@@ -1762,11 +1762,11 @@ var me = /* @__PURE__ */ new Set([
 			if (n === -1) throw new O("unclosed escape");
 			return n - e + 1;
 		}
-		if (r === "u" && ze.test(t.slice(e + 2))) {
+		if (r === "u" && Be.test(t.slice(e + 2))) {
 			let r = parseInt(t.slice(e + 2, e + 6), 16);
 			if (n && r >= 55296 && r <= 56319 && t.slice(e + 6, e + 8) === "\\u") {
 				let n = t.slice(e + 8, e + 12);
-				if (ze.test(n) && parseInt(n, 16) >= 56320 && parseInt(n, 16) <= 57343) return 12;
+				if (Be.test(n) && parseInt(n, 16) >= 56320 && parseInt(n, 16) <= 57343) return 12;
 			}
 			return 6;
 		}
@@ -1778,7 +1778,7 @@ var me = /* @__PURE__ */ new Set([
 		else if (n === "+") r = 1, i = Infinity, this.i++;
 		else if (n === "?") r = 0, i = 1, this.i++;
 		else if (n === "{") {
-			let n = Re.exec(t.slice(this.i));
+			let n = ze.exec(t.slice(this.i));
 			if (!n) return e;
 			r = Number(n[1]), i = n[2] === void 0 ? r : n[2] === "" ? Infinity : Number(n[2]), this.i += n[0].length;
 		} else return e;
@@ -1790,7 +1790,7 @@ var me = /* @__PURE__ */ new Set([
 			max: i
 		};
 	}
-}, Ue = class {
+}, We = class {
 	constructor(e) {
 		this.unicode = e, this.op = [], this.x = [], this.y = [], this.atoms = [], this.atomIds = /* @__PURE__ */ new Map(), this.work = 0;
 	}
@@ -1806,19 +1806,19 @@ var me = /* @__PURE__ */ new Set([
 		}), this.atomIds.set(n, r)), r;
 	}
 	finish() {
-		this.emit(Pe);
+		this.emit(Fe);
 	}
 	compile(e) {
 		if (++this.work > 4 * D) throw new O("pattern too large");
 		switch (e.t) {
 			case "atom":
-				this.emit(k, this.atomId(e));
+				this.emit(Ae, this.atomId(e));
 				return;
 			case "bol":
-				this.emit(Me, +!!e.multiline);
+				this.emit(Ne, +!!e.multiline);
 				return;
 			case "eol":
-				this.emit(Ne, +!!e.multiline);
+				this.emit(Pe, +!!e.multiline);
 				return;
 			case "cat":
 				for (let t of e.items) this.compile(t);
@@ -1826,8 +1826,8 @@ var me = /* @__PURE__ */ new Set([
 			case "alt": {
 				let t = [];
 				for (let n = 0; n < e.alts.length - 1; n++) {
-					let r = this.emit(Ae);
-					this.x[r] = r + 1, this.compile(e.alts[n]), t.push(this.emit(je)), this.y[r] = this.op.length;
+					let r = this.emit(je);
+					this.x[r] = r + 1, this.compile(e.alts[n]), t.push(this.emit(Me)), this.y[r] = this.op.length;
 				}
 				this.compile(e.alts[e.alts.length - 1]);
 				for (let e of t) this.x[e] = this.op.length;
@@ -1836,12 +1836,12 @@ var me = /* @__PURE__ */ new Set([
 			case "rep":
 				for (let t = 0; t < e.min; t++) this.compile(e.node);
 				if (e.max === Infinity) {
-					let t = this.emit(Ae);
-					this.x[t] = t + 1, this.compile(e.node), this.emit(je, t), this.y[t] = this.op.length;
+					let t = this.emit(je);
+					this.x[t] = t + 1, this.compile(e.node), this.emit(Me, t), this.y[t] = this.op.length;
 				} else {
 					let t = [];
 					for (let n = e.min; n < e.max; n++) {
-						let n = this.emit(Ae);
+						let n = this.emit(je);
 						this.x[n] = n + 1, t.push(n), this.compile(e.node);
 					}
 					for (let e of t) this.y[e] = this.op.length;
@@ -1849,10 +1849,10 @@ var me = /* @__PURE__ */ new Set([
 				return;
 		}
 	}
-}, We = (e, t, n) => {
+}, Ge = (e, t, n) => {
 	try {
 		new RegExp(e, t);
-		let r = t.includes("u"), i = new He(e, r, t, n).parse(), a = new Ue(r);
+		let r = t.includes("u"), i = new Ue(e, r, t, n).parse(), a = new We(r);
 		return a.compile(i), a.finish(), {
 			op: a.op,
 			x: a.x,
@@ -1865,7 +1865,7 @@ var me = /* @__PURE__ */ new Set([
 		if (e instanceof RangeError) throw e;
 		return null;
 	}
-}, Ge = (e, t, n, r) => {
+}, Ke = (e, t, n, r) => {
 	let { op: i, x: a, y: o, atoms: s, unicode: c, sticky: l } = e, u = n.regexWork ?? n, { clist: d, nlist: f } = r, p = 0, m = 0, { onList: h, stack: g, atomGen: ee, atomHit: _ } = r, v = r.gen, y = r.step;
 	r.gen = v + t.length + 2, r.step = y + t.length + 2;
 	let b = 0, x = !1, te = (e, n, r) => {
@@ -1875,20 +1875,20 @@ var me = /* @__PURE__ */ new Set([
 		for (; s > 0;) {
 			let r = g[--s];
 			if (h[r] !== v) switch (h[r] = v, ++c === 64 && (u(c), c = 0), i[r]) {
-				case k:
+				case Ae:
 					e[n++] = r;
 					break;
-				case Pe: return u(c), x = !0, n;
-				case je:
+				case Fe: return u(c), x = !0, n;
+				case Me:
 					g[s++] = a[r];
 					break;
-				case Ae:
+				case je:
 					g[s++] = o[r], g[s++] = a[r];
 					break;
-				case Me:
-					(b === 0 || a[r] === 1 && Ve(t.charCodeAt(b - 1))) && (g[s++] = r + 1);
+				case Ne:
+					(b === 0 || a[r] === 1 && He(t.charCodeAt(b - 1))) && (g[s++] = r + 1);
 					break;
-				case Ne: (b === t.length || a[r] === 1 && Ve(t.charCodeAt(b))) && (g[s++] = r + 1);
+				case Pe: (b === t.length || a[r] === 1 && He(t.charCodeAt(b))) && (g[s++] = r + 1);
 			}
 		}
 		return u(c), n;
@@ -1912,29 +1912,29 @@ var me = /* @__PURE__ */ new Set([
 		d = f, f = i, p = m;
 	}
 	return !1;
-}, Ke = (e, t, n) => {
-	let r = Ie(e, t.length);
+}, qe = (e, t, n) => {
+	let r = Le(e, t.length);
 	try {
-		return Ge(e, t, n, r);
+		return Ke(e, t, n, r);
 	} finally {
 		e.scratch = r;
 	}
-}, qe = 256, Je = /* @__PURE__ */ new Map(), Ye = 0, Xe = (e, t, n, r, i = !1) => {
+}, Je = 256, Ye = /* @__PURE__ */ new Map(), Xe = 0, Ze = (e, t, n, r, i = !1) => {
 	if (e.length > Ee || t.length > 7 || !Oe.test(t)) return null;
-	let a = `${t}/${+!!n}/${+!!i}`, o = Je.get(e)?.get(a);
+	let a = `${t}/${+!!n}/${+!!i}`, o = Ye.get(e)?.get(a);
 	if (o !== void 0) return r(e.length), o;
-	let s = Array.from(e).join(""), c = ke(s) > De ? null : We(n ? `^(?:${s})$` : s, t, i);
-	Ye >= qe && (Je.clear(), Ye = 0);
-	let l = Je.get(s);
-	return l === void 0 && Je.set(s, l = /* @__PURE__ */ new Map()), l.set(a, c), Ye++, r(s.length + (c === null ? 0 : c.op.length)), c;
-}, Ze = (e, t, n) => {
+	let s = Array.from(e).join(""), c = ke(s) > De ? null : Ge(n ? `^(?:${s})$` : s, t, i);
+	Xe >= Je && (Ye.clear(), Xe = 0);
+	let l = Ye.get(s);
+	return l === void 0 && Ye.set(s, l = /* @__PURE__ */ new Map()), l.set(a, c), Xe++, r(s.length + (c === null ? 0 : c.op.length)), c;
+}, Qe = (e, t, n) => {
 	var r;
-	return (r = n.regexProgram) == null || r.call(n, e.op.length), Ke(e, t, n);
-}, Qe = class {
+	return (r = n.regexProgram) == null || r.call(n, e.op.length), qe(e, t, n);
+}, $e = class {
 	constructor(e) {
 		this.nodes = e;
 	}
-}, $e = (e) => {
+}, et = (e) => {
 	let t = !1;
 	for (let n = 0; n < e.length; n++) {
 		let r = e[n];
@@ -1945,7 +1945,7 @@ var me = /* @__PURE__ */ new Set([
 		} else r === "[" && !t ? t = !0 : r === "]" && t && (t = !1);
 	}
 	return !1;
-}, et = (e) => {
+}, tt = (e) => {
 	for (let t = 0; t < e.length; t++) {
 		let n = e[t];
 		if (n === "\\") {
@@ -1961,24 +1961,24 @@ var me = /* @__PURE__ */ new Set([
 			}
 		}
 	}
-	return !$e(e);
-}, tt = 256, nt = /* @__PURE__ */ new Map(), rt = (e, t) => {
-	let n = nt.get(e);
-	return n === void 0 && (n = et(e), nt.size >= tt && nt.clear(), nt.set(Array.from(e).join(""), n)), t(e.length), n;
-}, it = /* @__PURE__ */ new Map(), at = (e, t) => {
-	let n = it.get(e);
-	return n === void 0 && (n = Te(e), n !== null && (n = Array.from(n).join("")), it.size >= tt && it.clear(), it.set(Array.from(e).join(""), n)), t(e.length), n;
+	return !et(e);
+}, nt = 256, rt = /* @__PURE__ */ new Map(), it = (e, t) => {
+	let n = rt.get(e);
+	return n === void 0 && (n = tt(e), rt.size >= nt && rt.clear(), rt.set(Array.from(e).join(""), n)), t(e.length), n;
+}, k = /* @__PURE__ */ new Map(), at = (e, t) => {
+	let n = k.get(e);
+	return n === void 0 && (n = Te(e), n !== null && (n = Array.from(n).join("")), k.size >= nt && k.clear(), k.set(Array.from(e).join(""), n)), t(e.length), n;
 }, ot = 256, st = (e, t, n, r, i, a, o = !1) => {
 	let s = a === void 0 ? void 0 : i.regexSites, c = s?.get(a);
 	if (c === void 0) {
 		if (e.length > Ee) c = null;
 		else if (o) {
 			let n = at(e, i);
-			c = n === null ? null : Xe(n, t, r, i, !0);
-		} else c = rt(e, i) ? Xe(e, t, r, i) : null;
+			c = n === null ? null : Ze(n, t, r, i, !0);
+		} else c = it(e, i) ? Ze(e, t, r, i) : null;
 		s !== void 0 && (s.size >= ot && s.clear(), s.set(a, c));
 	}
-	return c !== null && Ze(c, n, i);
+	return c !== null && Qe(c, n, i);
 }, ct = {
 	length: (e, t) => {
 		let n = e[0];
@@ -2020,14 +2020,14 @@ var me = /* @__PURE__ */ new Set([
 		if (n !== i) return dt(n) - dt(i);
 	}
 	return e.length - t.length;
-}, pt = (e, t, n = f) => C(e) && C(t) ? e < t : w(e) && w(t) ? (n(Math.min(e.length, t.length)), ft(e, t) < 0) : !1, mt = (e, t, n = f) => pt(e, t, n) || lt(e, t, n), A = (e, t, n = f) => C(e) && C(t) ? e > t : w(e) && w(t) ? (n(Math.min(e.length, t.length)), ft(e, t) > 0) : !1, ht = (e, t, n = f) => A(e, t, n) || lt(e, t, n), gt = (e, t) => typeof e == "string" && typeof t == "string" && e.length === t.length ? e.length : 0, _t = (e, t, n) => {
+}, A = (e, t, n = f) => C(e) && C(t) ? e < t : w(e) && w(t) ? (n(Math.min(e.length, t.length)), ft(e, t) < 0) : !1, pt = (e, t, n = f) => A(e, t, n) || lt(e, t, n), j = (e, t, n = f) => C(e) && C(t) ? e > t : w(e) && w(t) ? (n(Math.min(e.length, t.length)), ft(e, t) > 0) : !1, mt = (e, t, n = f) => j(e, t, n) || lt(e, t, n), ht = (e, t) => typeof e == "string" && typeof t == "string" && e.length === t.length ? e.length : 0, gt = (e, t, n) => {
 	let r = y(e);
 	for (let i = 0; i < r; i++) {
 		let r = g(e, i);
-		if (n(1 + gt(r, t)), r === t || r !== r && t !== t) return i;
+		if (n(1 + ht(r, t)), r === t || r !== r && t !== t) return i;
 	}
 	return -1;
-}, vt = (e) => typeof e == "number" ? "n" + String(e) : typeof e == "string" ? "s" + e : e, yt = (e) => typeof e == "string" && e.length + 1 > ee, j = (e, t, n) => {
+}, _t = (e) => typeof e == "number" ? "n" + String(e) : typeof e == "string" ? "s" + e : e, vt = (e) => typeof e == "string" && e.length + 1 > ee, M = (e, t, n) => {
 	let r = n?.get(e);
 	if (r) return r;
 	let i = {
@@ -2036,46 +2036,46 @@ var me = /* @__PURE__ */ new Set([
 	}, a = y(e);
 	for (let n = 0; n < a; n++) {
 		let r = g(e, n);
-		t(1 + (typeof r == "string" ? r.length : 0)), yt(r) ? i.long.push(r) : i.set.add(vt(r));
+		t(1 + (typeof r == "string" ? r.length : 0)), vt(r) ? i.long.push(r) : i.set.add(_t(r));
 	}
 	return n?.set(e, i), i;
-}, bt = ({ set: e, long: t }, n, r) => {
-	if (yt(n)) {
-		for (let e of t) if (r(1 + gt(e, n)), e === n) return !0;
+}, yt = ({ set: e, long: t }, n, r) => {
+	if (vt(n)) {
+		for (let e of t) if (r(1 + ht(e, n)), e === n) return !0;
 		return !1;
 	}
-	return e.size === 0 ? (r(), !1) : (r(1 + (typeof n == "string" ? 2 * n.length : 0)), e.has(vt(n)));
-}, xt = (e, t, n) => {
+	return e.size === 0 ? (r(), !1) : (r(1 + (typeof n == "string" ? 2 * n.length : 0)), e.has(_t(n)));
+}, bt = (e, t, n) => {
 	let r = y(e);
 	for (let i = 0; i < r; i++) if (n(), h(e, i) && t(e[i])) return !0;
 	return !1;
-}, St = {
+}, xt = {
 	eq: lt,
 	ne: ut,
-	lt: pt,
-	le: mt,
-	gt: A,
-	ge: ht,
-	in: (e, t, n = f) => x(t) ? _t(t, e, n) !== -1 : !1,
-	nin: (e, t, n = f) => x(t) ? _t(t, e, n) === -1 : !1,
+	lt: A,
+	le: pt,
+	gt: j,
+	ge: mt,
+	in: (e, t, n = f) => x(t) ? gt(t, e, n) !== -1 : !1,
+	nin: (e, t, n = f) => x(t) ? gt(t, e, n) === -1 : !1,
 	subsetof: (e, t, n = f, r) => {
 		if (!x(e) || !x(t)) return !1;
-		let i = j(t, n, r);
-		return !xt(e, (e) => !bt(i, e, n), n);
+		let i = M(t, n, r);
+		return !bt(e, (e) => !yt(i, e, n), n);
 	},
 	anyof: (e, t, n = f, r) => {
 		if (!x(e) || !x(t)) return !1;
-		let i = j(t, n, r);
-		return xt(e, (e) => bt(i, e, n), n);
+		let i = M(t, n, r);
+		return bt(e, (e) => yt(i, e, n), n);
 	},
 	noneof: (e, t, n = f, r) => {
 		if (!x(e) || !x(t)) return !1;
-		let i = j(t, n, r);
-		return !xt(e, (e) => bt(i, e, n), n);
+		let i = M(t, n, r);
+		return !bt(e, (e) => yt(i, e, n), n);
 	},
 	sizeof: (e, t) => !x(e) && !w(e) || !x(t) && !w(t) ? !1 : (x(e) ? y(e) : e.length) === (x(t) ? y(t) : t.length),
 	size: (e, t) => !x(e) && !w(e) || !C(t) ? !1 : (x(e) ? y(e) : e.length) === t
-}, Ct = (e) => !x(e) && !w(e) ? !1 : (x(e) ? y(e) : e.length) === 0, wt = (e, t, n, r = f, i) => !w(e) || !w(t) ? !1 : st(i !== void 0 && r.regexSites?.has(i) === !0 ? "" : t.slice(1, -1), n, e, !1, r, i), M = (e) => e.replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/\x08/g, "\\b").replace(/\f/g, "\\f").replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/[\x00-\x07\x0b\x0e-\x1f]/g, (e) => "\\u00" + e.charCodeAt(0).toString(16).padStart(2, "0")), N = (e, t) => e.concat(`[${t}]`), P = (e, t) => e < 0 ? t + e : e, Tt = (e, t) => {
+}, St = (e) => !x(e) && !w(e) ? !1 : (x(e) ? y(e) : e.length) === 0, Ct = (e, t, n, r = f, i) => !w(e) || !w(t) ? !1 : st(i !== void 0 && r.regexSites?.has(i) === !0 ? "" : t.slice(1, -1), n, e, !1, r, i), wt = (e) => e.replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/\x08/g, "\\b").replace(/\f/g, "\\f").replace(/\n/g, "\\n").replace(/\r/g, "\\r").replace(/\t/g, "\\t").replace(/[\x00-\x07\x0b\x0e-\x1f]/g, (e) => "\\u00" + e.charCodeAt(0).toString(16).padStart(2, "0")), N = (e, t) => e.concat(`[${t}]`), P = (e, t) => e < 0 ? t + e : e, Tt = (e, t) => {
 	let n = y(e), r = P(t, n);
 	return r >= 0 && r < n ? {
 		exists: !0,
@@ -2148,10 +2148,10 @@ var me = /* @__PURE__ */ new Set([
 			return t === void 0 && (t = /* @__PURE__ */ new WeakMap(), this.setCaches.set(e, t)), t;
 		}, this.canonicalNames = /* @__PURE__ */ new Map(), this.canonicalName = (e, t) => {
 			let n = this.canonicalNames.get(e);
-			return n === void 0 && (this.tick(t.length), n = Object.keys({ [t]: 0 })[0], this.canonicalNames.set(e, n), this.escapedNames.has(n) || this.escapedNames.set(n, M(n))), n;
+			return n === void 0 && (this.tick(t.length), n = Object.keys({ [t]: 0 })[0], this.canonicalNames.set(e, n), this.escapedNames.has(n) || this.escapedNames.set(n, wt(n))), n;
 		}, this.escapedNames = /* @__PURE__ */ new Map(), this.formatStringLiteralPath = (e, t) => {
 			let n = this.escapedNames.get(t);
-			return n === void 0 && (this.tick(t.length), n = M(t), this.escapedNames.set(t, n)), e.concat(`['${n}']`);
+			return n === void 0 && (this.tick(t.length), n = wt(t), this.escapedNames.set(t, n)), e.concat(`['${n}']`);
 		}, this.forEachElement = (e, t) => {
 			let n = y(e);
 			for (let r = 0; r < n; r++) this.tick(), h(e, r) && t(e[r], r);
@@ -2417,9 +2417,9 @@ var me = /* @__PURE__ */ new Set([
 			}
 		}, this.handleComparator = (e, t) => this.memoInvariant(t, () => this.evaluateComparator(e, t)), this.evaluateComparator = (e, t) => {
 			let n = this.handleOperationContent(e, t.left)?.value;
-			if (t.operator === "empty") return Ct(n);
-			if (t.operator === "reg") return wt(n, t.right.value, t.right.opts, this.tick, t);
-			let r = this.handleOperationContent(e, t.right)?.value, i = St[t.operator];
+			if (t.operator === "empty") return St(n);
+			if (t.operator === "reg") return Ct(n, t.right.value, t.right.opts, this.tick, t);
+			let r = this.handleOperationContent(e, t.right)?.value, i = xt[t.operator];
 			if (i) {
 				let e = this.isInvariant(t.right) ? this.siteSetCache(t.right) : void 0;
 				return i(n, r, this.tick, e);
@@ -2438,7 +2438,7 @@ var me = /* @__PURE__ */ new Set([
 		}, this.handleFunctionCall = (e, t) => this.memoInvariant(t, () => this.evaluateFunctionCall(e, t)), this.evaluateFunctionCall = (e, t) => {
 			let n = t.name === "count" || t.name === "value", r = t.args.map((t) => {
 				let r = this.handleOperationContent(e, t);
-				return !n || t.type !== "root" && t.type !== "current" ? r?.value : r?.isIndefinite ? new Qe(r.value) : new Qe(T(r?.value) ? [r?.value] : []);
+				return !n || t.type !== "root" && t.type !== "current" ? r?.value : r?.isIndefinite ? new $e(r.value) : new $e(T(r?.value) ? [r?.value] : []);
 			}), i = ct[t.name], a = t.args[1], o = a?.type === "stringLiteral" || a?.subtype === "string";
 			return i ? i(r, this.tick, o ? t : void 0) : void 0;
 		}, this.handleFilterExpressionContent = (e, t) => {
@@ -2688,20 +2688,20 @@ var Jt = (e, t) => e.map((e) => ({
 		key: o,
 		target: i
 	};
-}, $t = (e, r, i, a) => {
+}, R = (e, r, i, a) => {
 	let { parent: o, key: s } = Qt(e, r, a);
 	return (n[r.action] || t)(o, s, i), e;
-}, en = (e, t) => {
+}, $t = (e, t) => {
 	if (e?.attributes?.["data-role"] === t) return e;
 	for (let n of e?.children ?? []) {
-		let e = en(n, t);
+		let e = $t(n, t);
 		if (e) return e;
 	}
 	return null;
-}, tn = (e, t) => {
-	let n = e[t.fileName], r = t.dataRole ? en(n, t.dataRole) : n;
+}, en = (e, t) => {
+	let n = e[t.fileName], r = t.dataRole ? $t(n, t.dataRole) : n;
 	return (t.filePath ?? []).reduce((e, t) => e[t], r);
-}, nn = {
+}, tn = {
 	buildBodyTr: {
 		tagName: "tr",
 		attributes: { class: "align-middle" },
@@ -2861,8 +2861,443 @@ var Jt = (e, t) => e.map((e) => ({
 				}]
 			}]
 		}]
+	},
+	tableWithSearch: {
+		tagName: "div",
+		attributes: {
+			"data-role": "table-parent",
+			id: "table-simple-id"
+		},
+		children: [{
+			tagName: "div",
+			attributes: { class: "row mb-3 align-items-center" },
+			children: [
+				{
+					tagName: "div",
+					attributes: { class: "col-md-4 d-flex align-items-center" },
+					children: [{
+						tagName: "h6",
+						attributes: {
+							class: "mb-0 fw-semibold text-secondary",
+							id: "table-title"
+						},
+						textContent: "Items"
+					}]
+				},
+				{
+					tagName: "div",
+					attributes: { class: "col-md-4 text-center d-flex align-items-center justify-content-center" },
+					children: [{
+						tagName: "span",
+						attributes: {
+							id: "search-feedback",
+							class: "badge bg-white text-secondary border px-3 py-2 small fw-normal shadow-sm"
+						},
+						textContent: "Showing all records"
+					}]
+				},
+				{
+					tagName: "div",
+					attributes: { class: "col-md-4" },
+					children: [{
+						tagName: "div",
+						attributes: { class: "input-group" },
+						children: [{
+							tagName: "span",
+							attributes: { class: "input-group-text bg-white" },
+							children: [{
+								tagName: "i",
+								attributes: { class: "bi bi-search" },
+								textContent: "🔍"
+							}]
+						}, {
+							tagName: "input",
+							attributes: {
+								type: "text",
+								id: "tableSearch",
+								class: "form-control",
+								placeholder: "Search table..."
+							}
+						}]
+					}]
+				}
+			]
+		}, {
+			tagName: "div",
+			attributes: { id: "table-content-container" },
+			children: [{
+				tagName: "table",
+				attributes: {
+					class: "table table-hover table-striped align-middle border mb-0",
+					id: "table-simple-table-id"
+				},
+				children: [
+					{
+						tagName: "colgroup",
+						attributes: {
+							"data-role": "table-colgroup",
+							id: "table-simple-colgroup-id"
+						},
+						children: []
+					},
+					{
+						tagName: "thead",
+						attributes: {
+							class: "table-dark",
+							"data-role": "table-header",
+							id: "table-simple-header-id"
+						},
+						children: [{
+							tagName: "tr",
+							attributes: {
+								"data-role": "table-header-row",
+								id: "table-simple-header-row-id"
+							},
+							children: []
+						}]
+					},
+					{
+						tagName: "tbody",
+						attributes: {
+							"data-role": "table-body",
+							id: "table-simple-body-id"
+						},
+						children: []
+					},
+					{
+						tagName: "tfoot",
+						attributes: {
+							"data-role": "table-footer",
+							id: "table-simple-footer-id"
+						},
+						children: [{
+							tagName: "tr",
+							attributes: {
+								"data-role": "table-footer-row",
+								id: "table-simple-footer-row-id"
+							},
+							children: []
+						}]
+					}
+				]
+			}]
+		}]
+	},
+	tableSimple: {
+		tagName: "div",
+		attributes: {
+			"data-role": "table-parent",
+			id: "table-simple-id"
+		},
+		children: [{
+			tagName: "table",
+			attributes: {
+				class: "table table-hover table-striped align-middle border mb-0",
+				id: "table-simple-table-id"
+			},
+			children: [
+				{
+					tagName: "colgroup",
+					attributes: {
+						"data-role": "table-colgroup",
+						id: "table-simple-colgroup-id"
+					},
+					children: []
+				},
+				{
+					tagName: "thead",
+					attributes: {
+						class: "table-dark",
+						"data-role": "table-header",
+						id: "table-simple-header-id"
+					},
+					children: [{
+						tagName: "tr",
+						attributes: {
+							"data-role": "table-header-row",
+							id: "table-simple-header-row-id"
+						},
+						children: []
+					}]
+				},
+				{
+					tagName: "tbody",
+					attributes: {
+						"data-role": "table-body",
+						id: "table-simple-body-id"
+					},
+					children: []
+				},
+				{
+					tagName: "tfoot",
+					attributes: {
+						"data-role": "table-footer",
+						id: "table-simple-footer-id"
+					},
+					children: [{
+						tagName: "tr",
+						attributes: {
+							"data-role": "table-footer-row",
+							id: "table-simple-footer-row-id"
+						},
+						children: []
+					}]
+				}
+			]
+		}]
+	},
+	tableWithFooter: {
+		tagName: "table",
+		attributes: {
+			class: "table table-hover table-striped align-middle border mb-0",
+			id: "table-with-footer-id"
+		},
+		children: [
+			{
+				tagName: "colgroup",
+				attributes: {
+					"data-role": "table-colgroup",
+					id: "table-with-footer-colgroup-id"
+				},
+				children: []
+			},
+			{
+				tagName: "thead",
+				attributes: {
+					class: "table-dark",
+					"data-role": "table-header",
+					id: "table-with-footer-header-id"
+				},
+				children: [{
+					tagName: "tr",
+					attributes: {
+						"data-role": "table-header-row",
+						id: "table-with-footer-header-row-id"
+					},
+					children: []
+				}]
+			},
+			{
+				tagName: "tbody",
+				attributes: {
+					"data-role": "table-body",
+					id: "table-with-footer-body-id"
+				},
+				children: []
+			},
+			{
+				tagName: "tfoot",
+				attributes: {
+					"data-role": "table-footer",
+					id: "table-with-footer-footer-id"
+				},
+				children: [{
+					tagName: "tr",
+					attributes: {
+						"data-role": "table-footer-row",
+						id: "table-with-footer-footer-row-id"
+					},
+					children: []
+				}]
+			}
+		]
+	},
+	tableBodyOnly: {
+		tagName: "div",
+		attributes: { id: "ks-id" },
+		children: []
+	},
+	tableBodyOnly1: {
+		tagName: "tbody",
+		attributes: {
+			"data-role": "table-body",
+			id: "table-body-only-id"
+		},
+		children: []
+	},
+	tableFooterOnly: {
+		tagName: "tfoot",
+		attributes: {
+			"data-role": "table-footer",
+			id: "table-footer-only-id"
+		},
+		children: [{
+			tagName: "tr",
+			attributes: {
+				"data-role": "table-footer-row",
+				id: "table-footer-only-footer-row-id"
+			},
+			children: []
+		}]
+	},
+	tableHeaderOnly: {
+		tagName: "div",
+		attributes: {
+			"data-role": "table-parent",
+			id: "table-simple-id"
+		},
+		children: [{
+			tagName: "table",
+			attributes: {
+				class: "table table-hover table-striped align-middle border mb-0",
+				id: "table-simple-table-id"
+			},
+			children: [
+				{
+					tagName: "colgroup",
+					attributes: {
+						"data-role": "table-colgroup",
+						id: "table-simple-colgroup-id"
+					},
+					children: []
+				},
+				{
+					tagName: "thead",
+					attributes: {
+						class: "table-dark",
+						"data-role": "table-header",
+						id: "table-simple-header-id"
+					},
+					children: [{
+						tagName: "tr",
+						attributes: {
+							"data-role": "table-header-row",
+							id: "table-simple-header-row-id"
+						},
+						children: []
+					}]
+				},
+				{
+					tagName: "tbody",
+					attributes: {
+						"data-role": "table-body",
+						id: "table-simple-body-id"
+					},
+					children: []
+				},
+				{
+					tagName: "tfoot",
+					attributes: {
+						"data-role": "table-footer",
+						id: "table-simple-footer-id"
+					},
+					children: [{
+						tagName: "tr",
+						attributes: {
+							"data-role": "table-footer-row",
+							id: "table-simple-footer-row-id"
+						},
+						children: []
+					}]
+				}
+			]
+		}]
+	},
+	tableHeaderOnly1: {
+		tagName: "table",
+		attributes: {
+			class: "table table-hover table-striped align-middle border mb-0",
+			id: "table-header-only-id"
+		},
+		children: [
+			{
+				tagName: "colgroup",
+				attributes: {
+					"data-role": "table-colgroup",
+					id: "table-header-only-colgroup-id"
+				},
+				children: []
+			},
+			{
+				tagName: "thead",
+				attributes: {
+					class: "table-dark",
+					"data-role": "table-header",
+					id: "table-header-only-header-id"
+				},
+				children: [{
+					tagName: "tr",
+					attributes: {
+						"data-role": "table-header-row",
+						id: "table-header-only-header-row-id"
+					},
+					children: []
+				}]
+			},
+			{
+				tagName: "tbody",
+				attributes: {
+					"data-role": "table-body",
+					id: "table-header-only-body-id"
+				},
+				children: []
+			}
+		]
+	},
+	tableHeaderAndFooter: {
+		tagName: "div",
+		attributes: {
+			"data-role": "table-parent",
+			id: "table-simple-id"
+		},
+		children: [{
+			tagName: "table",
+			attributes: {
+				class: "table table-hover table-striped align-middle border mb-0",
+				id: "table-simple-table-id"
+			},
+			children: [
+				{
+					tagName: "colgroup",
+					attributes: {
+						"data-role": "table-colgroup",
+						id: "table-simple-colgroup-id"
+					},
+					children: []
+				},
+				{
+					tagName: "thead",
+					attributes: {
+						class: "table-dark",
+						"data-role": "table-header",
+						id: "table-simple-header-id"
+					},
+					children: [{
+						tagName: "tr",
+						attributes: {
+							"data-role": "table-header-row",
+							id: "table-simple-header-row-id"
+						},
+						children: []
+					}]
+				},
+				{
+					tagName: "tbody",
+					attributes: {
+						"data-role": "table-body",
+						id: "table-simple-body-id"
+					},
+					children: []
+				},
+				{
+					tagName: "tfoot",
+					attributes: {
+						"data-role": "table-footer",
+						id: "table-simple-footer-id"
+					},
+					children: [{
+						tagName: "tr",
+						attributes: {
+							"data-role": "table-footer-row",
+							id: "table-simple-footer-row-id"
+						},
+						children: []
+					}]
+				}
+			]
+		}]
 	}
-}, rn = {
+}, nn = {
 	$schema: "./tags.schema.json",
 	div: {
 		allowsTextContent: !1,
@@ -3109,7 +3544,7 @@ var Jt = (e, t) => e.map((e) => ({
 		allowsChildren: !1,
 		allowedAttributes: []
 	}
-}, an = {
+}, rn = {
 	$schema: "https://json-schema.org/draft/2020-12/schema",
 	title: "TagsCatalogSchema",
 	description: "JSON Schema for @keshavsoft/spec-repo tags.json catalog",
@@ -3143,8 +3578,8 @@ var Jt = (e, t) => e.map((e) => ({
 		},
 		additionalProperties: !1
 	} }
-}, on = {
-	table: /* @__PURE__ */ JSON.parse("{\"simple\":{\"base\":{\"tagName\":\"div\",\"attributes\":{\"data-role\":\"table-parent\",\"id\":\"table-simple-id\"},\"children\":[{\"tagName\":\"table\",\"attributes\":{\"class\":\"table table-hover table-striped align-middle border mb-0\",\"id\":\"table-simple-table-id\"},\"children\":[{\"tagName\":\"colgroup\",\"attributes\":{\"data-role\":\"table-colgroup\",\"id\":\"table-simple-colgroup-id\"},\"children\":[]},{\"tagName\":\"thead\",\"attributes\":{\"class\":\"table-dark\",\"data-role\":\"table-header\",\"id\":\"table-simple-header-id\"},\"children\":[{\"tagName\":\"tr\",\"attributes\":{\"data-role\":\"table-header-row\",\"id\":\"table-simple-header-row-id\"},\"children\":[]}]},{\"tagName\":\"tbody\",\"attributes\":{\"data-role\":\"table-body\",\"id\":\"table-simple-body-id\"},\"children\":[]},{\"tagName\":\"tfoot\",\"attributes\":{\"data-role\":\"table-footer\",\"id\":\"table-simple-footer-id\"},\"children\":[{\"tagName\":\"tr\",\"attributes\":{\"data-role\":\"table-footer-row\",\"id\":\"table-simple-footer-row-id\"},\"children\":[]}]}]}]},\"single\":[{\"narration\":\"Build column widths\",\"destinationPath\":{\"fileName\":\"base\",\"filePath\":[\"children\"],\"jsonPath\":\"$..*[?@.attributes['data-role'] == 'table-colgroup']\"},\"sourcePath\":{\"fileName\":\"data\",\"jsonPath\":\"$.columns\"},\"templateKey\":\"buildColGroup\",\"func\":\"fromCollection\"},{\"narration\":\"Build table header\",\"destinationPath\":{\"fileName\":\"base\",\"filePath\":[\"children\"],\"jsonPath\":\"$..*[?@.attributes['data-role'] == 'table-header-row']\"},\"sourcePath\":{\"fileName\":\"data\",\"jsonPath\":\"$.columns\"},\"templateKey\":\"buildHeader\",\"func\":\"fromCollection\"}],\"rowOnColumn\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"jsonPath\":\"$.children[0].children[?(@.attributes['data-role'] == 'table-body')]\",\"filePath\":[\"children\"]},\"templateKey\":{\"rowKey\":\"buildBodyTr\",\"columnKey\":\"buildBodyCell\"}}],\"options\":{\"serial\":[{\"narration\":\"Prepend the serial column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"colGroupForSerial\",\"func\":null},{\"narration\":\"Prepend the serial header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null},{\"narration\":\"Prepend the serial number cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"unshiftSerialToRows\"},\"sourcePath\":null,\"templateKey\":\"buildBodyCell\",\"func\":null},{\"narration\":\"Prepend the serial footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null}],\"options\":[{\"narration\":\"Append the options column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"colGroupForOption\",\"func\":null},{\"narration\":\"Append the options header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"headerForOption\",\"func\":null},{\"narration\":\"Append the options button cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"pushToRows\"},\"sourcePath\":null,\"templateKey\":\"optionsButtonCell\",\"func\":null},{\"narration\":\"Append the options footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"tdWithButtonSaveWarning\",\"func\":null}],\"search\":[{\"narration\":\"Prepend the search row to top of the table.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-parent\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"tableSearch\",\"func\":null}]}},\"withFooter\":{\"base\":{\"tagName\":\"table\",\"attributes\":{\"class\":\"table table-hover table-striped align-middle border mb-0\",\"id\":\"table-with-footer-id\"},\"children\":[{\"tagName\":\"colgroup\",\"attributes\":{\"data-role\":\"table-colgroup\",\"id\":\"table-with-footer-colgroup-id\"},\"children\":[]},{\"tagName\":\"thead\",\"attributes\":{\"class\":\"table-dark\",\"data-role\":\"table-header\",\"id\":\"table-with-footer-header-id\"},\"children\":[{\"tagName\":\"tr\",\"attributes\":{\"data-role\":\"table-header-row\",\"id\":\"table-with-footer-header-row-id\"},\"children\":[]}]},{\"tagName\":\"tbody\",\"attributes\":{\"data-role\":\"table-body\",\"id\":\"table-with-footer-body-id\"},\"children\":[]},{\"tagName\":\"tfoot\",\"attributes\":{\"data-role\":\"table-footer\",\"id\":\"table-with-footer-footer-id\"},\"children\":[{\"tagName\":\"tr\",\"attributes\":{\"data-role\":\"table-footer-row\",\"id\":\"table-with-footer-footer-row-id\"},\"children\":[]}]}]},\"single\":[{\"narration\":\"Build column widths\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildColGroup\",\"func\":\"fromCollection\"},{\"narration\":\"Build table header\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildHeader\",\"func\":\"fromCollection\"},{\"narration\":\"Build footer input cells\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildFooter\",\"func\":\"fromCollection\"}],\"double\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"func\":\"twoDimensional\"}]},\"bodyOnly\":{\"base\":{\"tagName\":\"div\",\"attributes\":{\"id\":\"ks-id\"},\"children\":[]},\"rowOnColumn\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"jsonPath\":\"$\",\"filePath\":[\"children\"]},\"destinationPath1\":{\"fileName\":\"base\",\"jsonPath\":\"$.children[0].children[?(@.attributes['data-role'] == 'table-body')]\",\"filePath\":[\"children\"]},\"templateKey\":{\"rowKey\":\"buildBodyTr\",\"columnKey\":\"buildBodyCell\"}}],\"options\":{\"serial\":[{\"narration\":\"Prepend the serial column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"colGroupForSerial\",\"func\":null},{\"narration\":\"Prepend the serial header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null},{\"narration\":\"Prepend the serial number cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"unshiftSerialToRows\"},\"sourcePath\":null,\"templateKey\":\"buildBodyCell\",\"func\":null},{\"narration\":\"Prepend the serial footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null}],\"options\":[{\"narration\":\"Append the options column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"colGroupForOption\",\"func\":null},{\"narration\":\"Append the options header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"headerForOption\",\"func\":null},{\"narration\":\"Append the options button cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"pushToRows\"},\"sourcePath\":null,\"templateKey\":\"optionsButtonCell\",\"func\":null},{\"narration\":\"Append the options footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"tdWithButtonSaveWarning\",\"func\":null}],\"search\":[{\"narration\":\"Prepend the search row to top of the table.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-parent\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"tableSearch\",\"func\":null}]}},\"bodyOnly1\":{\"base\":{\"tagName\":\"tbody\",\"attributes\":{\"data-role\":\"table-body\",\"id\":\"table-body-only-id\"},\"children\":[]},\"single\":[],\"double\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"func\":\"twoDimensional\"}]},\"footerOnly\":{\"base\":{\"tagName\":\"tfoot\",\"attributes\":{\"data-role\":\"table-footer\",\"id\":\"table-footer-only-id\"},\"children\":[{\"tagName\":\"tr\",\"attributes\":{\"data-role\":\"table-footer-row\",\"id\":\"table-footer-only-footer-row-id\"},\"children\":[]}]},\"single\":[{\"narration\":\"Build footer input cells\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildFooter\",\"func\":\"fromCollection\"}],\"double\":[]},\"headerOnly\":{\"base\":{\"tagName\":\"div\",\"attributes\":{\"data-role\":\"table-parent\",\"id\":\"table-simple-id\"},\"children\":[{\"tagName\":\"table\",\"attributes\":{\"class\":\"table table-hover table-striped align-middle border mb-0\",\"id\":\"table-simple-table-id\"},\"children\":[{\"tagName\":\"colgroup\",\"attributes\":{\"data-role\":\"table-colgroup\",\"id\":\"table-simple-colgroup-id\"},\"children\":[]},{\"tagName\":\"thead\",\"attributes\":{\"class\":\"table-dark\",\"data-role\":\"table-header\",\"id\":\"table-simple-header-id\"},\"children\":[{\"tagName\":\"tr\",\"attributes\":{\"data-role\":\"table-header-row\",\"id\":\"table-simple-header-row-id\"},\"children\":[]}]},{\"tagName\":\"tbody\",\"attributes\":{\"data-role\":\"table-body\",\"id\":\"table-simple-body-id\"},\"children\":[]},{\"tagName\":\"tfoot\",\"attributes\":{\"data-role\":\"table-footer\",\"id\":\"table-simple-footer-id\"},\"children\":[{\"tagName\":\"tr\",\"attributes\":{\"data-role\":\"table-footer-row\",\"id\":\"table-simple-footer-row-id\"},\"children\":[]}]}]}]},\"single\":[{\"narration\":\"Build column widths\",\"destinationPath\":{\"fileName\":\"base\",\"filePath\":[\"children\"],\"jsonPath\":\"$..*[?@.attributes['data-role'] == 'table-colgroup']\"},\"sourcePath\":{\"fileName\":\"data\",\"jsonPath\":\"$.columns\"},\"templateKey\":\"buildColGroup\",\"func\":\"fromCollection\"},{\"narration\":\"Build table header\",\"destinationPath\":{\"fileName\":\"base\",\"filePath\":[\"children\"],\"jsonPath\":\"$..*[?@.attributes['data-role'] == 'table-header-row']\"},\"sourcePath\":{\"fileName\":\"data\",\"jsonPath\":\"$.columns\"},\"templateKey\":\"buildHeader\",\"func\":\"fromCollection\"}],\"options\":{\"serial\":[{\"narration\":\"Prepend the serial column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"colGroupForSerial\",\"func\":null},{\"narration\":\"Prepend the serial header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null},{\"narration\":\"Prepend the serial number cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"unshiftSerialToRows\"},\"sourcePath\":null,\"templateKey\":\"buildBodyCell\",\"func\":null},{\"narration\":\"Prepend the serial footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null}],\"options\":[{\"narration\":\"Append the options column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"colGroupForOption\",\"func\":null},{\"narration\":\"Append the options header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"headerForOption\",\"func\":null},{\"narration\":\"Append the options button cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"pushToRows\"},\"sourcePath\":null,\"templateKey\":\"optionsButtonCell\",\"func\":null},{\"narration\":\"Append the options footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"tdWithButtonSaveWarning\",\"func\":null}],\"search\":[{\"narration\":\"Prepend the search row to top of the table.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-parent\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"tableSearch\",\"func\":null}]}},\"headerOnly1\":{\"base\":{\"tagName\":\"table\",\"attributes\":{\"class\":\"table table-hover table-striped align-middle border mb-0\",\"id\":\"table-header-only-id\"},\"children\":[{\"tagName\":\"colgroup\",\"attributes\":{\"data-role\":\"table-colgroup\",\"id\":\"table-header-only-colgroup-id\"},\"children\":[]},{\"tagName\":\"thead\",\"attributes\":{\"class\":\"table-dark\",\"data-role\":\"table-header\",\"id\":\"table-header-only-header-id\"},\"children\":[{\"tagName\":\"tr\",\"attributes\":{\"data-role\":\"table-header-row\",\"id\":\"table-header-only-header-row-id\"},\"children\":[]}]},{\"tagName\":\"tbody\",\"attributes\":{\"data-role\":\"table-body\",\"id\":\"table-header-only-body-id\"},\"children\":[]}]},\"single\":[{\"narration\":\"Build column widths\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildColGroup\",\"func\":\"fromCollection\"},{\"narration\":\"Build table header\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildHeader\",\"func\":\"fromCollection\"}],\"double\":[]},\"options\":{\"serial\":[{\"narration\":\"Prepend the serial column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"colGroupForSerial\",\"func\":null},{\"narration\":\"Prepend the serial header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null},{\"narration\":\"Prepend the serial number cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"unshiftSerialToRows\"},\"sourcePath\":null,\"templateKey\":\"buildBodyCell\",\"func\":null},{\"narration\":\"Prepend the serial footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null}],\"options\":[{\"narration\":\"Append the options column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"colGroupForOption\",\"func\":null},{\"narration\":\"Append the options header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"headerForOption\",\"func\":null},{\"narration\":\"Append the options button cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"pushToRows\"},\"sourcePath\":null,\"templateKey\":\"optionsButtonCell\",\"func\":null},{\"narration\":\"Append the options footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"tdWithButtonSaveWarning\",\"func\":null}],\"search\":[{\"narration\":\"Prepend the search row to top of the table.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-parent\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"tableSearch\",\"func\":null}]},\"headerAndFooter\":{\"base\":{\"tagName\":\"div\",\"attributes\":{\"data-role\":\"table-parent\",\"id\":\"table-simple-id\"},\"children\":[{\"tagName\":\"table\",\"attributes\":{\"class\":\"table table-hover table-striped align-middle border mb-0\",\"id\":\"table-simple-table-id\"},\"children\":[{\"tagName\":\"colgroup\",\"attributes\":{\"data-role\":\"table-colgroup\",\"id\":\"table-simple-colgroup-id\"},\"children\":[]},{\"tagName\":\"thead\",\"attributes\":{\"class\":\"table-dark\",\"data-role\":\"table-header\",\"id\":\"table-simple-header-id\"},\"children\":[{\"tagName\":\"tr\",\"attributes\":{\"data-role\":\"table-header-row\",\"id\":\"table-simple-header-row-id\"},\"children\":[]}]},{\"tagName\":\"tbody\",\"attributes\":{\"data-role\":\"table-body\",\"id\":\"table-simple-body-id\"},\"children\":[]},{\"tagName\":\"tfoot\",\"attributes\":{\"data-role\":\"table-footer\",\"id\":\"table-simple-footer-id\"},\"children\":[{\"tagName\":\"tr\",\"attributes\":{\"data-role\":\"table-footer-row\",\"id\":\"table-simple-footer-row-id\"},\"children\":[]}]}]}]},\"single\":[{\"narration\":\"Build column widths\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildColGroup\",\"func\":\"fromCollection\"},{\"narration\":\"Build table header\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildHeader\",\"func\":\"fromCollection\"}],\"double\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":{\"rowKey\":\"buildBodyTr\",\"columnKey\":\"buildBodyCell\"},\"func\":\"twoDimensional\"}],\"rowOnColumn\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"]},\"templateKey\":{\"rowKey\":\"buildBodyTr\",\"columnKey\":\"buildBodyCell\"}}],\"options\":{\"serial\":[{\"narration\":\"Prepend the serial column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"colGroupForSerial\",\"func\":null},{\"narration\":\"Prepend the serial header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null},{\"narration\":\"Prepend the serial number cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"unshiftSerialToRows\"},\"sourcePath\":null,\"templateKey\":\"buildBodyCell\",\"func\":null},{\"narration\":\"Prepend the serial footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null}],\"options\":[{\"narration\":\"Append the options column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"colGroupForOption\",\"func\":null},{\"narration\":\"Append the options header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"headerForOption\",\"func\":null},{\"narration\":\"Append the options button cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"pushToRows\"},\"sourcePath\":null,\"templateKey\":\"optionsButtonCell\",\"func\":null},{\"narration\":\"Append the options footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"tdWithButtonSaveWarning\",\"func\":null}],\"search\":[{\"narration\":\"Prepend the search row to top of the table.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-parent\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"tableSearch\",\"func\":null}]}}}"),
+}, an = {
+	table: /* @__PURE__ */ JSON.parse("{\"simple\":{\"single\":[{\"narration\":\"Build column widths\",\"destinationPath\":{\"fileName\":\"base\",\"filePath\":[\"children\"],\"jsonPath\":\"$..*[?@.attributes['data-role'] == 'table-colgroup']\"},\"sourcePath\":{\"fileName\":\"data\",\"jsonPath\":\"$.columns\"},\"templateKey\":\"buildColGroup\",\"func\":\"fromCollection\"},{\"narration\":\"Build table header\",\"destinationPath\":{\"fileName\":\"base\",\"filePath\":[\"children\"],\"jsonPath\":\"$..*[?@.attributes['data-role'] == 'table-header-row']\"},\"sourcePath\":{\"fileName\":\"data\",\"jsonPath\":\"$.columns\"},\"templateKey\":\"buildHeader\",\"func\":\"fromCollection\"}],\"rowOnColumn\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"jsonPath\":\"$.children[0].children[?(@.attributes['data-role'] == 'table-body')]\",\"filePath\":[\"children\"]},\"templateKey\":{\"rowKey\":\"buildBodyTr\",\"columnKey\":\"buildBodyCell\"}}],\"options\":{\"serial\":[{\"narration\":\"Prepend the serial column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"colGroupForSerial\",\"func\":null},{\"narration\":\"Prepend the serial header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null},{\"narration\":\"Prepend the serial number cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"unshiftSerialToRows\"},\"sourcePath\":null,\"templateKey\":\"buildBodyCell\",\"func\":null},{\"narration\":\"Prepend the serial footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null}],\"options\":[{\"narration\":\"Append the options column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"colGroupForOption\",\"func\":null},{\"narration\":\"Append the options header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"headerForOption\",\"func\":null},{\"narration\":\"Append the options button cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"pushToRows\"},\"sourcePath\":null,\"templateKey\":\"optionsButtonCell\",\"func\":null},{\"narration\":\"Append the options footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"tdWithButtonSaveWarning\",\"func\":null}],\"search\":[{\"narration\":\"Prepend the search row to top of the table.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-parent\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"tableSearch\",\"func\":null}]},\"baseFromSpec\":\"tableSimple\"},\"withFooter\":{\"single\":[{\"narration\":\"Build column widths\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildColGroup\",\"func\":\"fromCollection\"},{\"narration\":\"Build table header\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildHeader\",\"func\":\"fromCollection\"},{\"narration\":\"Build footer input cells\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildFooter\",\"func\":\"fromCollection\"}],\"double\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"func\":\"twoDimensional\"}],\"baseFromSpec\":\"tableWithFooter\"},\"bodyOnly\":{\"rowOnColumn\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"jsonPath\":\"$\",\"filePath\":[\"children\"]},\"destinationPath1\":{\"fileName\":\"base\",\"jsonPath\":\"$.children[0].children[?(@.attributes['data-role'] == 'table-body')]\",\"filePath\":[\"children\"]},\"templateKey\":{\"rowKey\":\"buildBodyTr\",\"columnKey\":\"buildBodyCell\"}}],\"options\":{\"serial\":[{\"narration\":\"Prepend the serial column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"colGroupForSerial\",\"func\":null},{\"narration\":\"Prepend the serial header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null},{\"narration\":\"Prepend the serial number cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"unshiftSerialToRows\"},\"sourcePath\":null,\"templateKey\":\"buildBodyCell\",\"func\":null},{\"narration\":\"Prepend the serial footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null}],\"options\":[{\"narration\":\"Append the options column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"colGroupForOption\",\"func\":null},{\"narration\":\"Append the options header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"headerForOption\",\"func\":null},{\"narration\":\"Append the options button cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"pushToRows\"},\"sourcePath\":null,\"templateKey\":\"optionsButtonCell\",\"func\":null},{\"narration\":\"Append the options footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"tdWithButtonSaveWarning\",\"func\":null}],\"search\":[{\"narration\":\"Prepend the search row to top of the table.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-parent\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"tableSearch\",\"func\":null}]},\"baseFromSpec\":\"tableBodyOnly\"},\"bodyOnly1\":{\"single\":[],\"double\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"func\":\"twoDimensional\"}],\"baseFromSpec\":\"tableBodyOnly1\"},\"footerOnly\":{\"single\":[{\"narration\":\"Build footer input cells\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildFooter\",\"func\":\"fromCollection\"}],\"double\":[],\"baseFromSpec\":\"tableFooterOnly\"},\"headerOnly\":{\"single\":[{\"narration\":\"Build column widths\",\"destinationPath\":{\"fileName\":\"base\",\"filePath\":[\"children\"],\"jsonPath\":\"$..*[?@.attributes['data-role'] == 'table-colgroup']\"},\"sourcePath\":{\"fileName\":\"data\",\"jsonPath\":\"$.columns\"},\"templateKey\":\"buildColGroup\",\"func\":\"fromCollection\"},{\"narration\":\"Build table header\",\"destinationPath\":{\"fileName\":\"base\",\"filePath\":[\"children\"],\"jsonPath\":\"$..*[?@.attributes['data-role'] == 'table-header-row']\"},\"sourcePath\":{\"fileName\":\"data\",\"jsonPath\":\"$.columns\"},\"templateKey\":\"buildHeader\",\"func\":\"fromCollection\"}],\"options\":{\"serial\":[{\"narration\":\"Prepend the serial column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"colGroupForSerial\",\"func\":null},{\"narration\":\"Prepend the serial header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null},{\"narration\":\"Prepend the serial number cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"unshiftSerialToRows\"},\"sourcePath\":null,\"templateKey\":\"buildBodyCell\",\"func\":null},{\"narration\":\"Prepend the serial footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null}],\"options\":[{\"narration\":\"Append the options column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"colGroupForOption\",\"func\":null},{\"narration\":\"Append the options header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"headerForOption\",\"func\":null},{\"narration\":\"Append the options button cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"pushToRows\"},\"sourcePath\":null,\"templateKey\":\"optionsButtonCell\",\"func\":null},{\"narration\":\"Append the options footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"tdWithButtonSaveWarning\",\"func\":null}],\"search\":[{\"narration\":\"Prepend the search row to top of the table.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-parent\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"tableSearch\",\"func\":null}]},\"baseFromSpec\":\"tableHeaderOnly\"},\"headerOnly1\":{\"single\":[{\"narration\":\"Build column widths\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildColGroup\",\"func\":\"fromCollection\"},{\"narration\":\"Build table header\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildHeader\",\"func\":\"fromCollection\"}],\"double\":[],\"baseFromSpec\":\"tableHeaderOnly1\"},\"options\":{\"serial\":[{\"narration\":\"Prepend the serial column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"colGroupForSerial\",\"func\":null},{\"narration\":\"Prepend the serial header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null},{\"narration\":\"Prepend the serial number cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"unshiftSerialToRows\"},\"sourcePath\":null,\"templateKey\":\"buildBodyCell\",\"func\":null},{\"narration\":\"Prepend the serial footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null}],\"options\":[{\"narration\":\"Append the options column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"colGroupForOption\",\"func\":null},{\"narration\":\"Append the options header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"headerForOption\",\"func\":null},{\"narration\":\"Append the options button cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"pushToRows\"},\"sourcePath\":null,\"templateKey\":\"optionsButtonCell\",\"func\":null},{\"narration\":\"Append the options footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"tdWithButtonSaveWarning\",\"func\":null}],\"search\":[{\"narration\":\"Prepend the search row to top of the table.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-parent\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"tableSearch\",\"func\":null}]},\"headerAndFooter\":{\"single\":[{\"narration\":\"Build column widths\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildColGroup\",\"func\":\"fromCollection\"},{\"narration\":\"Build table header\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":\"buildHeader\",\"func\":\"fromCollection\"}],\"double\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"]},\"sourcePath\":{\"fileName\":\"data\",\"filePath\":[\"columns\"]},\"templateKey\":{\"rowKey\":\"buildBodyTr\",\"columnKey\":\"buildBodyCell\"},\"func\":\"twoDimensional\"}],\"rowOnColumn\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"]},\"templateKey\":{\"rowKey\":\"buildBodyTr\",\"columnKey\":\"buildBodyCell\"}}],\"options\":{\"serial\":[{\"narration\":\"Prepend the serial column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"colGroupForSerial\",\"func\":null},{\"narration\":\"Prepend the serial header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null},{\"narration\":\"Prepend the serial number cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"unshiftSerialToRows\"},\"sourcePath\":null,\"templateKey\":\"buildBodyCell\",\"func\":null},{\"narration\":\"Prepend the serial footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null}],\"options\":[{\"narration\":\"Append the options column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"colGroupForOption\",\"func\":null},{\"narration\":\"Append the options header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"headerForOption\",\"func\":null},{\"narration\":\"Append the options button cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"pushToRows\"},\"sourcePath\":null,\"templateKey\":\"optionsButtonCell\",\"func\":null},{\"narration\":\"Append the options footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"tdWithButtonSaveWarning\",\"func\":null}],\"search\":[{\"narration\":\"Prepend the search row to top of the table.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-parent\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"tableSearch\",\"func\":null}]},\"baseFromSpec\":\"tableHeaderAndFooter\"},\"withSearch\":{\"baseFromSpec\":\"tableWithSearch\",\"single\":[{\"narration\":\"Build column widths\",\"destinationPath\":{\"fileName\":\"base\",\"filePath\":[\"children\"],\"jsonPath\":\"$..*[?@.attributes['data-role'] == 'table-colgroup']\"},\"sourcePath\":{\"fileName\":\"data\",\"jsonPath\":\"$.columns\"},\"templateKey\":\"buildColGroup\",\"func\":\"fromCollection\"},{\"narration\":\"Build table header\",\"destinationPath\":{\"fileName\":\"base\",\"filePath\":[\"children\"],\"jsonPath\":\"$..*[?@.attributes['data-role'] == 'table-header-row']\"},\"sourcePath\":{\"fileName\":\"data\",\"jsonPath\":\"$.columns\"},\"templateKey\":\"buildHeader\",\"func\":\"fromCollection\"}],\"rowOnColumn\":[{\"narration\":\"Build table body\",\"destinationPath\":{\"fileName\":\"base\",\"filePath\":[\"children\"],\"jsonPath\":\"$..*[?@.attributes['data-role'] == 'table-body']\"},\"templateKey\":{\"rowKey\":\"buildBodyTr\",\"columnKey\":\"buildBodyCell\"}}],\"options\":{\"serial\":[{\"narration\":\"Prepend the serial column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"colGroupForSerial\",\"func\":null},{\"narration\":\"Prepend the serial header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null},{\"narration\":\"Prepend the serial number cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"unshiftSerialToRows\"},\"sourcePath\":null,\"templateKey\":\"buildBodyCell\",\"func\":null},{\"narration\":\"Prepend the serial footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"headerSerialCell\",\"func\":null}],\"options\":[{\"narration\":\"Append the options column width to the table colgroup.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-colgroup\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"colGroupForOption\",\"func\":null},{\"narration\":\"Append the options header cell to the table header row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-header-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"headerForOption\",\"func\":null},{\"narration\":\"Append the options button cell into each table body row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-body\",\"filePath\":[\"children\"],\"action\":\"pushToRows\"},\"sourcePath\":null,\"templateKey\":\"optionsButtonCell\",\"func\":null},{\"narration\":\"Append the options footer cell to the table footer row.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-footer-row\",\"filePath\":[\"children\"],\"action\":\"push\"},\"sourcePath\":null,\"templateKey\":\"tdWithButtonSaveWarning\",\"func\":null}],\"search\":[{\"narration\":\"Prepend the search row to top of the table.\",\"destinationPath\":{\"fileName\":\"base\",\"dataRole\":\"table-parent\",\"filePath\":[\"children\"],\"action\":\"unshift\"},\"sourcePath\":null,\"templateKey\":\"tableSearch\",\"func\":null}]}}}"),
 	select: {
 		base: {
 			tagName: "div",
@@ -3431,29 +3866,29 @@ var Jt = (e, t) => e.map((e) => ({
 		}],
 		double: []
 	}
-}, sn = {
+}, on = {
 	name: "spec-repo",
-	version: "1.6.1"
-}, cn = ({ spec: e, tags: t, tagsSchema: n, definitions: r }) => {
+	version: "1.12.1"
+}, sn = ({ spec: e, tags: t, tagsSchema: n, definitions: r }) => {
 	typeof globalThis < "u" && e && t && n && r && (globalThis.ks ??= {}, globalThis.ks.specs ??= {}, globalThis.ks.specs.jsonFiles = {
-		meta: sn,
+		meta: on,
 		spec: e,
 		tags: t,
 		tagsSchema: n,
 		definitions: r
 	});
-}, R = nn;
-cn({
-	spec: nn,
-	tags: rn,
-	tagsSchema: an,
-	definitions: on
+}, z = tn;
+sn({
+	spec: tn,
+	tags: nn,
+	tagsSchema: rn,
+	definitions: an
 });
 // node_modules/json-instruction-single/src/v8/getResult.js
-var ln = {
+var cn = {
 	applyTemplate: I,
 	fromCollection: L
-}, un = (e, t, n) => {
+}, ln = (e, t, n) => {
 	let r = e?.sourcePath;
 	if (r === null) return null;
 	if (r?.jsonPath) {
@@ -3463,39 +3898,39 @@ var ln = {
 		if (i.length !== 1) throw Error(`Source JSONPath must identify exactly one value; matched ${i.length}: ${r.jsonPath}`);
 		return n && console.log("json-instruction-single v8 source:", r, i[0]), i[0];
 	}
-	return tn(t, r);
-}, dn = (e, t, n) => {
-	let r = (t?.spec ?? R)[e.templateKey], i = un(e, t, n), a = e?.func === null ? r : ln[e.func](i, r);
+	return en(t, r);
+}, un = (e, t, n) => {
+	let r = (t?.spec ?? z)[e.templateKey], i = ln(e, t, n), a = e?.func === null ? r : cn[e.func](i, r);
 	return i === null ? r : a;
-}, fn = (e, t, n) => {
+}, dn = (e, t, n) => {
 	n && console.log("runSingleInstruction v8:", e);
-	let r = dn(e, t, n);
-	return n && console.log("runSingleInstruction v8 result:", r), $t(t, e.destinationPath, r, n), r;
-}, pn = (e, t, n, r) => (e.forEach((e) => fn(e, t, n, r)), t), mn = {
+	let r = un(e, t, n);
+	return n && console.log("runSingleInstruction v8 result:", r), R(t, e.destinationPath, r, n), r;
+}, fn = (e, t, n, r) => (e.forEach((e) => dn(e, t, n, r)), t), pn = {
 	applyTemplate: I,
 	fromCollection: L,
 	twoDimensional: Xt
-}, hn = ({ instruction: e, registry: t, showLog: n, returnLog: r }) => {
-	let i = R, a = mn[e.func]({
+}, mn = ({ instruction: e, registry: t, showLog: n, returnLog: r }) => {
+	let i = z, a = pn[e.func]({
 		columns: t?.data?.columns,
 		data: t?.data?.data,
 		columnSpec: i[e?.templateKey?.columnKey],
 		rowSpec: i[e?.templateKey?.rowKey]
 	});
-	$t(t, e.destinationPath, a);
-}, gn = ({ instructions: e, registry: t, showLog: n, returnLog: r }) => {
+	R(t, e.destinationPath, a);
+}, hn = ({ instructions: e, registry: t, showLog: n, returnLog: r }) => {
 	e.forEach((e) => {
-		hn({
+		mn({
 			instruction: e,
 			registry: t,
 			showLog: n,
 			returnLog: r
 		});
 	});
-}, _n = (e, t) => e.map((e) => ({
+}, gn = (e, t) => e.map((e) => ({
 	...e,
 	rowData: t[e.columnName]
-})), vn = (e, t) => {
+})), _n = (e, t) => {
 	if (!Array.isArray(e)) throw TypeError("inColumns must be an Array");
 	if (e.length === 0) throw Error("inColumns cannot be empty");
 	for (let t = 0; t < e.length; t++) {
@@ -3509,13 +3944,13 @@ var ln = {
 		if (!n || typeof n != "object") throw TypeError(`inData[${e}] must be an object`);
 	}
 	return !0;
-}, yn = ({ columns: e, data: t, columnSpec: n, rowSpec: r }) => (vn(e, t), t.map((t) => {
+}, vn = ({ columns: e, data: t, columnSpec: n, rowSpec: r }) => (_n(e, t), t.map((t) => {
 	let i = I(t, r);
-	return i.children = L(_n(e, t), n), i;
-})), bn = (e, t) => t.map((t) => ({
+	return i.children = L(gn(e, t), n), i;
+})), yn = (e, t) => t.map((t) => ({
 	...e,
 	rowData: t[e.columnName]
-})), xn = (e, t) => {
+})), bn = (e, t) => {
 	if (!Array.isArray(e)) throw TypeError("inColumns must be an Array");
 	if (e.length === 0) throw Error("inColumns cannot be empty");
 	for (let t = 0; t < e.length; t++) {
@@ -3529,36 +3964,36 @@ var ln = {
 		if (!n || typeof n != "object") throw TypeError(`inData[${e}] must be an object`);
 	}
 	return !0;
-}, Sn = ({ columns: e, data: t, columnSpec: n, rowSpec: r }) => (xn(e, t), e.map((e) => {
+}, xn = ({ columns: e, data: t, columnSpec: n, rowSpec: r }) => (bn(e, t), e.map((e) => {
 	let i = I(e, n);
-	return i.children = t.length > 0 ? L(bn(e, t), r) : [], i;
-})), Cn = ({ instructions: e = [], base: t, data: n, showLog: r = !1 } = {}) => {
+	return i.children = t.length > 0 ? L(yn(e, t), r) : [], i;
+})), Sn = ({ instructions: e = [], base: t, data: n, showLog: r = !1 } = {}) => {
 	e.forEach((e) => {
-		let i = R[e?.templateKey?.columnKey], a = R[e?.templateKey?.rowKey], o = yn({
+		let i = z[e?.templateKey?.columnKey], a = z[e?.templateKey?.rowKey], o = vn({
 			columns: n?.columns,
 			data: n?.data,
 			columnSpec: i,
 			rowSpec: a
 		});
-		r && console.log("[runInstructions:rowOnColumn]", e.narration, o), $t({
+		r && console.log("[runInstructions:rowOnColumn]", e.narration, o), R({
 			base: t,
 			data: n
 		}, e.destinationPath, o);
 	});
-}, wn = ({ instructions: e = [], base: t, data: n, showLog: r = !1 } = {}) => {
+}, Cn = ({ instructions: e = [], base: t, data: n, showLog: r = !1 } = {}) => {
 	e.forEach((e) => {
-		let i = R[e?.templateKey?.columnKey], a = R[e?.templateKey?.rowKey], o = Sn({
+		let i = z[e?.templateKey?.columnKey], a = z[e?.templateKey?.rowKey], o = xn({
 			columns: n?.columns,
 			data: n?.data,
 			columnSpec: i,
 			rowSpec: a
 		});
-		r && console.log("[runInstructions:columnOnRow]", e.narration, o), $t({
+		r && console.log("[runInstructions:columnOnRow]", e.narration, o), R({
 			base: t,
 			data: n
 		}, e.destinationPath, o);
 	});
-}, Tn = ({ single: e = [], double: t = [], rowOnColumn: n = [], columnOnRow: r = [], base: i, data: a, showLog: o = !1 } = {}) => {
+}, wn = ({ single: e = [], double: t = [], rowOnColumn: n = [], columnOnRow: r = [], base: i, data: a, showLog: o = !1 } = {}) => {
 	if (o && console.log("runInstructions input:", {
 		single: e,
 		double: t,
@@ -3574,103 +4009,106 @@ var ln = {
 		base: i,
 		data: a
 	};
-	return e.length > 0 && pn(e, s, o), t.length > 0 && gn({
+	return e.length > 0 && fn(e, s, o), t.length > 0 && hn({
 		instructions: t,
 		registry: s,
 		showLog: o
-	}), n.length > 0 && Cn({
+	}), n.length > 0 && Sn({
 		instructions: n,
 		base: i,
 		data: a,
 		showLog: o
-	}), r.length > 0 && wn({
+	}), r.length > 0 && Cn({
 		instructions: r,
 		base: i,
 		data: a,
 		showLog: o
 	}), s;
-}, En = (e, t) => !e || typeof e != "object" ? !1 : e.attributes?.["data-role"] === t || Array.isArray(e.children) && e.children.some((e) => En(e, t)), Dn = (e = [], t) => e.filter(({ destinationPath: e }) => En(t, e?.dataRole)), On = ({ base: e, options: t = {}, optionDefs: n = {}, showLog: r = !1 } = {}) => {
+}, Tn = (e, t) => !e || typeof e != "object" ? !1 : e.attributes?.["data-role"] === t || Array.isArray(e.children) && e.children.some((e) => Tn(e, t)), En = (e = [], t) => e.filter(({ destinationPath: e }) => Tn(t, e?.dataRole)), Dn = ({ base: e, options: t = {}, optionDefs: n = {}, showLog: r = !1 } = {}) => {
 	if (!e) return e;
 	let i = { base: e };
 	if (t.showSearch && n.search) {
-		let t = Dn(n.search, e);
-		r && console.log("[runOptions:search]", t), pn(t, i, r);
+		let t = En(n.search, e);
+		r && console.log("[runOptions:search]", t), fn(t, i, r);
 	}
 	if ((t.showSerial || t.serial) && n.serial) {
-		let t = Dn(n.serial, e);
-		r && console.log("[runOptions:serial]", t), pn(t, i, r);
+		let t = En(n.serial, e);
+		r && console.log("[runOptions:serial]", t), fn(t, i, r);
 	}
 	if ((t.showOptions || t.options) && n.options) {
-		let t = Dn(n.options, e);
-		r && console.log("[runOptions:options]", t), pn(t, i, r);
+		let t = En(n.options, e);
+		r && console.log("[runOptions:options]", t), fn(t, i, r);
 	}
 	return e;
-}, kn = ({ definitions: e = on, type: t = "table.simple", data: n = [], columns: r = [], options: i = {}, showLog: a = !1 } = {}) => {
-	let o = t.split("."), s = o[0], c = o[1], l = e[s], u = c && l?.[c] ? l[c] : l;
-	if (!u) throw Error(`Unknown component definition for type "${t}".`);
-	let d = Tn({
-		single: u.single || [],
-		double: u.double || [],
-		rowOnColumn: u.rowOnColumn || [],
-		columnOnRow: u.columnOnRow || [],
-		base: structuredClone(u.base),
+}, On = ({ definitions: e = an, spec: t = tn, type: n = "table.simple", data: r = [], columns: i = [], options: a = {}, showLog: o = !1 } = {}) => {
+	let s = n.split("."), c = s[0], l = s[1], u = e[c], d = l && u?.[l] ? u[l] : u;
+	if (!d) throw Error(`Unknown component definition for type "${n}".`);
+	let f = d.baseFromSpec ? t[d.baseFromSpec] : d.base;
+	if (!f) throw Error(`Base template not found for type "${n}".`);
+	let p = wn({
+		single: d.single || [],
+		double: d.double || [],
+		rowOnColumn: d.rowOnColumn || [],
+		columnOnRow: d.columnOnRow || [],
+		base: structuredClone(f),
 		data: {
-			columns: r,
-			data: n
+			columns: i,
+			data: r
 		},
-		showLog: a
-	});
-	return On({
-		base: d,
-		options: i,
-		optionDefs: u.options || e[s]?.options || {},
-		showLog: a
-	}), d;
-}, An = ({ definitions: e = on, renderers: t = [], data: n = [], columns: r = [], showLog: i = !1 } = {}) => {
-	if (!Array.isArray(t) || t.length === 0) throw Error("renderers must be a non-empty array of renderer configurations.");
-	return t.map((t) => {
-		let a = typeof t == "string" ? { type: t } : t;
-		return kn({
+		showLog: o
+	}), m = p?.base ?? p;
+	return Dn({
+		base: m,
+		options: a,
+		optionDefs: d.options || e[c]?.options || {},
+		showLog: o
+	}), m;
+}, kn = ({ definitions: e = an, spec: t = tn, renderers: n = [], data: r = [], columns: i = [], showLog: a = !1 } = {}) => {
+	if (!Array.isArray(n) || n.length === 0) throw Error("renderers must be a non-empty array of renderer configurations.");
+	return n.map((n) => {
+		let o = typeof n == "string" ? { type: n } : n, s = On({
 			definitions: e,
-			type: a.type,
-			data: a.data || n,
-			columns: a.columns || r,
-			options: a.options || {},
-			showLog: i
-		})?.base;
+			spec: t,
+			type: o.type,
+			data: o.data || r,
+			columns: o.columns || i,
+			options: o.options || {},
+			showLog: a
+		});
+		return s?.base ?? s;
 	});
-}, jn = {
+}, An = {
 	version: "42.1.4",
 	name: "json-to-dom"
-}, Mn = (e) => {
+}, jn = (e) => {
 	e && (globalThis.ks ??= {}, globalThis.ks.jsonToDom = {
-		meta: jn,
+		meta: An,
 		appendToDom: e
 	});
-}, Nn = {
+}, Mn = {
 	version: "v12",
 	description: "JSON-to-DOM engine powered by decoupled external-action traversal engine"
-}, Pn = (e) => {
+}, Nn = (e) => {
 	if (typeof globalThis > "u" || !e) return;
 	globalThis.ks ??= {};
 	let t = typeof e == "function" ? e : e.buildSpecElement, n = e.buildSpecElementWithValidate, r = {
-		meta: Nn,
+		meta: Mn,
 		buildSpecElement: t,
 		...n ? { buildSpecElementWithValidate: n } : {}
 	};
 	globalThis.ks["json-to-tag"] = r, globalThis.ks.jsonToTag = r;
-}, Fn = ({ inItems: e, inFunc: t }) => {
+}, Pn = ({ inItems: e, inFunc: t }) => {
 	let n = e, r = t;
-	return Array.isArray(n) ? n.map((e) => Ln({
+	return Array.isArray(n) ? n.map((e) => In({
 		inSpec: e,
 		inFunc: r
 	})).flat(Infinity).filter(Boolean) : [];
-}, In = ({ inSpec: e, inFunc: t }) => {
+}, Fn = ({ inSpec: e, inFunc: t }) => {
 	let n = e, r = t;
 	if (!n || typeof n != "object" || Array.isArray(n)) return null;
 	let i = typeof r == "function" ? r(n) : null;
 	if (Array.isArray(n.children)) {
-		let e = Fn({
+		let e = Pn({
 			inItems: n.children,
 			inFunc: r
 		});
@@ -3680,31 +4118,31 @@ var ln = {
 		}
 	}
 	return i;
-}, Ln = ({ inSpec: e, inFunc: t }) => {
+}, In = ({ inSpec: e, inFunc: t }) => {
 	let n = e, r = t;
-	return n == null ? null : typeof Node < "u" && n instanceof Node ? n : Array.isArray(n) ? Fn({
+	return n == null ? null : typeof Node < "u" && n instanceof Node ? n : Array.isArray(n) ? Pn({
 		inItems: n,
 		inFunc: r
-	}) : typeof n == "object" ? In({
+	}) : typeof n == "object" ? Fn({
 		inSpec: n,
 		inFunc: r
 	}) : typeof n == "string" || typeof n == "number" ? typeof document < "u" ? document.createTextNode(String(n)) : String(n) : null;
-}, Rn = ({ inNode: e, inErrors: t }) => {
+}, Ln = ({ inNode: e, inErrors: t }) => {
 	let n = e, r = t;
 	return !n || typeof n != "object" || Array.isArray(n) ? (r.push({ reason: "Node must be a plain object" }), !1) : !0;
-}, zn = ({ inNode: e, inCatalog: t, inErrors: n }) => {
+}, Rn = ({ inNode: e, inCatalog: t, inErrors: n }) => {
 	let r = e, i = t, a = n, o = r.tagName;
 	return !o || typeof o != "string" || o.trim() === "" ? (a.push({ reason: "Missing or empty 'tagName'" }), !1) : i && typeof i == "object" && !(i[o] || Object.keys(i).includes(o)) ? (a.push({
 		tagName: o,
 		reason: `Unrecognized tagName '${o}' not found in spec catalog`
 	}), !1) : !0;
-}, Bn = ({ inNode: e, inCatalog: t, inErrors: n }) => {
+}, zn = ({ inNode: e, inCatalog: t, inErrors: n }) => {
 	let r = e, i = t, a = n, o = r.tagName, s = i ? i[o] : null;
 	return s && s.allowsTextContent === !1 && r.textContent ? (a.push({
 		tagName: o,
 		reason: `Tag '${o}' does not allow direct textContent`
 	}), !1) : !0;
-}, Vn = ({ inNode: e, inCatalog: t, inErrors: n }) => {
+}, Bn = ({ inNode: e, inCatalog: t, inErrors: n }) => {
 	let r = e, i = t, a = n, o = r.tagName, s = i ? i[o] : null;
 	return s && s.allowsChildren === !1 && Array.isArray(r.children) && r.children.length > 0 ? (a.push({
 		tagName: o,
@@ -3713,7 +4151,7 @@ var ln = {
 		tagName: o,
 		reason: "'children' must be an array"
 	}), !1) : !0;
-}, Hn = ({ inNode: e, inCatalog: t, inErrors: n }) => {
+}, Vn = ({ inNode: e, inCatalog: t, inErrors: n }) => {
 	let r = e, i = t, a = n, o = r.tagName, s = i ? i[o] : null;
 	return s && Array.isArray(s.childTags) && s.childTags.length > 0 && Array.isArray(r.children) && r.children.forEach((e) => {
 		e && e.tagName && !s.childTags.includes(e.tagName) && a.push({
@@ -3721,18 +4159,22 @@ var ln = {
 			reason: `Tag '${e.tagName}' is not an allowed child of '${o}' (allowed: ${s.childTags.join(", ")})`
 		});
 	}), !0;
-}, Un = ({ inNode: e, inErrors: t }) => {
+}, Hn = ({ inNode: e, inErrors: t }) => {
 	let n = e, r = t, i = n.tagName;
 	return "attributes" in n && (!n.attributes || typeof n.attributes != "object" || Array.isArray(n.attributes)) ? (r.push({
 		tagName: i,
 		reason: "'attributes' must be a key-value object"
 	}), !1) : !0;
-}, Wn = ({ inNode: e, inCatalog: t, inErrors: n }) => {
+}, Un = ({ inNode: e, inCatalog: t, inErrors: n }) => {
 	let r = e, i = t, a = n;
-	Rn({
+	Ln({
 		inNode: r,
 		inErrors: a
-	}) && (zn({
+	}) && (Rn({
+		inNode: r,
+		inCatalog: i,
+		inErrors: a
+	}), zn({
 		inNode: r,
 		inCatalog: i,
 		inErrors: a
@@ -3746,20 +4188,16 @@ var ln = {
 		inErrors: a
 	}), Hn({
 		inNode: r,
-		inCatalog: i,
-		inErrors: a
-	}), Un({
-		inNode: r,
 		inErrors: a
 	}));
 };
 // node_modules/json-to-tag-validate/src/v4/index.js
-function Gn({ inJson: e, inCatalog: t, inSpec: n }) {
-	let r = e, i = t ?? n ?? rn, a = [];
-	return Ln({
+function Wn({ inJson: e, inCatalog: t, inSpec: n }) {
+	let r = e, i = t ?? n ?? nn, a = [];
+	return In({
 		inSpec: r,
 		inFunc: (e) => {
-			Wn({
+			Un({
 				inNode: e,
 				inCatalog: i,
 				inErrors: a
@@ -3771,15 +4209,15 @@ function Gn({ inJson: e, inCatalog: t, inSpec: n }) {
 	};
 }
 // node_modules/@keshavsoft/json-to-tag/src/v12/element/createElement.js
-var Kn = "http://www.w3.org/2000/svg", qn = /* @__PURE__ */ new Set(/* @__PURE__ */ "svg.path.symbol.use.g.circle.ellipse.rect.line.polyline.polygon.text.tspan.defs.clippath.mask.pattern.marker.lineargradient.radialgradient.stop.image.filter.fegaussianblur.femerge.femergenode".split(".")), Jn = ({ inTagName: e }) => {
+var Gn = "http://www.w3.org/2000/svg", Kn = /* @__PURE__ */ new Set(/* @__PURE__ */ "svg.path.symbol.use.g.circle.ellipse.rect.line.polyline.polygon.text.tspan.defs.clippath.mask.pattern.marker.lineargradient.radialgradient.stop.image.filter.fegaussianblur.femerge.femergenode".split(".")), qn = ({ inTagName: e }) => {
 	let t = e?.toLowerCase();
 	if (!t) return null;
 	if (t === "checkbox") {
 		let e = document.createElement("input");
 		return e.type = "checkbox", e;
 	}
-	return qn.has(t) ? document.createElementNS(Kn, t) : document.createElement(t);
-}, Yn = ({ inElement: e, inTextContent: t }) => (!e || t == null || (e.textContent = t), e), Xn = ({ inElement: e, inProperties: t }) => (e && t && typeof t == "object" && Object.assign(e, t), e), Zn = "http://www.w3.org/1999/xlink", Qn = ({ inElement: e, inAttributes: t }) => {
+	return Kn.has(t) ? document.createElementNS(Gn, t) : document.createElement(t);
+}, Jn = ({ inElement: e, inTextContent: t }) => (!e || t == null || (e.textContent = t), e), Yn = ({ inElement: e, inProperties: t }) => (e && t && typeof t == "object" && Object.assign(e, t), e), Xn = "http://www.w3.org/1999/xlink", Zn = ({ inElement: e, inAttributes: t }) => {
 	let n = e, r = t;
 	if (!n || !r || typeof r != "object") return n;
 	let i = typeof SVGElement < "u" ? n instanceof SVGElement : n.namespaceURI === "http://www.w3.org/2000/svg";
@@ -3789,104 +4227,104 @@ var Kn = "http://www.w3.org/2000/svg", qn = /* @__PURE__ */ new Set(/* @__PURE__
 			if (t != null) {
 				let e = String(t);
 				if (i) try {
-					n.setAttributeNS(Zn, "href", e);
+					n.setAttributeNS(Xn, "href", e);
 				} catch {}
 				n.setAttribute("href", e), n.setAttribute("xlink:href", e);
 			}
 		} else typeof t == "boolean" ? t ? n.setAttribute(e, "") : n.removeAttribute(e) : t != null && n.setAttribute(e, String(t));
 	}), n;
-}, $n = ({ inElement: e, inClassList: t }) => {
+}, Qn = ({ inElement: e, inClassList: t }) => {
 	if (!e || !t) return e;
 	let n = typeof t == "string" ? t.split(/\s+/).filter(Boolean) : Array.isArray(t) ? t.filter((e) => typeof e == "string" && e.trim()) : [];
 	return n.length && e.classList.add(...n), e;
-}, er = (e) => {
+}, $n = (e) => {
 	if (!e || typeof e != "object" || Array.isArray(e) || !e.tagName) return null;
-	let t = Jn({ inTagName: e.tagName });
-	return t ? (Yn({
+	let t = qn({ inTagName: e.tagName });
+	return t ? (Jn({
 		inElement: t,
 		inTextContent: e.textContent,
 		inTagName: e.tagName
-	}), Xn({
+	}), Yn({
 		inElement: t,
 		inProperties: e.properties
-	}), Qn({
+	}), Zn({
 		inElement: t,
 		inAttributes: e.attributes
-	}), $n({
+	}), Qn({
 		inElement: t,
 		inClassList: e.classList
 	}), t) : null;
-}, tr = (e = {}) => Ln({
+}, er = (e = {}) => In({
 	inSpec: e?.spec ?? e?.inSpec ?? e,
-	inFunc: er
+	inFunc: $n
 });
-Pn({
-	buildSpecElement: tr,
+Nn({
+	buildSpecElement: er,
 	buildSpecElementWithValidate: (e = {}) => {
-		let t = e?.spec ?? e?.inSpec ?? e, n = Gn({ inJson: t });
-		return n.isValid || console.warn("[json-to-tag] Specification validation issues:", n.errors), Ln({
+		let t = e?.spec ?? e?.inSpec ?? e, n = Wn({ inJson: t });
+		return n.isValid || console.warn("[json-to-tag] Specification validation issues:", n.errors), In({
 			inSpec: t,
-			inFunc: er
+			inFunc: $n
 		});
 	}
 });
 // node_modules/spec-to-dom/src/v2/register/meta.js
-var nr = {
+var tr = {
 	version: "2.1.1",
 	name: "spec-to-dom"
-}, rr = (e) => {
+}, nr = (e) => {
 	e && (globalThis.ks ??= {}, globalThis.ks.specToDom = {
-		meta: nr,
+		meta: tr,
 		appendToDom: e
 	});
-}, ir = ({ buildSpec: e, targetHtmlId: t, appendPosition: n, showLog: r }) => {
+}, rr = ({ buildSpec: e, targetHtmlId: t, appendPosition: n, showLog: r }) => {
 	let i = e, a = t, o = n, s = r;
 	s && console.log("renderToDom 1 (content):", i);
 	let c = document.getElementById(a);
 	return c ? (Array.isArray(i) || i instanceof NodeList || i instanceof HTMLCollection ? o === "prepend" ? c.prepend(...i) : c.append(...i) : o === "prepend" ? c.prepend(i) : (c.innerHTML = "", c.append(i)), s && console.log("renderToDom 2 (mounted):", c), c) : null;
 };
-rr(ir);
+nr(rr);
 // node_modules/@keshavsoft/json-to-dom/src/v42/index.js
-var ar = ({ jsonSpec: e, targetHtmlId: t, appendPosition: n, showLog: r }) => ir({
-	buildSpec: tr(e),
+var ir = ({ jsonSpec: e, targetHtmlId: t, appendPosition: n, showLog: r }) => rr({
+	buildSpec: er(e),
 	targetHtmlId: t,
 	appendPosition: n,
 	showLog: r
 });
-Mn(ar);
+jn(ir);
 // node_modules/json-renderers-guard/src/v5/spec/type/index.js
-var or = (e) => {
+var ar = (e) => {
 	let t = e?.inConfig ?? e;
 	if (!t || typeof t != "object") throw TypeError("Config must be an object");
 	let n = t.type;
 	if (n === void 0) throw Error("Missing compulsory key: \"type\"");
 	if (typeof n != "string") throw TypeError("type must be a string");
 	return !0;
-}, sr = (e) => {
+}, or = (e) => {
 	let t = e?.inConfig ?? e;
 	if (!t || typeof t != "object") throw TypeError("Config must be an object");
 	let n = t.data;
 	if (n === void 0) throw Error("Missing compulsory key: \"data\"");
 	if (!Array.isArray(n)) throw TypeError("data must be an Array");
 	return !0;
-}, cr = (e) => {
+}, sr = (e) => {
 	let t = e?.inConfig ?? e;
 	if (!t || typeof t != "object") throw TypeError("Config must be an object");
 	let n = t.columns;
 	if (n === void 0) throw Error("Missing compulsory key: \"columns\"");
 	if (!Array.isArray(n)) throw TypeError("columns must be an Array");
 	return !0;
-}, lr = (e) => {
+}, cr = (e) => {
 	let t = e?.inConfig ?? e;
 	if (!t || typeof t != "object") throw TypeError("Config must be an object");
 	let n = t.showLog;
 	if (n !== void 0 && typeof n != "boolean") throw TypeError("showLog must be a boolean");
 	return !0;
-}, ur = (e) => {
+}, lr = (e) => {
 	let t = e?.inConfig ?? e;
 	if (!t || typeof t != "object" || Array.isArray(t)) throw TypeError("Config must be an object");
-	return or(t), sr(t), cr(t), lr(t), !0;
-}, dr = (e) => {
+	return ar(t), or(t), sr(t), cr(t), !0;
+}, ur = (e) => {
 	let t = e?.inConfig ?? e;
 	if (!t || typeof t != "object") throw TypeError("Config must be an object");
 	let n = t.targetHtmlId;
@@ -3894,25 +4332,25 @@ var or = (e) => {
 	if (typeof n != "string") throw TypeError("targetHtmlId must be a string");
 	if (n.trim().length === 0) throw Error("targetHtmlId must be a non-empty string");
 	return !0;
-}, fr = (e) => {
+}, dr = (e) => {
 	let t = e?.inConfig ?? e;
 	if (!t || typeof t != "object") throw TypeError("Config must be an object");
 	let n = t.appendPosition;
 	if (n === void 0) throw Error("Missing compulsory key: \"appendPosition\"");
 	if (typeof n != "string") throw TypeError("appendPosition must be a string");
 	return !0;
-}, pr = (e) => {
+}, fr = (e) => {
 	let t = e?.inConfig ?? e;
 	if (!t || typeof t != "object") throw TypeError("Config must be an object");
 	let n = t.classToApply;
 	if (n === void 0) throw Error("Missing compulsory key: \"classToApply\"");
 	if (typeof n != "string") throw TypeError("classToApply must be a string");
 	return !0;
-}, mr = (e) => {
+}, pr = (e) => {
 	let t = e?.inConfig ?? e;
 	if (!t || typeof t != "object" || Array.isArray(t)) throw TypeError("Config must be an object");
-	return dr(t), fr(t), pr(t), !0;
-}, z = {
+	return ur(t), dr(t), fr(t), !0;
+}, B = {
 	type: "table",
 	targetHtmlId: "",
 	data: [],
@@ -3920,32 +4358,32 @@ var or = (e) => {
 	classToApply: "",
 	appendPosition: "replace",
 	showLog: !1
-}, hr = (e) => {
+}, mr = (e) => {
 	let t = typeof e == "object" && e ? e.inKey ?? e.key : e;
-	return t && t in z ? z[t] : { ...z };
+	return t && t in B ? B[t] : { ...B };
 };
-Object.assign(hr, z);
+Object.assign(mr, B);
 // node_modules/json-renderers-guard/src/v5/index.js
-var B = (e) => {
+var V = (e) => {
 	let t = e?.inConfig ?? e;
 	if (!t || typeof t != "object" || Array.isArray(t)) throw TypeError("Config must be an object");
-	return ur(t), mr(t), !0;
+	return lr(t), pr(t), !0;
 };
-B.getSpec = hr, B.configSpec = z, B.guardSpec = ur, B.guardMount = mr;
+V.getSpec = mr, V.configSpec = B, V.guardSpec = lr, V.guardMount = pr;
 // src/v2/registerGlobal/meta.js
-var gr = {
+var hr = {
 	name: "json-renderers-from-instructions-collection",
 	version: "1.2.1",
 	description: "Composite multi-renderer orchestrator driven by declarative instructions and collections"
-}, _r = (e) => {
+}, gr = (e) => {
 	let t = e;
 	typeof globalThis < "u" && t && (globalThis.ks ??= {}, globalThis.ks.jsonRenderers ??= {}, globalThis.ks.jsonRenderers.fromInstructionsCollection = {
-		meta: gr,
+		meta: hr,
 		render: t
 	});
-}, vr = (e = {}) => {
+}, _r = (e = {}) => {
 	let t = e?.showLog;
-	B({
+	V({
 		...e,
 		type: e.type || "collection"
 	}), t && console.log("[from-instructions-collection] input config:", {
@@ -3954,7 +4392,7 @@ var gr = {
 		data: e.data,
 		targetHtmlId: e.targetHtmlId
 	});
-	let n = An({
+	let n = kn({
 		renderers: e.renderers || [],
 		data: e.data || [],
 		columns: e.columns || [],
@@ -3962,7 +4400,7 @@ var gr = {
 		showLog: t
 	});
 	t && console.log("[from-instructions-collection] generated composite spec:", n);
-	let r = ar({
+	let r = ir({
 		jsonSpec: n,
 		targetHtmlId: e.targetHtmlId,
 		appendPosition: e.appendPosition || "replace",
@@ -3971,5 +4409,5 @@ var gr = {
 	});
 	return t && console.log("[from-instructions-collection] mounted DOM element:", r), r;
 };
-_r(vr);
-export { kn as buildSingleSpec, An as buildSpec, vr as default, vr as render };
+gr(_r);
+export { On as buildSingleSpec, kn as buildSpec, _r as default, _r as render };
