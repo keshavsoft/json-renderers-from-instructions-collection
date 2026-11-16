@@ -19,6 +19,6 @@
     "json-renderers-guard": "^1.5.3",
     "json-renderers-run-instructions": "^1.5.7",
     "json-renderers-run-options": "^1.1.1",
-    "spec-repo": "^1.12.1"
+    "spec-repo": "^1.13.1"
   }
 }
